@@ -16,15 +16,15 @@ const Register = props =>
 <Row className="d-flex justify-content-center">
   <Col xs={12} sm={8} lg={4}>
   <h2>Sign In</h2>
-  <Form className="form">
+  <Form className="form" onSubmit={props.handleRegistration}>
     <Col>
       <FormGroup>
         <Label>Email</Label>
         <Input
-          type="text"
-          name="name"
-          id="exampleUserName"
-          placeholder="username"
+          type="email"
+          name="email"
+          id="exampleEmail"
+          placeholder="myemail@email.com"
         />
       </FormGroup>
     </Col>
@@ -32,10 +32,10 @@ const Register = props =>
       <FormGroup>
         <Label>Username</Label>
         <Input
-          type="email"
-          name="email"
-          id="exampleEmail"
-          placeholder="myemail@email.com"
+          type="text"
+          name="username"
+          id="exampleusername"
+          placeholder="username"
         />
       </FormGroup>
     </Col>
@@ -52,7 +52,7 @@ const Register = props =>
     </Col>
     <Col className="d-flex justify-content-around">
       <Button onClick={() => props.switchForm(false)}>Already Registered?</Button>
-      <Button>Submit</Button>
+      <Button type="submit">Submit</Button>
       </Col>
   </Form>
   </Col>

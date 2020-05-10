@@ -14,17 +14,23 @@ const mapStateToProps = state => {
   }
 }
 
-
-
 class App extends Component {
   constructor(props){
     super()
+  }
+
+  handleRegistration = event => {
+    event.preventDefault();
+    const email = event.target.email.value
+    const username = event.target.username.value
+    const password = event.target.password.value
+    
   }
   render(){
     return (
 
     <Container className="App">
-    {this.props.formStatus ? <Register /> : <SignIn />}
+    {this.props.formStatus ? <Register handleRegistration={this.handleRegistration} /> : <SignIn />}
     </Container>
     )
   }
