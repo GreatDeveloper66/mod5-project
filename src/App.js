@@ -4,7 +4,7 @@ import { Container } from 'reactstrap'
 import SignIn from './Components/SignIn'
 import Register from './Components/Register'
 import { connect } from 'react-redux'
-import FormSwitchAction from './actions/formswitch'
+// import FormSwitchAction from './actions/formswitch'
 // import fetch from 'isomorphic-fetch'
 // import runtimeEnv from '@mars/heroku-js-runtime-env'
 

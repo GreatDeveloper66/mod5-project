@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const Register = () =>
+const Register = props =>
 <Row className="d-flex justify-content-center">
   <Col xs={12} sm={8} lg={4}>
   <h2>Sign In</h2>
@@ -51,7 +51,7 @@ const Register = () =>
       </FormGroup>
     </Col>
     <Col className="d-flex justify-content-around">
-      <Button>Already Registered?</Button>
+      <Button onClick={() => props.switchForm(false)}>Already Registered?</Button>
       <Button>Submit</Button>
       </Col>
   </Form>

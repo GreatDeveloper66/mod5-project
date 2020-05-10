@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const SignIn = () =>
+const SignIn = props =>
 <Row className="d-flex justify-content-center">
   <Col xs={12} sm={8} lg={4}>
   <h2>Sign In</h2>
@@ -42,8 +42,9 @@ const SignIn = () =>
       </FormGroup>
     </Col>
     <Col className="d-flex justify-content-around">
-    <Button>New User?</Button>
+    <Button onClick={() => props.switchForm(true)}>New User?</Button>
     <Button>Submit</Button>
+
     </Col>
   </Form>
   </Col>

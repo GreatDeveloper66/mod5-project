@@ -4,3 +4,5 @@ const FormSwitchAction = formStatus => {
     formStatus: formStatus
   }
 }
+
+export default FormSwitchAction
