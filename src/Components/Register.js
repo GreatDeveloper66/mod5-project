@@ -9,12 +9,23 @@ const SignIn = () =>
   <Form className="form">
     <Col>
       <FormGroup>
-        <Label>Username</Label>
+        <Label>Email</Label>
         <Input
           type="text"
           name="name"
           id="exampleUserName"
           placeholder="username"
+        />
+      </FormGroup>
+    </Col>
+    <Col>
+      <FormGroup>
+        <Label>Username</Label>
+        <Input
+          type="email"
+          name="email"
+          id="exampleEmail"
+          placeholder="myemail@email.com"
         />
       </FormGroup>
     </Col>
