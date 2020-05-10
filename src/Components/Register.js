@@ -1,8 +1,18 @@
 import React from 'react';
 import '../App.css';
 import { FormGroup, Form, Col, Label, Input, Button, Row } from 'reactstrap'
+import { connect } from 'react-redux'
+import FormSwitchAction from '../actions/formswitch'
 
-const SignIn = () =>
+const mapDispatchToProps = dispatch => {
+  return {
+    switchForm: formStatus => {
+      dispatch(FormSwitchAction(formStatus))
+    }
+  }
+}
+
+const Register = () =>
 <Row className="d-flex justify-content-center">
   <Col xs={12} sm={8} lg={4}>
   <h2>Sign In</h2>
@@ -48,4 +58,4 @@ const SignIn = () =>
   </Col>
 </Row>
 
-export default SignIn
+export default connect(null,mapDispatchToProps)(Register)
