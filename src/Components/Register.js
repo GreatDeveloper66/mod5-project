@@ -41,9 +41,9 @@ const SignIn = () =>
       </FormGroup>
     </Col>
     <Col className="d-flex justify-content-around">
-    <Button>New User?</Button>
-    <Button>Submit</Button>
-    </Col>
+      <Button>Already Registered?</Button>
+      <Button>Submit</Button>
+      </Col>
   </Form>
   </Col>
 </Row>
