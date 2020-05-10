@@ -7,9 +7,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux'
 //import NotesReducer from './reducers/notes'
 import FormSwitchReducer from './reducers/formswitch'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 
-const store = createStore(FormSwitchReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  compose(applyMiddleware(thunk)),
+);
+
 
 
 ReactDOM.render(
