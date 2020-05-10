@@ -5,10 +5,8 @@ import { Container, FormGroup, Form, Col, Label, Input, Button, Row } from 'reac
 function App() {
   return (
     <Container className="App">
-    <Row>
-      <Col>
-      </Col>
-      <Col>
+    <Row className="justify-content-center">
+      <Col xs={12} sm={8} lg={4}>
       <h2>Sign In</h2>
       <Form className="form">
         <Col>
@@ -35,8 +33,6 @@ function App() {
         </Col>
         <Button>Submit</Button>
       </Form>
-      </Col>
-      <Col>
       </Col>
     </Row>
   </Container>
