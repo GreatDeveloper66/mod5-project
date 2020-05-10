@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Container, FormGroup, Form, Col, Label, Input, Button } from 'reactstrap'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Container>
+        <h2>Sign In</h2>
+        <Form className="form">
+          <Col>
+            <FormGroup>
+              <Label>UserName</Label>
+              <Input
+                type="email"
+                name="email"
+                id="exampleEmail"
+                placeholder="myemail@email.com"
+              />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label for="examplePassword">Password</Label>
+              <Input
+                type="password"
+                name="password"
+                id="examplePassword"
+                placeholder="********"
+              />
+            </FormGroup>
+          </Col>
+          <Button>Submit</Button>
+        </Form>
+      </Container>
     </div>
   );
 }
