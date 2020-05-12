@@ -1,10 +1,7 @@
 const RegisterUserReducer = (state = {userObj: {}}, action) => {
   switch(action.type){
     case 'registeruser':
-      return {
-        ...state,
-        userObj: {...state.userObj}
-      }
+      return Object.assign({},state,{userObj: action.userObj})
       default:
         return state
   }
