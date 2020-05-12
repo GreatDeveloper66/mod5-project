@@ -4,12 +4,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-      # @user = User.create(user_params)
-      # if(@user.valid?)
-      #   render json: {user: 'user created', useris: UserSerializer.new(@user)}
-      # else
-      #   render json: {error: 'user creation failed'}
-      # end
+       @user = User.create(user_params)
+       if(@user.valid?)
+         render json: {user: 'user created', useris: UserSerializer.new(@user)}
+       else
+         render json: {error: 'user creation failed'}
+       end
    end
 
   def show
