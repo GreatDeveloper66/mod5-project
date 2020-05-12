@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import '../App.css';
-import { FormGroup, Form, Col, Label, Input, Button, Row } from 'reactstrap'
+import { FormGroup, Col, Label, Input } from 'reactstrap'
 
 const BottomForm = () => <Fragment>
                             <Col>
@@ -26,5 +26,5 @@ const BottomForm = () => <Fragment>
                               </FormGroup>
                             </Col>
                           </Fragment>
-                          
+
 export default BottomForm
