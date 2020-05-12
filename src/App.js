@@ -22,6 +22,8 @@ class App extends Component {
 
   handleRegistration = event => {
     event.preventDefault();
+    // const host = runtimeEnv().REACT_APP_API_URL
+    const host = `http://localhost:5000`
     const email = event.target.email.value
     const username = event.target.username.value
     const password = event.target.password.value
@@ -43,7 +45,7 @@ class App extends Component {
 
     console.log(configObj)
 
-    fetch('http://localhost:5000/users',configObj)
+    fetch(`${host}/api/v1/users`,configObj)
       .then(resp => resp.json())
       .then(data => console.log('register user', data))
   }
