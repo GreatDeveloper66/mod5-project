@@ -6,6 +6,8 @@ import Register from './Components/Register'
 import { connect } from 'react-redux'
 import RegisterUserAction from './actions/registeruser'
 import fetch from 'isomorphic-fetch'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Root from './Containers/root'
 // import runtimeEnv from '@mars/heroku-js-runtime-env'
 
 const mapStateToProps = state => {
@@ -62,10 +64,11 @@ class App extends Component {
   }
   render(){
     return (
-
+    <Router>
     <Container className="App">
-    {this.props.formStatus ? <Register handleRegistration={this.handleRegistration} /> : <SignIn />}
+    <Root handleRegistration={this.handleRegistration} />
     </Container>
+    </Router>
     )
   }
 }
