@@ -5,15 +5,13 @@ class Home extends Component {
     super()
   }
 
-  handleProfile = () => {
 
-  }
   render(){
     return(
       <div>
       <div>Home Page</div>
       <button>Sign Out</button>
-      <button onClick={this.handleProfile}>Profile</button>
+      <button onClick={() => this.props.history.push('/profile')}>Profile</button>
       </div>
     )
   }

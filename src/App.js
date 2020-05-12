@@ -4,6 +4,7 @@ import { Container } from 'reactstrap'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Root from './Containers/root'
 import Home from './Containers/home'
+import Profile from './Containers/profile'
 // import runtimeEnv from '@mars/heroku-js-runtime-env'
 
 
@@ -21,6 +22,7 @@ class App extends Component {
           exact path='/'
           component = {Root}
           />
+          <Route exact path = '/profile' component={Profile} />
           <Route exact path='/home' component={Home} />
         </Switch>
     <Container className="App">
