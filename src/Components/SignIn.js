@@ -41,7 +41,10 @@ const SignInUser = event => {
   }
   fetch('http://localhost:5000/api/v1/login', configObj)
     .then(resp => resp.json())
-    .then(data => props.logInUser(data))
+    .then(data => {
+      props.logInUser(data)
+      props.history.push('/home')
+    })
 }
 return (
 <Row className="d-flex justify-content-center">

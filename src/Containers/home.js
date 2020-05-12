@@ -5,7 +5,13 @@ class Home extends Component {
     super()
   }
   render(){
-    return(<div>Home Page</div>)
+    return(
+      <div>
+      <div>Home Page</div>
+      <button>Sign Out</button>
+      <button>Profile</button>
+      </div>
+    )
   }
 }
 

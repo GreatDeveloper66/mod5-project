@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 }
 
 const Root = props => props.formStatus ?
-                      <Register /> :
-                      <SignIn />
+                      <Register history={props.history}/> :
+                      <SignIn history={props.history}/>
 
 export default connect(mapStateToProps,null)(Root);
