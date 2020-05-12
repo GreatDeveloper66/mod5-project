@@ -3,20 +3,55 @@ import '../App.css';
 import { FormGroup, Form, Col, Label, Input, Button, Row } from 'reactstrap'
 import { connect } from 'react-redux'
 import FormSwitchAction from '../actions/formswitch'
+import RegisterUserAction from '../actions/registeruser'
 
 const mapDispatchToProps = dispatch => {
   return {
     switchForm: formStatus => {
       dispatch(FormSwitchAction(formStatus))
+    },
+    registerUser: userObj => {
+      dispatch(RegisterUserAction(userObj))
     }
   }
 }
 
-const Register = props =>
+const Register = props => {
+  const handleRegistration = event => {
+    event.preventDefault();
+    // const host = runtimeEnv().REACT_APP_API_URL
+    const host = `http://localhost:5000`
+    const email = event.target.email.value
+    const username = event.target.username.value
+    const password = event.target.password.value
+    const userObj = {
+      user: {
+        username: username,
+        email: email,
+        password: password
+      }
+    }
+    const configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(userObj)
+    }
+    fetch(`${host}/api/v1/users`,configObj)
+      .then(resp => resp.json())
+      .then(data => {
+          props.registerUser(data.userObj)
+
+        })
+  }
+
+  return (
 <Row className="d-flex justify-content-center">
   <Col xs={12} sm={8} lg={4}>
   <h2>Register</h2>
-  <Form className="form" onSubmit={props.handleRegistration}>
+  <Form className="form" onSubmit={handleRegistration}>
     <Col>
       <FormGroup>
         <Label>Email</Label>
@@ -57,5 +92,7 @@ const Register = props =>
   </Form>
   </Col>
 </Row>
+)
+}
 
 export default connect(null,mapDispatchToProps)(Register)

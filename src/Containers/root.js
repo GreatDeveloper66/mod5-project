@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 }
 
 const Root = props => props.formStatus ?
-                      <Register handleRegistration={props.handleRegistration} /> :
+                      <Register /> :
                       <SignIn />
 
 export default connect(mapStateToProps,null)(Root);
