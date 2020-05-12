@@ -3,6 +3,7 @@ import '../App.css';
 import { FormGroup, Form, Col, Label, Input, Button, Row } from 'reactstrap'
 import { connect } from 'react-redux'
 import FormSwitchAction from '../actions/formswitch'
+import LogInUserAction from '../actions/loginuser'
 import fetch from 'isomorphic-fetch'
 
 
@@ -11,6 +12,9 @@ const mapDispatchToProps = dispatch => {
   return {
     switchForm: formStatus => {
       dispatch(FormSwitchAction(formStatus))
+    },
+    logInUser: userObj => {
+      dispatch(LogInUserAction(userObj))
     }
   }
 }
@@ -37,7 +41,7 @@ const SignInUser = event => {
   }
   fetch('http://localhost:5000/api/v1/login', configObj)
     .then(resp => resp.json())
-    .then(data => console.log('login', data))
+    .then(data => props.logInUser(data))
 }
 return (
 <Row className="d-flex justify-content-center">
