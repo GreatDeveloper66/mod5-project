@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import FormSwitchAction from '../actions/formswitch'
 import LogInUserAction from '../actions/loginuser'
 import fetch from 'isomorphic-fetch'
+import BottomForm from './bottomform'
 
 
 
@@ -51,32 +52,10 @@ return (
   <Col xs={12} sm={8} lg={4}>
   <h2>Sign In</h2>
   <Form className="form" onSubmit={SignInUser}>
-    <Col>
-      <FormGroup>
-        <Label>Username</Label>
-        <Input
-          type="text"
-          name="username"
-          id="exampleUserName"
-          placeholder="username"
-        />
-      </FormGroup>
-    </Col>
-    <Col>
-      <FormGroup>
-        <Label for="examplePassword">Password</Label>
-        <Input
-          type="password"
-          name="password"
-          id="examplePassword"
-          placeholder="********"
-        />
-      </FormGroup>
-    </Col>
+    <BottomForm />
     <Col className="d-flex justify-content-around">
     <Button onClick={() => props.switchForm(true)}>New User?</Button>
     <Button>Submit</Button>
-
     </Col>
   </Form>
   </Col>

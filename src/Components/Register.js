@@ -4,6 +4,8 @@ import { FormGroup, Form, Col, Label, Input, Button, Row } from 'reactstrap'
 import { connect } from 'react-redux'
 import FormSwitchAction from '../actions/formswitch'
 import RegisterUserAction from '../actions/registeruser'
+import TopForm from './topform'
+import BottomForm from './bottomform'
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -52,39 +54,8 @@ const Register = props => {
   <Col xs={12} sm={8} lg={4}>
   <h2>Register</h2>
   <Form className="form" onSubmit={handleRegistration}>
-    <Col>
-      <FormGroup>
-        <Label>Email</Label>
-        <Input
-          type="email"
-          name="email"
-          id="exampleEmail"
-          placeholder="myemail@email.com"
-        />
-      </FormGroup>
-    </Col>
-    <Col>
-      <FormGroup>
-        <Label>Username</Label>
-        <Input
-          type="text"
-          name="username"
-          id="exampleusername"
-          placeholder="username"
-        />
-      </FormGroup>
-    </Col>
-    <Col>
-      <FormGroup>
-        <Label for="examplePassword">Password</Label>
-        <Input
-          type="password"
-          name="password"
-          id="examplePassword"
-          placeholder="********"
-        />
-      </FormGroup>
-    </Col>
+    <TopForm />
+    <BottomForm />
     <Col className="d-flex justify-content-around">
       <Button onClick={() => props.switchForm(false)}>Already Registered?</Button>
       <Button type="submit">Submit</Button>
