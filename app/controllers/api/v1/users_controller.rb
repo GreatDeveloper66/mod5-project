@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
   def create
        @user = User.create(user_params)
        if(@user.valid?)
-         render json: {user: 'user created', useris: UserSerializer.new(@user)}
+         render json: {userObj: UserSerializer.new(@user)}
        else
          render json: {error: 'user creation failed'}
        end
@@ -15,9 +15,9 @@ class Api::V1::UsersController < ApplicationController
   def show
   end
 
-  # private
-  #   def user_params
-  #     params.require(:user).permit(:email, :username, :password)
-  #   end
+  private
+     def user_params
+       params.require(:user).permit(:email, :username, :password)
+     end
 
 end
