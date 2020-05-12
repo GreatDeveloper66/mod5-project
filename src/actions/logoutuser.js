@@ -3,3 +3,5 @@ const LogOutUserAction = () => {
     type: 'logoutuser'
   }
 }
+
+export default LogOutUserAction

@@ -5,6 +5,7 @@ const RegisterUserAction = userObj => {
   }
 }
 
+export default RegisterUserAction
 
 // const UserRegistrationAction = userObj => {
 //   return dispatch => {

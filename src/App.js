@@ -4,7 +4,7 @@ import { Container } from 'reactstrap'
 import SignIn from './Components/SignIn'
 import Register from './Components/Register'
 import { connect } from 'react-redux'
-// import FormSwitchAction from './actions/formswitch'
+import RegisterUserAction from './actions/registeruser'
 import fetch from 'isomorphic-fetch'
 // import runtimeEnv from '@mars/heroku-js-runtime-env'
 
@@ -13,6 +13,15 @@ const mapStateToProps = state => {
     formStatus: state.formStatus
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    registerUser: userObj => {
+      dispatch(RegisterUserAction(userObj))
+    }
+  }
+}
+
 
 
 class App extends Component {
@@ -42,12 +51,14 @@ class App extends Component {
       },
       body: JSON.stringify(userObj)
     }
-
-    console.log(configObj)
-
     fetch(`${host}/api/v1/users`,configObj)
       .then(resp => resp.json())
-      .then(data => console.log('register user', data))
+      .then(data => {
+          console.log('datauser',data.userObj)
+          console.log('registerUser', this.props.registerUser)
+
+          this.props.registerUser(data.userObj)
+        })
   }
   render(){
     return (
@@ -59,4 +70,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps,null)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(App);

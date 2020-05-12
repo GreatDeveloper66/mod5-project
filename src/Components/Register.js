@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => {
 const Register = props =>
 <Row className="d-flex justify-content-center">
   <Col xs={12} sm={8} lg={4}>
-  <h2>Sign In</h2>
+  <h2>Register</h2>
   <Form className="form" onSubmit={props.handleRegistration}>
     <Col>
       <FormGroup>

@@ -4,3 +4,5 @@ const LogInUserAction = userObj => {
     userObj: userObj
   }
 }
+
+export default LogInUserAction
