@@ -5,7 +5,6 @@ class Home extends Component {
     super()
   }
 
-
   render(){
     return(
       <div>
