@@ -8,6 +8,7 @@ import RegisterUserAction from './actions/registeruser'
 import fetch from 'isomorphic-fetch'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Root from './Containers/root'
+import Home from './Containers/home'
 // import runtimeEnv from '@mars/heroku-js-runtime-env'
 
 const mapStateToProps = state => {
@@ -56,17 +57,22 @@ class App extends Component {
     fetch(`${host}/api/v1/users`,configObj)
       .then(resp => resp.json())
       .then(data => {
-          console.log('datauser',data.userObj)
-          console.log('registerUser', this.props.registerUser)
-
           this.props.registerUser(data.userObj)
+
         })
   }
   render(){
     return (
     <Router>
+      <Switch>
+        <Route
+          exact path='/'
+          render={props => <Root handleRegistration={this.handleRegistration} />}
+          />
+          <Route exact path='/home' component={Home} />
+        </Switch>
     <Container className="App">
-    <Root handleRegistration={this.handleRegistration} />
+    {/*<Root handleRegistration={this.handleRegistration} />*/}
     </Container>
     </Router>
     )
