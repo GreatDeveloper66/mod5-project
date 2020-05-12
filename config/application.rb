@@ -25,14 +25,14 @@ module Mod5ProjectBackend
     config.load_defaults 6.0
 
     Rails.application.config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins 'example.com'
+    allow do
+      origins '*'
 
-        resource '*',
-          headers: :any,
-          methods: [:get, :post, :put, :patch, :delete, :options, :head]
-      end
+      resource '*',
+        headers: :any,
+        methods: [:get, :post, :put, :patch, :delete, :options, :head]
     end
+  end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
