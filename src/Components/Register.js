@@ -43,7 +43,6 @@ const Register = props => {
       .then(resp => resp.json())
       .then(data => {
           props.registerUser(data.userObj)
-
         })
   }
 

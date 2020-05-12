@@ -49,7 +49,7 @@ return (
         <Label>Username</Label>
         <Input
           type="text"
-          name="name"
+          name="username"
           id="exampleUserName"
           placeholder="username"
         />
