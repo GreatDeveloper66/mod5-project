@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux'
 //import NotesReducer from './reducers/notes'
 import RootReducer from './reducers/rootreducer'
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore } from 'redux'
 // import thunk from 'redux-thunk'
 // import thunkMiddleware from 'redux-thunk'
 

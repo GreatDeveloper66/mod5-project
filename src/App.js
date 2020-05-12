@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Container } from 'reactstrap'
-import SignIn from './Components/SignIn'
-import Register from './Components/Register'
-import { connect } from 'react-redux'
-import RegisterUserAction from './actions/registeruser'
-import fetch from 'isomorphic-fetch'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Root from './Containers/root'
 import Home from './Containers/home'

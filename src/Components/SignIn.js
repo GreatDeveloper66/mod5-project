@@ -3,6 +3,7 @@ import '../App.css';
 import { FormGroup, Form, Col, Label, Input, Button, Row } from 'reactstrap'
 import { connect } from 'react-redux'
 import FormSwitchAction from '../actions/formswitch'
+import fetch from 'isomorphic-fetch'
 
 
 
