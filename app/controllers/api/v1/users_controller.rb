@@ -5,7 +5,9 @@ class Api::V1::UsersController < ApplicationController
       render json: User.all
     end
 
-    
+    def update
+      render json: {user: User.serializer.new(current_user) }
+    end
 
     def profile
       render json: { user: UserSerializer.new(current_user) }, status: :accepted
@@ -24,6 +26,6 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params
-      params.require(:user).permit(:id, :username, :password)
+      params.require(:user).permit(:email, :username,:password)
     end
 end
