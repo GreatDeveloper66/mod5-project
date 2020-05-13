@@ -71,7 +71,7 @@ return (
     <UserName username={"username here"}/>
 	<Password />
     <Col className="d-flex justify-content-around">
-    <Button onClick={() => props.switchForm(true)}>New User?</Button>
+    <Button onClick={() => props.history.push('/Register')}>New User?</Button>
     <Button>Submit</Button>
     </Col>
   </Form>

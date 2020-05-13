@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Root from './Containers/root'
 import Home from './Containers/home'
 import Profile from './Containers/profile'
+import SignIn from './Components/SignIn'
+import Register from './Components/Register'
 // import runtimeEnv from '@mars/heroku-js-runtime-env'
 
 
@@ -16,19 +18,16 @@ class App extends Component {
 
   render(){
     return (
+ <Container>
     <Router>
       <Switch>
-        <Route
-          exact path='/'
-          component = {Root}
-          />
+        <Route exact path = '/' component = {SignIn} />
           <Route exact path = '/profile' component={Profile} />
+		  <Route exact path ='/Register' component={Register} />
           <Route exact path='/home' component={Home} />
         </Switch>
-    <Container className="App">
-    {/*<Root handleRegistration={this.handleRegistration} />*/}
-    </Container>
     </Router>
+	</Container>
     )
   }
 }
