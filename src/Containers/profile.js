@@ -24,6 +24,7 @@ const mapDispatchToProps = dispatch => {
 const Profile = props => {
 	                   
 					const handleDelete = () => {
+						console.log(props)
 						const id = props.profile.user.id
 						const jwt = props.userObj.jwt
 						const url = `http://localhost:5000/api/v1/users/${id}`

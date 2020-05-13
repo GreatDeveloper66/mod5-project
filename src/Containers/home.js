@@ -3,6 +3,7 @@ import '../App.css';
 import { connect } from 'react-redux'
 import LogOutUserAction from '../actions/logoutuser'
 import RenderProfileAction from '../actions/renderprofile'
+import { Navbar } from 'reactstrap'
 
 const mapStateToProps = state => {
   return {
@@ -49,9 +50,10 @@ class Home extends Component {
   render(){
     return(
       <div>
-      <div>Home Page</div>
+      <Navbar>
       <button onClick={this.handleSignOut}>Sign Out</button>
       <button onClick={this.handleProfile}>Profile</button>
+	  </Navbar>
       </div>
     )
   }
