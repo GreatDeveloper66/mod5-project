@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import '../App.css';
 import { FormGroup, Col, Label, Input } from 'reactstrap'
 
-const TopForm = () => <Fragment>
+const Email = () => <Fragment>
                         <Col>
                           <FormGroup>
                             <Label>Email</Label>
@@ -16,4 +16,4 @@ const TopForm = () => <Fragment>
                         </Col>
                       </Fragment>
 
-export default TopForm
+export default Email

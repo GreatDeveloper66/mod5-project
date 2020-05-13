@@ -2,8 +2,9 @@ import React from 'react';
 import '../App.css';
 import { Form, Col, Button, Row } from 'reactstrap'
 import BottomForm from '../Components/bottomform'
-import TopForm from '../Components/topform'
+import Email from '../Components/email'
 import { connect } from 'react-redux'
+import UserName from '../Components/username'
 
 const mapStateToProps = state => {
   return {
@@ -48,8 +49,8 @@ const Profile = props => {
                           <Col xs={12} sm={8} lg={4}>
                           <h2>Profile</h2>
                           <Form className="form" onSubmit={handleSubmit}>
-                            <TopForm />
-                            <BottomForm />
+                            <Email />
+                            <UserName />
                             <Col className="d-flex justify-content-around">
                               <Button>Delete</Button>
                               <Button type="submit">Save</Button>
