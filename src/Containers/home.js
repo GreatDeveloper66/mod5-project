@@ -32,7 +32,6 @@ class Home extends Component {
     const header = {
       Authorization: `Bearer ${jwt}`
     }
-    console.log(JSON.stringify(header))
     
     fetch('http://localhost:5000/api/v1/profile', {
       headers: { Authorization: `Bearer ${jwt}`}
