@@ -19,30 +19,26 @@ const Profile = props => {
                         event.preventDefault()
                         const email = event.target.email.value
                         const username = event.target.username.value
-                        const password = event.target.password.value
-                        console.log('userObj',props)
-                        const id = props.userObj.user.id
-
+                        const id = props.profile.user.id
                         const jwt = props.userObj.jwt
                         const userObj = {
-                          User: {
+                          user: {
                             id: id,
                             username: username,
-                            email: email,
-                            password: password
+                            email: email
                           }
                         }
                         const configObj = {
                           method: 'PATCH',
                           headers: {
-                            // Authorization: jwt,
                             "Accept":"application/json",
                             "Content-Type":"application/json",
-                            Authorization: jwt
+                            Authorization: `Bearer ${jwt}`
                           },
                           body:JSON.stringify(userObj)
                         }
-                        fetch(`http://localhost:5000/api/v1/users/${id}`,configObj)
+						const url = `http://localhost:5000/api/v1/users/${id}`
+                        fetch(url,configObj)
                           .then(resp => resp.json())
                           .then(data => console.log(data))
                       }
@@ -50,7 +46,6 @@ const Profile = props => {
                         <Row className="d-flex justify-content-center">
                           <Col xs={12} sm={8} lg={4}>
                           <h2>Profile</h2>
-						  <h2>{console.log(props.profile.user)}</h2>
                           <Form className="form" onSubmit={handleSubmit}>
                             <Email placeholder={props.profile.user ? props.profile.user.email : "email@email.com"}/>
                             <UserName placeholder={props.profile.user ? props.profile.user.username : "username here"}/>
