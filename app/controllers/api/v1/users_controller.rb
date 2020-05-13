@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def update
-      render json: {user: User.serializer.new(current_user) }
+      render json: {user: Userserializer.new(current_user) }
     end
 
     def profile
