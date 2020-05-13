@@ -4,6 +4,7 @@ import { Form, Col, Button, Row } from 'reactstrap'
 import Email from '../Components/email'
 import { connect } from 'react-redux'
 import UserName from '../Components/username'
+import LogOutUserAction from '../actions/logoutuser'
 
 const mapStateToProps = state => {
   return {
@@ -12,8 +13,40 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+	return {
+		deleteUser: () => {
+			dispatch(LogOutUserAction())
+		}
+	}
+}
+
 const Profile = props => {
 	                   
+					const handleDelete = () => {
+						const id = props.profile.user.id
+						const jwt = props.userObj.jwt
+						const url = `http://localhost:5000/api/v1/users/${id}`
+						const configObj = {
+							method: 'DELETE',
+							headers: {
+								Authorization: `Bearer ${jwt}`
+							}
+						}
+						fetch(url,{method: 'DELETE'})
+							.then(response => response.json())
+							.then(data => {
+								props.deleteUser()
+								props.history.push('/')
+							})
+						
+					}
+					
+						
+					
+					
+		
+					
 	                  
                       const handleSubmit = event => {
                         event.preventDefault()
@@ -50,7 +83,7 @@ const Profile = props => {
                             <Email placeholder={props.profile.user ? props.profile.user.email : "email@email.com"}/>
                             <UserName placeholder={props.profile.user ? props.profile.user.username : "username here"}/>
                             <Col className="d-flex justify-content-around">
-                              <Button>Delete</Button>
+                              <Button onClick={handleDelete}>Delete</Button>
                               <Button type="submit">Save</Button>
                               </Col>
                           </Form>
@@ -59,4 +92,4 @@ const Profile = props => {
                     )
                     }
 
-export default connect(mapStateToProps,null)(Profile)
+export default connect(mapStateToProps,mapDispatchToProps)(Profile)
