@@ -4,9 +4,15 @@ class Api::V1::UsersController < ApplicationController
     def index
       render json: User.all
     end
+    
+    def edit
+      @user = User.find_by(id: params[:id])
+      render json: {user: UserSerializer.new(@user) }
+    end
 
     def update
-      User.update(params[:id], :username => params[:username], :email => params[:email])
+      current_user.update(user_params)
+      # @user.update(:username => params[:username], :email => params[:email])
       render json: {user: UserSerializer.new(current_user) }
       
       # current_user.update(email: params[:email], username: params[:username])
@@ -25,6 +31,11 @@ class Api::V1::UsersController < ApplicationController
       else
         render json: { error: 'failed to create user' }, status: :not_acceptable
       end
+    end
+    
+    def destroy
+      @user = User.find_by(id: params[:id])
+      @user.destroy
     end
 
     private
