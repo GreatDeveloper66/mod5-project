@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import { Form, Col, Button, Row, Container, Card } from 'reactstrap'
 import { connect } from 'react-redux'
-import FormSwitchAction from '../actions/formswitch'
 import LogInUserAction from '../actions/loginuser'
 import fetch from 'isomorphic-fetch'
 import UserName from './username'

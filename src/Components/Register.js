@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import { Form, Col, Button, Row, Container, Card } from 'reactstrap'
 import { connect } from 'react-redux'
-import FormSwitchAction from '../actions/formswitch'
 import RegisterUserAction from '../actions/registeruser'
 import Email from './email'
 import UserName from './username'
