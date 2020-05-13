@@ -6,7 +6,11 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def update
-      render json: {user: Userserializer.new(current_user) }
+      User.update(params[:id], :username => params[:username], :email => params[:email])
+      render json: {user: UserSerializer.new(current_user) }
+      
+      # current_user.update(email: params[:email], username: params[:username])
+#       render json: {user: UserSerializer.new(current_user) }
     end
 
     def profile
