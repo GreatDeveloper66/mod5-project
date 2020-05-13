@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
 import FormSwitchReducer from './formswitch'
 import RegisterUserReducer from './registeruser'
+import RenderProfileReducer from './renderprofile'
 
-const RootReducer = combineReducers({ formStatus: FormSwitchReducer, userObj:RegisterUserReducer })
+const RootReducer = combineReducers({ formStatus: FormSwitchReducer, userObj:RegisterUserReducer, profile: RenderProfileReducer })
 
 export default RootReducer
 
