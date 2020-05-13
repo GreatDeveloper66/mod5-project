@@ -33,9 +33,10 @@ const Profile = props => {
 								Authorization: `Bearer ${jwt}`
 							}
 						}
-						fetch(url,{method: 'DELETE'})
+						fetch(url,configObj)
 							.then(response => response.json())
 							.then(data => {
+								console.log(data)
 								props.deleteUser()
 								props.history.push('/')
 							})
@@ -73,7 +74,9 @@ const Profile = props => {
 						const url = `http://localhost:5000/api/v1/users/${id}`
                         fetch(url,configObj)
                           .then(resp => resp.json())
-                          .then(data => console.log(data))
+                          .then(data => {
+                          	props.history.push('/home')
+                          })
                       }
                       return (
                         <Row className="d-flex justify-content-center">
