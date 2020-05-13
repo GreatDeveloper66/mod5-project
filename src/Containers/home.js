@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux'
 import LogOutUserAction from '../actions/logoutuser'
+import RenderProfileAction from '../actions/renderprofile'
 
 const mapStateToProps = state => {
   return {
@@ -13,6 +14,9 @@ const mapDispatchToProps = dispatch => {
 	return {
 		logOutUser: () => {
 			dispatch(LogOutUserAction())
+		},
+		renderProfile: profile => {
+			dispatch(RenderProfileAction(profile))
 		}
 	}
 }
