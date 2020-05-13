@@ -65,7 +65,7 @@ const Register = props => {
     <UserName username={"username here"}/>
 	<Password />
     <Col className="d-flex justify-content-around">
-      <Button onClick={() => props.switchForm(false)}>Already Registered?</Button>
+      <Button onClick={() => props.history.push('/')}>Already Registered?</Button>
       <Button type="submit">Submit</Button>
       </Col>
   </Form>
