@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Form, Col, Button, Row } from 'reactstrap'
+import { Form, Col, Button, Row, Container, Card } from 'reactstrap'
 import { connect } from 'react-redux'
 import FormSwitchAction from '../actions/formswitch'
 import RegisterUserAction from '../actions/registeruser'
@@ -51,12 +51,17 @@ const Register = props => {
         })
   }
 
+
+
+
   return (
-<Row className="d-flex justify-content-center mt-5">
-  <Col xs={12} sm={8} lg={4}>
-  <h2>Register</h2>
-  <Form className="form" onSubmit={handleRegistration}>
-    <Email email={"email@email.com"}/>
+<Container className="mt-5">	  
+   <Row className="d-flex justify-content-center mt-5">
+     <Col xs={12} sm={8} lg={4}>
+	  <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+        <h2>Register</h2>
+       <Form className="form" onSubmit={handleRegistration}>
+       <Email email={"email@email.com"}/>
     <UserName username={"username here"}/>
 	<Password />
     <Col className="d-flex justify-content-around">
@@ -64,8 +69,10 @@ const Register = props => {
       <Button type="submit">Submit</Button>
       </Col>
   </Form>
+	  </Card>
   </Col>
 </Row>
+</Container>
 )
 }
 
