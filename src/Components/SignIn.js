@@ -32,7 +32,6 @@ const SignInUser = event => {
   event.preventDefault()
   const username = event.target.username.value
   const password = event.target.password.value
-  const jwt = props.userObj.jwt
   const userObj = {
     user: {
       username: username,
@@ -43,8 +42,7 @@ const SignInUser = event => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Accept": "application/json",
-      Authorization: jwt
+      "Accept": "application/json"
     },
     body: JSON.stringify(userObj)
   }
