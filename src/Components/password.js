@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import '../App.css';
 import { FormGroup, Col, Label, Input } from 'reactstrap'
 
-const Password = () => <Fragment>
+const Password = () => 
                             <Col>
                               <FormGroup>
                                 <Label for="examplePassword">Password</Label>
@@ -14,6 +14,6 @@ const Password = () => <Fragment>
                                 />
                               </FormGroup>
                             </Col>
-                          </Fragment>
+                          
 
 export default Password

@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import '../App.css';
 import { FormGroup, Col, Label, Input } from 'reactstrap'
 
-const Email = () => <Fragment>
+const Email = () => 
                         <Col>
                           <FormGroup>
                             <Label>Email</Label>
@@ -14,6 +14,6 @@ const Email = () => <Fragment>
                             />
                           </FormGroup>
                         </Col>
-                      </Fragment>
+                      
 
 export default Email
