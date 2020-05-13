@@ -6,8 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux'
 //import NotesReducer from './reducers/notes'
-import FormSwitchReducer from './reducers/formswitch'
-import { createStore, applyMiddleware, compose } from 'redux'
+import RootReducer from './reducers/rootreducer'
+import { createStore } from 'redux'
 // import thunk from 'redux-thunk'
 // import thunkMiddleware from 'redux-thunk'
 
@@ -17,7 +17,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 //   applyMiddleware(thunk)
 // );
 // const store = createStore(RootReducer, compose(applyMiddleware(thunk),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
-const store = createStore(FormSwitchReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(RootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <Provider store={store}>
