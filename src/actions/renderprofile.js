@@ -1,6 +1,6 @@
 const RenderProfileAction = profile => {
   return {
-    type: 'registeruser',
+    type: 'renderprofile',
 	profile: profile
   }
 }
