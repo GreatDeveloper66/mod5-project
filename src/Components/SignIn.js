@@ -8,6 +8,12 @@ import fetch from 'isomorphic-fetch'
 import BottomForm from './bottomform'
 
 
+const mapStateToProps = state => {
+  return {
+    userObj: state.userObj
+  }
+}
+
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -26,6 +32,7 @@ const SignInUser = event => {
   event.preventDefault()
   const username = event.target.username.value
   const password = event.target.password.value
+  const jwt = props.userObj.jwt
   const userObj = {
     user: {
       username: username,
@@ -36,7 +43,8 @@ const SignInUser = event => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Accept": "application/json"
+      "Accept": "application/json",
+      Authorization: jwt
     },
     body: JSON.stringify(userObj)
   }
@@ -62,4 +70,4 @@ return (
 </Row>
 )
 }
-export default connect(null,mapDispatchToProps)(SignIn)
+export default connect(mapStateToProps,mapDispatchToProps)(SignIn)

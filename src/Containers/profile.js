@@ -17,7 +17,9 @@ const Profile = props => {
                         const email = event.target.email.value
                         const username = event.target.username.value
                         const password = event.target.password.value
+                        console.log('userObj',props)
                         const id = props.userObj.user.id
+
                         const jwt = props.userObj.jwt
                         const userObj = {
                           User: {
@@ -30,13 +32,16 @@ const Profile = props => {
                         const configObj = {
                           method: 'PATCH',
                           headers: {
-                            Authorization:jwt,
+                            // Authorization: jwt,
                             "Accept":"application/json",
-                            "Content-Type":"application/json"
+                            "Content-Type":"application/json",
+                            Authorization: jwt
                           },
                           body:JSON.stringify(userObj)
                         }
-                        fetch('http://localhost:5000/')
+                        fetch(`http://localhost:5000/api/v1/users/${id}`,configObj)
+                          .then(resp => resp.json())
+                          .then(data => console.log(data))
                       }
                       return (
                         <Row className="d-flex justify-content-center">
@@ -55,4 +60,4 @@ const Profile = props => {
                     )
                     }
 
-export default Profile
+export default connect(mapStateToProps,null)(Profile)

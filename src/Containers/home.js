@@ -28,12 +28,17 @@ class Home extends Component {
     .then(data => console.log(data))
     this.props.history.push('/profile')
   }
+  
+  handleSignOut = () => {
+	  
+  	this.props.history.push('/')
+  }
 
   render(){
     return(
       <div>
       <div>Home Page</div>
-      <button>Sign Out</button>
+      <button onClick={this.handleSignOut}>Sign Out</button>
       <button onClick={this.handleProfile}>Profile</button>
       </div>
     )
