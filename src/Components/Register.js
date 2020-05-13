@@ -11,9 +11,6 @@ import Password from './password'
 
 const mapDispatchToProps = dispatch => {
   return {
-    switchForm: formStatus => {
-      dispatch(FormSwitchAction(formStatus))
-    },
     registerUser: userObj => {
       dispatch(RegisterUserAction(userObj))
     }

@@ -18,9 +18,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    switchForm: formStatus => {
-      dispatch(FormSwitchAction(formStatus))
-    },
     logInUser: userObj => {
       dispatch(LogInUserAction(userObj))
     }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { Container } from 'reactstrap'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Root from './Containers/root'
 import Home from './Containers/home'
 import Profile from './Containers/profile'
 import SignIn from './Components/SignIn'
