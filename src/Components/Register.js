@@ -52,7 +52,7 @@ const Register = props => {
   }
 
   return (
-<Row className="d-flex justify-content-center">
+<Row className="d-flex justify-content-center mt-5">
   <Col xs={12} sm={8} lg={4}>
   <h2>Register</h2>
   <Form className="form" onSubmit={handleRegistration}>
