@@ -39,7 +39,7 @@ class Home extends Component {
     })
     .then(response => response.json())
     .then(data => {
-		console.log(data)
+		this.props.renderProfile(data)
 		this.props.history.push('/profile')
 	})
     
