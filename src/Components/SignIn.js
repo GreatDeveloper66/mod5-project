@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import FormSwitchAction from '../actions/formswitch'
 import LogInUserAction from '../actions/loginuser'
 import fetch from 'isomorphic-fetch'
-import BottomForm from './bottomform'
 import UserName from './username'
 import Password from './password'
 

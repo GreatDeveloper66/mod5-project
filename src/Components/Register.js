@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import FormSwitchAction from '../actions/formswitch'
 import RegisterUserAction from '../actions/registeruser'
 import Email from './email'
-import BottomForm from './bottomform'
 import UserName from './username'
 import Password from './password'
 
