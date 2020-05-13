@@ -1,8 +1,10 @@
 .App {
   text-align: center;
+  background-color: red;
+  background-image: url('./yoga_background.jpg');
 }
 
-.App-logo {
+/*.App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -36,3 +38,4 @@
     transform: rotate(360deg);
   }
 }
+*/
