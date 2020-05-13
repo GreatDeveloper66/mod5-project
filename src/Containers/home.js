@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux'
+import LogOutUserAction from '../actions/logoutuser'
 
 const mapStateToProps = state => {
   return {
     userObj: state.userObj
   }
+}
+
+const mapDispatchToProps = dispatch => {
+	return {
+		logOutUser: () => {
+			dispatch(LogOutUserAction())
+		}
+	}
 }
 
 class Home extends Component {
@@ -30,7 +39,7 @@ class Home extends Component {
   }
   
   handleSignOut = () => {
-	  
+	this.props.logOutUser()  
   	this.props.history.push('/')
   }
 
@@ -45,4 +54,4 @@ class Home extends Component {
   }
 }
 
-export default connect(mapStateToProps,null)(Home)
+export default connect(mapStateToProps,mapDispatchToProps)(Home)
