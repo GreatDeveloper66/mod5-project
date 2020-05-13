@@ -56,8 +56,8 @@ const Register = props => {
   <Col xs={12} sm={8} lg={4}>
   <h2>Register</h2>
   <Form className="form" onSubmit={handleRegistration}>
-    <Email />
-    <UserName />
+    <Email email={"email@email.com"}/>
+    <UserName username={"username here"}/>
 	<Password />
     <Col className="d-flex justify-content-around">
       <Button onClick={() => props.switchForm(false)}>Already Registered?</Button>

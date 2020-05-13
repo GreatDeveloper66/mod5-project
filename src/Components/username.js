@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import { FormGroup, Col, Label, Input } from 'reactstrap'
 
-const UserName = () => 
+const UserName = props => 
                             <Col>
                               <FormGroup>
                                 <Label>Username</Label>
@@ -10,7 +10,7 @@ const UserName = () =>
                                   type="text"
                                   name="username"
                                   id="exampleUserName"
-                                  placeholder="username"
+                                  placeholder={props.placeholder}
                                 />
                               </FormGroup>
                             </Col>

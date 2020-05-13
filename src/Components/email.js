@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import { FormGroup, Col, Label, Input } from 'reactstrap'
 
-const Email = () => 
+const Email = props => 
                         <Col>
                           <FormGroup>
                             <Label>Email</Label>
@@ -10,7 +10,7 @@ const Email = () =>
                               type="email"
                               name="email"
                               id="exampleEmail"
-                              placeholder="myemail@email.com"
+                              placeholder={props.placeholder}
                             />
                           </FormGroup>
                         </Col>

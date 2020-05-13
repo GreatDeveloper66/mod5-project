@@ -60,7 +60,7 @@ return (
   <Col xs={12} sm={8} lg={4}>
   <h2>Sign In</h2>
   <Form className="form" onSubmit={SignInUser}>
-    <UserName />
+    <UserName username={"username here"}/>
 	<Password />
     <Col className="d-flex justify-content-around">
     <Button onClick={() => props.switchForm(true)}>New User?</Button>
