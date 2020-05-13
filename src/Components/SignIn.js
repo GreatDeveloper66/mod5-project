@@ -8,7 +8,7 @@ import fetch from 'isomorphic-fetch'
 import UserName from './username'
 import Password from './password'
 
-
+let LoginStatus = "Log In Here"
 const mapStateToProps = state => {
   return {
     userObj: state.userObj
@@ -50,9 +50,15 @@ const SignInUser = event => {
   fetch('http://localhost:5000/api/v1/login', configObj)
     .then(resp => resp.json())
     .then(data => {
+		if(data.successfulLogin){
+          props.logInUser(data)
+          props.history.push('/home')
+		}
+		else {
+			LoginStatus = "Wrong Username or Password"
+		}
 	  console.log('login', data)
-      props.logInUser(data)
-      props.history.push('/home')
+     
     })
 }
 return (
@@ -70,8 +76,14 @@ return (
     </Col>
   </Form>
 </Card>
+	
   </Col>
 </Row>
+	<Row className="d-flex justify-content-center">
+		<Col xs={12} sm={8} lg={4}>
+	<h2>{LoginStatus}</h2>
+		</Col>
+	</Row>
 </Container>
 )
 }

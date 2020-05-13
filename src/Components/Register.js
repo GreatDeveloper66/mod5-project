@@ -46,7 +46,7 @@ const Register = props => {
     fetch(`${host}/api/v1/users`,configObj)
       .then(resp => resp.json())
       .then(data => {
-          props.registerUser(data)
+          props.registerUser(data.jwt)
           props.history.push('/home')
         })
   }
