@@ -49,6 +49,7 @@ const SignInUser = event => {
   fetch('http://localhost:5000/api/v1/login', configObj)
     .then(resp => resp.json())
     .then(data => {
+	  
       props.logInUser(data)
       props.history.push('/home')
     })

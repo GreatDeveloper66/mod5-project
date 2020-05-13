@@ -34,8 +34,11 @@ class Home extends Component {
       headers: { Authorization: `Bearer ${jwt}`}
     })
     .then(response => response.json())
-    .then(data => console.log(data))
-    this.props.history.push('/profile')
+    .then(data => {
+		console.log(data)
+		this.props.history.push('/profile')
+	})
+    
   }
   
   handleSignOut = () => {
