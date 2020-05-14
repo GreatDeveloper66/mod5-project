@@ -51,7 +51,7 @@ const Register = props => {
 
 
   return (
-<Container className="mt-5">	  
+<Container className="mt-5">
    <Row className="d-flex justify-content-center mt-5">
      <Col xs={12} sm={8} lg={4}>
 	  <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
