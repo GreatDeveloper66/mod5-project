@@ -14,7 +14,15 @@ class Sequence < ApplicationRecord
                             :order => index})
     end
   end
-  
+
+  def findasanasequences
+    self.asanasequences.sort_by { |asanaseq| asanseq.order }
+  end
+
+  def findasanas
+    self.findasanasequences.map { |aseq| aseq.asana }
+  end
+
   def addasana(asana)
     self.duration += asana.duration
     Asanasequence.create({:asana_id => asana.id,
@@ -22,12 +30,9 @@ class Sequence < ApplicationRecord
                           :order => self.findhighestorder})
   end
 
-  def findasanas
-    self.asanas
-  end
 
   def findhighestorder
-    self.findasanas.length
+    self.asanas.length
   end
   def self.totalduration(asanarray)
     asanarray.reduce(0) { |sum,asana| sum + asana.duration }

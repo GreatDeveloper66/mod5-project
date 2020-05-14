@@ -9,4 +9,5 @@ class Category < ApplicationRecord
                              :asana_id => asana.id})
     end
   end
+
 end
