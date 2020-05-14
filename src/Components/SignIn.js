@@ -10,15 +10,15 @@ import Password from './password'
 let LoginStatus = "Log In Here"
 const mapStateToProps = state => {
   return {
-    userObj: state.userObj
+    userObj: state.jwt
   }
 }
 
 
 const mapDispatchToProps = dispatch => {
   return {
-    logInUser: userObj => {
-      dispatch(LogInUserAction(userObj))
+    logInUser: jwt => {
+      dispatch(LogInUserAction(jwt))
     }
   }
 }
@@ -47,7 +47,7 @@ const SignInUser = event => {
     .then(resp => resp.json())
     .then(data => {
 		if(data.successfulLogin){
-          props.logInUser(data)
+          props.logInUser(data.jwt)
           props.history.push('/home')
 		}
 		else {
