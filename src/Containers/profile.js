@@ -54,7 +54,7 @@ const Profile = props => {
                           user: {
                             id: id,
                             username: username,
-                            email: email
+                            email: email,
                           }
                         }
                         const configObj = {

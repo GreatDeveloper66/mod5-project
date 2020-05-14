@@ -25,6 +25,11 @@ const mapDispatchToProps = dispatch => {
 }
 
 const SignIn = props => {
+	
+	const handleRegisterSwitch = () => {
+		props.logInUser(props.jwt,'')
+		props.history.push('/Register')
+	}
 
 const SignInUser = event => {
   event.preventDefault()
@@ -68,7 +73,7 @@ return (
     <UserName username={"username here"}/>
 	<Password />
     <Col className="d-flex justify-content-around">
-    <Button onClick={() => props.history.push('/Register')}>New User?</Button>
+    <Button onClick={handleRegisterSwitch}>New User?</Button>
     <Button>Submit</Button>
     </Col>
   </Form>
