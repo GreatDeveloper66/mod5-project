@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import { Form, Col, Button, Row, Container, Card } from 'reactstrap'
 import { connect } from 'react-redux'
-import FormSwitchAction from '../actions/formswitch'
 import RegisterUserAction from '../actions/registeruser'
 import Email from './email'
 import UserName from './username'
@@ -11,11 +10,8 @@ import Password from './password'
 
 const mapDispatchToProps = dispatch => {
   return {
-    switchForm: formStatus => {
-      dispatch(FormSwitchAction(formStatus))
-    },
-    registerUser: userObj => {
-      dispatch(RegisterUserAction(userObj))
+    registerUser: jwt => {
+      dispatch(RegisterUserAction(jwt))
     }
   }
 }
@@ -65,7 +61,7 @@ const Register = props => {
     <UserName username={"username here"}/>
 	<Password />
     <Col className="d-flex justify-content-around">
-      <Button onClick={() => props.switchForm(false)}>Already Registered?</Button>
+      <Button onClick={() => props.history.push('/')}>Already Registered?</Button>
       <Button type="submit">Submit</Button>
       </Col>
   </Form>

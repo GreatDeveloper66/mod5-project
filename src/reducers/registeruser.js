@@ -1,11 +1,11 @@
-const RegisterUserReducer = (state={},action) => {
+const RegisterUserReducer = (state='',action) => {
   switch(action.type){
     case 'registeruser':
-      return Object.assign({},state,action.userObj)
+		return action.jwt
     case 'loginuser':
-      return Object.assign({},state,action.userObj)
+        return action.jwt
 	case 'logoutuser':
-      return {}
+      return ''
     default:
       return state
   }

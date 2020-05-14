@@ -1,7 +1,7 @@
-const RegisterUserAction = userObj => {
+const RegisterUserAction = jwt => {
   return {
     type: 'registeruser',
-    userObj: userObj
+	jwt: jwt
   }
 }
 
