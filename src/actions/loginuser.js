@@ -1,7 +1,7 @@
-const LogInUserAction = userObj => {
+const LogInUserAction = jwt => {
   return {
     type: 'loginuser',
-    userObj: userObj
+	 jwt: jwt
   }
 }
 

@@ -10,8 +10,8 @@ import Password from './password'
 
 const mapDispatchToProps = dispatch => {
   return {
-    registerUser: userObj => {
-      dispatch(RegisterUserAction(userObj))
+    registerUser: jwt => {
+      dispatch(RegisterUserAction(jwt))
     }
   }
 }
