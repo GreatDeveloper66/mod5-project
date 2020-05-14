@@ -1,24 +1,25 @@
 import React from 'react';
 import '../App.css';
-import { Form, Col, Button, Row, Container, Card } from 'reactstrap'
+import { Form, Col, Button, Row, Container, Card, Alert} from 'reactstrap'
 import { connect } from 'react-redux'
 import LogInUserAction from '../actions/loginuser'
 import fetch from 'isomorphic-fetch'
 import UserName from './username'
 import Password from './password'
 
-let LoginStatus = "Log In Here"
+
 const mapStateToProps = state => {
   return {
-    userObj: state.jwt
+    jwt: state.jwt,
+	loginmessage: state.loginmessage
   }
 }
 
 
 const mapDispatchToProps = dispatch => {
   return {
-    logInUser: jwt => {
-      dispatch(LogInUserAction(jwt))
+    logInUser: (jwt,message) => {
+      dispatch(LogInUserAction(jwt,message))
     }
   }
 }
@@ -47,13 +48,13 @@ const SignInUser = event => {
     .then(resp => resp.json())
     .then(data => {
 		if(data.successfulLogin){
-          props.logInUser(data.jwt)
+          props.logInUser(data.jwt, '')
           props.history.push('/home')
 		}
 		else {
-			LoginStatus = "Wrong Username or Password"
+			props.logInUser('','Incorrect UserName and/or Password. Try Again')
 		}
-	  console.log('login', data)
+	 console.log('props', props)
      
     })
 }
@@ -77,7 +78,7 @@ return (
 </Row>
 	<Row className="d-flex justify-content-center">
 		<Col xs={12} sm={8} lg={4}>
-	<h2>{LoginStatus}</h2>
+	{props.loginmessage ? <Alert color="danger">{props.loginmessage}</Alert> : ''}
 		</Col>
 	</Row>
 </Container>
