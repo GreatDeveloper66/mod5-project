@@ -8,7 +8,7 @@ import LogOutUserAction from '../actions/logoutuser'
 
 const mapStateToProps = state => {
   return {
-    userObj: state.userObj,
+    jwt: state.jwt,
     profile: state.profile
   }
 }
@@ -24,9 +24,8 @@ const mapDispatchToProps = dispatch => {
 const Profile = props => {
 	                   
 					const handleDelete = () => {
-						console.log(props)
 						const id = props.profile.user.id
-						const jwt = props.userObj.jwt
+						const jwt = props.jwt
 						const url = `http://localhost:5000/api/v1/users/${id}`
 						
 						const configObj = {
@@ -38,7 +37,6 @@ const Profile = props => {
 						fetch(url,configObj)
 							.then(response => response.json())
 							.then(data => {
-								console.log(data)
 								props.deleteUser()
 								props.history.push('/home')
 							})
@@ -51,7 +49,7 @@ const Profile = props => {
                         const email = event.target.email.value
                         const username = event.target.username.value
                         const id = props.profile.user.id
-                        const jwt = props.userObj.jwt
+                        const jwt = props.jwt
                         const userObj = {
                           user: {
                             id: id,

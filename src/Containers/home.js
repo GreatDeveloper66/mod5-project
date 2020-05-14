@@ -7,7 +7,7 @@ import { Navbar } from 'reactstrap'
 
 const mapStateToProps = state => {
   return {
-    userObj: state.userObj
+    jwt: state.jwt
   }
 }
 
@@ -29,7 +29,7 @@ class Home extends Component {
 
 
   handleProfile = () => {
-    const jwt = this.props.userObj.jwt
+    const jwt = this.props.jwt
     
     fetch('http://localhost:5000/api/v1/profile', {
       headers: { Authorization: `Bearer ${jwt}`}
