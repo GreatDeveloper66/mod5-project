@@ -12,7 +12,8 @@ class Api::V1::UsersController < ApplicationController
 
     def update
       current_user.update(username: user_params[:username],email: user_params[:email])
-      render json: {user: UserSerializer.new(current_user) }
+      # render json: {user: UserSerializer.new(current_user) }
+      render json: {user: 'user changed'}
       
       # current_user.update(email: params[:email], username: params[:username])
 #       render json: {user: UserSerializer.new(current_user) }
