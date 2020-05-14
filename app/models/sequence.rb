@@ -14,7 +14,14 @@ class Sequence < ApplicationRecord
                             :order => index})
     end
   end
+  def addasana(asana)
+    self.duration += asana.duration
+    Asanasequence.create({:asana_id => asana.id,
+                          :sequence_id => self.id,
+                          :order => self.length})
+  end
   def self.totalduration(asanarray)
     asanarray.reduce(0) { |sum,asana| sum + asana.duration }
   end
+  
 end
