@@ -5,7 +5,7 @@ const RegisterUserReducer = (state='',action) => {
     case 'loginuser':
         return action.jwt
 	case 'logoutuser':
-      return {}
+      return ''
     default:
       return state
   }
