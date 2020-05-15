@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-Asana.detroy_all
+Asana.destroy_all
 Category.destroy_all
 Sequence.destroy_all
 Asanacategory.destroy_all
@@ -73,7 +73,7 @@ asanacategories = [
   ['seated',[3,16,22,28,29,44,45,46,47,48]],
   ['standing',[0,1,2,4,5,6,7,10,11,12,14,17,30,31,32,36,37,41]],
   ['restorative',[16,23,28]],
-  ['hip opener',[0,1,3,29,30]]
+  ['hip opener',[0,1,3,29,30]],
   ['prone',[9,13]],
   ['beginner',[0,1,4,5,6,8,9,11,13,16,22,23,28,29,33,34,35,41,42,43,44]],
   ['intermediate',[2,3,7,10,12,14,17,24,25,26,30,31,36,37,38,40,47] ],
@@ -81,7 +81,7 @@ asanacategories = [
   ['forward bend',[4,6,8,12,16,17,24,34,41,44,45,47]],
   ['backward bend',[9,10,13,33,39,40,42]],
   ['twist',[15,31,36,46]],
-  ['balance',[2,5,7,10,11,15,30,31,32,36,37,38,47] ],
+  ['balance',[2,5,7,10,11,15,30,31,32,36,37,38,47]],
   ['inversions',[5,8,13,14,15,17,24,25,26,32,39,40,41]],
   ['salutations',[18,19,20,21]]
 ]
@@ -94,7 +94,7 @@ categories = asanacategories.map do |cat|
   catasanas = cat[1].map do |num|
     asanas[num]
   end
-  Categories.createcategory({name: cat[0], asanarray: catasanas})
+  Category.createcategory(name: cat[0], asanarray: catasanas)
 end
 
 
@@ -107,8 +107,8 @@ sequencea2 = sequences2.map do |num|
   asanas[num]
 end
 
-sequence1 = Sequence.createsequence('Basic A',sequencea1)
-sequence2 = Sequence.createsequence('Basic B',sequencea2)
+sequence1 = Sequence.createsequence(name: 'Basic A',asanarray: sequencea1)
+sequence2 = Sequence.createsequence(name: 'Basic B',asanarray: sequencea2)
 
 
 

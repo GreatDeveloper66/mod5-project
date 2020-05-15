@@ -2,7 +2,7 @@ class Sequence < ApplicationRecord
   belongs_to :user
   has_many :asanasequences
   has_many :asanas, through: :asanasequences
-  def self.createsequence(name,asanarray)
+  def self.createsequence(name:'',asanarray:[])
     total = self.totalduration(asanarray)
 
     newsequence = self.create({:name => name, :duration => total})
