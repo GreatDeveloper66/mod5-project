@@ -87,7 +87,7 @@ asanacategories = [
 ]
 
 asanas = asanasarray.map do |asanadata|
-  Asana.create({sanskritname: asanadata[0],englishname: asanadata[1],picurl: asanadata[2],duration: asanadata[3]})
+  Asana.create({sanskritname: asanadata[1],englishname: asanadata[0],picurl: asanadata[2],duration: asanadata[3]})
 end
 
 categories = asanacategories.map do |cat| 

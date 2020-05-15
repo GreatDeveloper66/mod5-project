@@ -3,9 +3,9 @@ class Category < ApplicationRecord
   has_many :asanas, through: :asanacategories
 
   def self.createcategory(name: '',asanarray: [])
-    self.create({:name => name})
+    id = self.create({:name => name}).id
     asanarray.each do |asana|
-      Asanacategory.create({:category_id => self.id,
+      Asanacategory.create({:category_id => id,
                              :asana_id => asana.id})
     end
   end
