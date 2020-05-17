@@ -26,6 +26,8 @@ class App extends Component {
 		  <Route exact path ='/Register' component={Register} />
           <Route exact path='/home' component={Home} />
 		  <Route exact path='/sequences/new' component={NewSequence} />
+		  <Route exact path='/sequences/edit' component={EditSequence} />
+		  <Route exact path='/sequence/view' component={ViewSequence } />
         </Switch>
     </Router>
 	</Container>
