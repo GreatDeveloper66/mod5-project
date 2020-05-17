@@ -3,13 +3,15 @@ class Sequence < ApplicationRecord
   has_many :asanasequences
   has_many :asanas, through: :asanasequences
   def self.createsequence(name:'',asanarray:[])
+    
     total = self.totalduration(asanarray)
+    
 
     newsequence = self.create({:name => name, :duration => total})
     sequenceid = newsequence.id
 
-    asanarray.each_with_index do |asana, index|
-      Asanasequence.create({:asana_id => asana.id,
+  asanarray.each_with_index do |asana, index|
+    Asanasequence.create({:asana_id => asana.id,
                             :sequence_id => sequenceid,
                             :order => index})
     end
