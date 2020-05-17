@@ -32,7 +32,6 @@ class NavBar extends Component {
 	
 	handleProfile = () => {
 		const jwt = this.props.jwt
-    
 		fetch('http://localhost:5000/api/v1/profile', {
 		headers: { Authorization: `Bearer ${jwt}`}
 		})
