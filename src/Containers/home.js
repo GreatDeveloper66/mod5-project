@@ -54,6 +54,9 @@ class Home extends Component {
       <button onClick={this.handleSignOut}>Sign Out</button>
       <button onClick={this.handleProfile}>Profile</button>
 	  </Navbar>
+	  <button className="success" bsSize="large">
+	  Create New Sequence
+	  </button>
       </div>
     )
   }
