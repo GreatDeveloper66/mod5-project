@@ -35,5 +35,12 @@ class Sequence < ApplicationRecord
 	end
 	asanaseqs.destroy_all
   end
+  
+  def change_asana_order(order:0, neworder:0)
+	asanaseqs = self.asanasequences.find |asanaseq|
+		asanaseq.order == neworder
+	end
+	asanaseqs.update({order: order})
+  end
 
 end
