@@ -54,6 +54,16 @@ class Sequence < ApplicationRecord
 	asanaseq2.update({order: order1})
 	
   end
+
+  def insert_asana(asana,order)
+	length = self.findhighestorder
+	self.addasana(asana)
+	for i in order...length
+		self.change_asana_order(order,order + 1)
+	end
+	
+  end
+  
   
 
 end
