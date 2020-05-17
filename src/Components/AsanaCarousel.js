@@ -3,6 +3,62 @@ import '../App.css';
 import { connect } from 'react-redux'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
+
+
+const asanasarray = [
+  ['Warrior1','Virabhadrasana A','yoga-30',1],
+  ['Warrior2','Virabhadrasana B','yoga-11',1],
+  ['Warrior3','Virabhadrasana C','yoga-17',1],
+  ['Pigeon','Kapotasana','yoga-59',1],
+  ['Forward Bend','Uttanasana','yoga-18',1],
+  ['Mountain','Tadasana','yoga',1],
+  ['Half Way Bend', 'Ardha Uttanasana','yoga-64',2],
+  ['Chair','Utkatasana','yoga-1',1],
+  ['Downward Dog','Adho Mukha Svanasana','yoga-61',3],
+  ['Upward Dog','Urdhva Mukha Shavanasana','yoga-35',1],
+  ['High Lunge','Ashta Chandrasana','yoga-30',2],
+  ['Low Lunge','Anjaneyasana', 'yoga-27',2],
+  ['Wide Stance Fold','Prasarita Padottanasana','yoga-24',3],
+  ['Cobra','Bhujangasana','yoga-31',1],
+  ['Triangle','Trikonasana','yoga-14',2],
+  ['Revolved Triangle','Parivrtta Trikonasana','yoga-14',2],
+  ['Childs Pose','Balasana','yoga-50',3],
+  ['Pyramid Pose','Parsvottanasana','yoga-23',1],
+  ['Sun Salutations A', 'Surya Namaskara A','yoga-2',3],
+  ['Classical Sun Salutations','Surya Namaskara Classic','yoga-2',3],
+  ['Sun Salutations B', 'Surya Namaskara B','yoga-2',3],
+  ['Moon Salutations','Chandra Namaskara','yoga-2',3],
+  ['Staff','Dandasana','yoga-52',1],
+  ['Happy Baby','Ananda Balasana','yoga-88',2],
+  ['Plough','Halasana','yoga-90',1],
+  ['Shoulder Stand', 'Salamba Sarvagasana','yoga-80',3],
+  ['Headstand','Salamba Shirshasana','yoga-70',3],
+  ['Ear to Knee','Karnapidasana','yoga-89',2],
+  ['Corpse','Savasana','yoga-41',4],
+  ['Crossed Legged Seat','Bharadvajrasana','yoga-10',4],
+  ['Extended Side Angle','Utthita Parsvakonasana','yoga-12',2],
+  ['Revolved Side Angle','Parivrtta Parsvakonasana','yoga-12',2],
+  ['Half Moon', 'Ardha Chandrasana','yoga-15',2],
+  ['Cat','Marjaryasana','yoga-55',2],
+  ['Cow','Bitilasana','yoga-56',2],
+  ['Table','Bharmanasana','yoga-54',2],
+  ['Eagle','Garudasana','yoga-72',3],
+  ['Tree','Vrikshasana','yoga-4',2],
+  ['Side Plank', 'Vasisthasana','yoga-21',1],
+  ['Wheel', 'Urdhva Dhanurasana','yoga-73',1],
+  ['Bridge', 'Setu Bandha Sarvangasana','yoga-36',1],
+  ['Wide Leg Forward End', 'Prasarita Padottanasana','yoga-24',1],
+  ['Upward Facing Plank','Pursvottanasana','yoga-77',1],
+  ['Plank','Pursvottanasana','yoga-32',1],
+  ['West Stretching','Paschimottanasana','yoga-53',1],
+  ['Sage Marichi Pose A','Marichyasana A','yoga-95',2],
+  ['Sage Marichi C','Marichyasana C','yoga-95',2],
+  ['Boat','Navasana','yoga-85',2],
+  ['Lotus', 'Padmasana','yoga-10',3]
+]
+
+
 
 
 const responsive = {
@@ -48,10 +104,42 @@ class AsanaCarousel extends Component {
 				dotListClass="custom-dot-list-style"
 				itemClass="carousel-item-padding-40-px"
 				>
-			<div>Item 1</div>
-			<div>Item 2</div>
-			<div>Item 3</div>
-			<div>Item 4</div>
+			<div>
+				<Card>
+					<CardBody>
+						<CardTitle>{asanasarray[0][1]}</CardTitle>
+						<CardSubtitle>{asanasarray[0][0]}</CardSubtitle>
+					</CardBody>
+						<img width="100%" src={require('../images/yoga-30.svg')} alt="asana image"/>
+				</Card>
+			</div>
+			<div>
+				<Card>
+					<CardBody>
+						<CardTitle>{asanasarray[0][1]}</CardTitle>
+						<CardSubtitle>{asanasarray[0][0]}</CardSubtitle>
+					</CardBody>
+						<img width="100%" src={require('../images/yoga-30.svg')} alt="asana image"/>
+				</Card>
+			</div>
+			<div>
+				<Card>
+					<CardBody>
+						<CardTitle>{asanasarray[0][1]}</CardTitle>
+						<CardSubtitle>{asanasarray[0][0]}</CardSubtitle>
+					</CardBody>
+						<img width="100%" src={require('../images/yoga-30.svg')} alt="asana image"/>
+				</Card>
+			</div>
+			<div>
+				<Card>
+					<CardBody>
+						<CardTitle>{asanasarray[0][1]}</CardTitle>
+						<CardSubtitle>{asanasarray[0][0]}</CardSubtitle>
+					</CardBody>
+						<img width="100%" src={'../images/yoga-30.svg'} alt="asana image"/>
+				</Card>
+			</div>
 			</Carousel>
 		
 		)

@@ -5,6 +5,12 @@ import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
 import { Container, Row } from 'reactstrap'
 
+
+
+
+
+
+
 class NewSequence extends Component {
 	constructor(props){
 		super()
