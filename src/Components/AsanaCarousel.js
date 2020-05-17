@@ -83,6 +83,20 @@ class AsanaCarousel extends Component {
 	constructor(props){
 		super()
 	}
+	
+	
+	renderCarouselCards = () => {
+		return asanasarray.map((asana,index) => 
+				<div>
+				<Card>
+					<CardBody>
+						<CardTitle>{asanasarray[index][1]}</CardTitle>
+						<CardSubtitle>{asanasarray[index][0]}</CardSubtitle>
+					</CardBody>
+						<img width="100%" src={require(`../images/${asanasarray[index][2]}.svg`)} alt="asana image"/>
+				</Card>
+			</div>)
+	}
 	render(){
 		return (
 				<Carousel
@@ -104,42 +118,7 @@ class AsanaCarousel extends Component {
 				dotListClass="custom-dot-list-style"
 				itemClass="carousel-item-padding-40-px"
 				>
-			<div>
-				<Card>
-					<CardBody>
-						<CardTitle>{asanasarray[0][1]}</CardTitle>
-						<CardSubtitle>{asanasarray[0][0]}</CardSubtitle>
-					</CardBody>
-						<img width="100%" src={require('../images/yoga-30.svg')} alt="asana image"/>
-				</Card>
-			</div>
-			<div>
-				<Card>
-					<CardBody>
-						<CardTitle>{asanasarray[0][1]}</CardTitle>
-						<CardSubtitle>{asanasarray[0][0]}</CardSubtitle>
-					</CardBody>
-						<img width="100%" src={require('../images/yoga-30.svg')} alt="asana image"/>
-				</Card>
-			</div>
-			<div>
-				<Card>
-					<CardBody>
-						<CardTitle>{asanasarray[0][1]}</CardTitle>
-						<CardSubtitle>{asanasarray[0][0]}</CardSubtitle>
-					</CardBody>
-						<img width="100%" src={require('../images/yoga-30.svg')} alt="asana image"/>
-				</Card>
-			</div>
-			<div>
-				<Card>
-					<CardBody>
-						<CardTitle>{asanasarray[0][1]}</CardTitle>
-						<CardSubtitle>{asanasarray[0][0]}</CardSubtitle>
-					</CardBody>
-						<img width="100%" src={'../images/yoga-30.svg'} alt="asana image"/>
-				</Card>
-			</div>
+				{this.renderCarouselCards()}
 			</Carousel>
 		
 		)
