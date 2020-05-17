@@ -36,8 +36,6 @@ class Sequence < ApplicationRecord
   def findhighestorder
     self.asanas.length
   end
-  def self.totalduration(asanarray)
-    asanarray.reduce(0) { |sum,asana| sum + asana.duration }
-  end
+ 
 
 end
