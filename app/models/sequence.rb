@@ -28,5 +28,12 @@ class Sequence < ApplicationRecord
 	end
 	asanaseqs.destroy_all
   end
+  
+  def remove_asana_order(order)
+	asanaseqs = self.asanasequences.find |asanaseq|
+		asanaseq.order == order
+	end
+	asanaseqs.destroy_all
+  end
 
 end
