@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import LogOutUserAction from '../actions/logoutuser'
 import RenderProfileAction from '../actions/renderprofile'
 import { Navbar, Row, Container, Button } from 'reactstrap'
+import NavBar from '../Components/NavBar'
 
 const mapStateToProps = state => {
   return {
@@ -49,21 +50,16 @@ class Home extends Component {
 
   render(){
     return(
-      <div>
-      <Container>
-		<Row className="d-flex justify-content-end">
-			<Button color="primary" onClick={this.handleSignOut}>Sign Out</Button>
-			<Button color="primary" onClick={this.handleProfile}>Profile</Button>
-		</Row>
-	  </Container>
+	<Container>
+      <NavBar />
       <Container className="mt-4">
 		<Row className="d-flex justify-content-center align-items-center">
-			<Button color="success" size="lg">Create New Sequence</Button>
+			<Button color="success" size="lg" onClick={() => this.props.history.push('/sequences/new')}>Create New Sequence</Button>
 		</Row>
 	  </Container>
 	  
 	 
-      </div>
+      </Container>
     )
   }
 }

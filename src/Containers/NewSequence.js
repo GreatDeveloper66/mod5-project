@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux'
 
-
-class NavBar extends Component {
+class NewSequence extends Component {
 	constructor(props){
 		super()
 	}
 	render(){
-		return(
-			
-		)
+		return('hello')
 	}
 }
+
+export default NewSequence
