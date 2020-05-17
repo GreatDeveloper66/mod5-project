@@ -21,6 +21,12 @@ class Sequence < ApplicationRecord
   def findhighestorder
     self.asanas.length
   end
- 
+  
+  def remove_asana(asana_id)
+	asanaseqs = self.asanasequences.find_all |asanaseq|
+		asanaseq.id == asana_id
+	end
+	asanaseqs.destroy_all
+  end
 
 end
