@@ -3,7 +3,7 @@ import '../App.css';
 import { connect } from 'react-redux'
 import LogOutUserAction from '../actions/logoutuser'
 import RenderProfileAction from '../actions/renderprofile'
-import { Navbar } from 'reactstrap'
+import { Navbar, Row, Container } from 'reactstrap'
 
 const mapStateToProps = state => {
   return {
@@ -50,10 +50,14 @@ class Home extends Component {
   render(){
     return(
       <div>
-      <Navbar>
-      <button onClick={this.handleSignOut}>Sign Out</button>
+      <Container>
+		<Row className="d-flex justify-content-end">
+			<button onClick={this.handleSignOut}>Sign Out</button>
       <button onClick={this.handleProfile}>Profile</button>
-	  </Navbar>
+		</Row>
+	  </Container>
+      
+	  
 	  <button className="success" bsSize="large">
 	  Create New Sequence
 	  </button>
