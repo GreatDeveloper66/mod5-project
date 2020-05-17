@@ -11,17 +11,11 @@ class EditSequence extends Component {
 	}
 	render(){
 		return(
-			<Container>
-			<Row>
-				<NavBar />
-			</Row>
-			<Row>
-				<AsanaCarousel />
-			</Row>
-			<Row>
-				footer
-			</Row>
-			</Container>
+		<div>
+			<NavBar />
+			<AsanaCarousel />
+			<footer>Footer</footer>
+		</div>
 		)
 	}
 }
