@@ -3,9 +3,11 @@ class CategorySerializer < ActiveModel::Serializer
   def asanas
     self.object.asanas.map do |asana|
       {
+	    id: asana.id,
         englishname: asana.englishname,
         sanskritname: asana.sanskritname,
-        picurl: asana.picurl
+        picurl: asana.picurl,
+		duration: asana.duration
       }
     end
   end
