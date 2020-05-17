@@ -7,6 +7,9 @@ import Profile from './Containers/profile'
 import SignIn from './Components/SignIn'
 import Register from './Components/Register'
 import NewSequence from './Containers/NewSequence'
+import EditSequence from './Containers/EditSequence'
+import ViewSequence from './Containers/ViewSequence'
+
 // import runtimeEnv from '@mars/heroku-js-runtime-env'
 
 
