@@ -1,9 +1,9 @@
 def create
+	render json: current_user.sequences
 end
 def update
 end
 def destroy
-	ef destroy
       @sequence = Sequence.find_by(id: params[:id])
       @sequence.destroy
       render json: { message: 'user succesfully deleted' }
