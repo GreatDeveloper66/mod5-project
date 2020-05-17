@@ -42,5 +42,18 @@ class Sequence < ApplicationRecord
 	end
 	asanaseqs.update({order: order})
   end
+  
+  def flip_asanas_order(order1: 0, order2: 0)
+	asanaseq1 = self.asanasequences.find |asanaseq|
+		asanaseq.order == order1
+	end
+	asanaseq2 = self.asanasequences.find |asanaseq|
+		asanaseq.order == order2
+	end
+	asanaseq1.update({order: order2})
+	asanaseq2.update({order: order1})
+	
+  end
+  
 
 end
