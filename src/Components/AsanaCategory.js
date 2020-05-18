@@ -13,34 +13,24 @@ class AsanaCategory extends Component {
 	constructor(props){
 		super()
 	}
+	/*
+	renderAsanaCards = () => {
+		return this.props.asanas.map(asana => <Col xs="3"><AsanaCard title={asana.sanskritname} subtitle={asana.englishname} image={asana.picurl} /></Col>)
+	}
+	*/
+	renderAsanaCards = () => {
+		if(this.props.name){
+			return this.props.asanas.map(asana => <Col xs="3"><AsanaCard title={asana.sanskritname} subtitle={asana.englishname} image={asana.picurl} /></Col>)
+		}
+	}
 	render(){
 		return(
 			<Container className="mt-3">
 				<Row className="d-flex justify-content-center align-items-stretch">
-					<div className="mt-3 mb-3"><h1 className="text-primary">Category 1</h1></div>
+					<div className="mt-3 mb-3"><h1 className="text-primary">{this.props.name}</h1></div>
 				</Row>
 					<Row className="d-flex justify-content-start align-items-stretch">
-						<Col xs="3">
-							<AsanaCard title={"Title"} subtitle={"Subtitle"} image={"yoga-30"} />
-						</Col>
-						<Col xs="3">
-							<AsanaCard title={"Title"} subtitle={"Subtitle"} image={"yoga-30"} />
-						</Col>
-						<Col>
-							<AsanaCard title={"Title"} subtitle={"Subtitle"} image={"yoga-30"} />
-						</Col>
-						<Col xs="3">
-							<AsanaCard title={"Title"} subtitle={"Subtitle"} image={"yoga-30"} />
-						</Col>
-						<Col xs="3">
-							<AsanaCard title={"Title"} subtitle={"Subtitle"} image={"yoga-30"} />
-						</Col>
-						<Col xs="3">
-							<AsanaCard title={"Title"} subtitle={"Subtitle"} image={"yoga-30"} />
-						</Col>
-						<Col xs="3">
-							<AsanaCard title={"Title"} subtitle={"Subtitle"} image={"yoga-30"} />
-						</Col>
+					{this.renderAsanaCards()}
 				</Row>
 			</Container>
 		)
