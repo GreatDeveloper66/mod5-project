@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
-import AsanaCategory from '../Components/AsanaCategory'
+
 
 class ViewSequence extends Component {
 	constructor(props){

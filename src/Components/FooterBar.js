@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux'
-import { Container, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap'
 
 
 class FooterBar extends Component {
@@ -15,13 +15,19 @@ class FooterBar extends Component {
 
 	render(){
 		return(
-			<Container>
+			<Container className="mt-3">
 				<Row className="d-flex justify-content-end">
 					<Form>
 						<FormGroup row>
-							<Label for="name" sm={2}>Name:</Label>
-							<Input type="text" name="name" id="name" />
-							<Button color="primary" onClick={this.handleSave} type="submit">SAVE</Button>
+							<Col sm={2}>
+								<Label for="name" sm={2}><p className="text-success">NAME:</p></Label>
+							</Col>
+							<Col sm={7}>
+								<Input type="text" name="name" id="name" />
+							</Col>
+							<Col sm={3}>
+								<Button color="primary" onClick={this.handleSave} type="submit">SAVE</Button>
+							</Col>
 						</FormGroup>
 					</Form>
 					
