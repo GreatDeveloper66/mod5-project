@@ -7,7 +7,6 @@ import { Container, Row,Col } from 'reactstrap'
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import AsanaCard from './AsanaCard'
 
-const Categories = ['flatiron','flatiron','flatiron']
 
 class AsanaCategory extends Component {
 	constructor(props){

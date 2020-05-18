@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
+import sequences from '../json/sequences.json'
 
 class EditSequence extends Component {
 	constructor(props){
