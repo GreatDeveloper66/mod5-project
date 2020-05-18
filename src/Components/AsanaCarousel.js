@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { connect } from 'react-redux'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
+import AsanaCard from './AsanaCard'
 
 
 const asanasarray = [
@@ -86,16 +85,7 @@ class AsanaCarousel extends Component {
 	
 	
 	renderCarouselCards = () => {
-		return asanasarray.map((asana,index) => 
-				<div>
-				<Card>
-					<CardBody>
-						<CardTitle>{asanasarray[index][1]}</CardTitle>
-						<CardSubtitle>{asanasarray[index][0]}</CardSubtitle>
-					</CardBody>
-						<img width="100%" src={require(`../images/${asanasarray[index][2]}.svg`)} alt="asana image"/>
-				</Card>
-			</div>)
+		return asanasarray.map((asana,index) => <div key={index}><AsanaCard title={asana[1]} subtitle={asana[0]} image={asana[2]} /></div>)	
 	}
 	render(){
 		return (

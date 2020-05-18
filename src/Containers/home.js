@@ -3,7 +3,7 @@ import '../App.css';
 import { connect } from 'react-redux'
 import LogOutUserAction from '../actions/logoutuser'
 import RenderProfileAction from '../actions/renderprofile'
-import { Navbar, Row, Container, Button } from 'reactstrap'
+import { Row, Container, Button } from 'reactstrap'
 import NavBar from '../Components/NavBar'
 
 const mapStateToProps = state => {
