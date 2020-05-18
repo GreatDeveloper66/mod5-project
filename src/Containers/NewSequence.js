@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
-
+import FooterBar from '../Components/FooterBar'
+import AsanaCategory from '../Components/AsanaCategory'
 
 
 
@@ -18,7 +19,8 @@ class NewSequence extends Component {
 		<div>
 			<NavBar />
 			<AsanaCarousel />
-			<footer>Footer</footer>
+			<AsanaCategory />
+			<FooterBar />
 		</div>
 		)
 	}

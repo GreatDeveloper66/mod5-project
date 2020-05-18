@@ -13,7 +13,6 @@ class ViewSequence extends Component {
 			<div>
 			<NavBar />
 			<AsanaCarousel />
-			<AsanaCategory />
 			<footer>Footer</footer>
 		</div>
 		)
