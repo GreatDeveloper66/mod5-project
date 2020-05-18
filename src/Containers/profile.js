@@ -5,6 +5,7 @@ import Email from '../Components/email'
 import { connect } from 'react-redux'
 import UserName from '../Components/username'
 import LogOutUserAction from '../actions/logoutuser'
+import SavedSequences from '../Components/SavedSequences'
 
 const mapStateToProps = state => {
   return {
@@ -93,6 +94,7 @@ const Profile = props => {
 						  </Card>
                           </Col>
                         </Row>
+						<SavedSequences />
 					</Container>
                     )
                     }

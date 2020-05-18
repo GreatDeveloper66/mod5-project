@@ -56,4 +56,4 @@ class SavedSequences extends Component {
 	}
 }
 
-export default FooterBar
+export default SavedSequences
