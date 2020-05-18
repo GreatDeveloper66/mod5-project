@@ -29,8 +29,8 @@ class SavedSequences extends Component {
 				<Row className="d-flex justify-content-center">
 					<Form onSubmit={this.handleEdit}>
 						<FormGroup row>
-							<Col sm={7}>
-								<Label for="exampleSelect" sm={2}>Select</Label>
+							<Col sm={6}>
+								
 									<Input type="select" name="select" id="exampleSelect">
 										<option>Saved Sequence 1</option>
 										<option>Saved Sequence 2</option>
@@ -40,10 +40,13 @@ class SavedSequences extends Component {
 									</Input>
        
 							</Col>
-							<Col sm={3}>
+							<Col sm={2}>
+								<Button color="primary">VIEW</Button>
+							</Col>
+							<Col sm={2}>
 								<Button color="primary" type="submit">EDIT</Button>
 							</Col>
-							<Col sm={3}>
+							<Col sm={2}>
 								<Button color="primary" onClick={this.handleDelete}>DELETE</Button>
 							</Col>
 						</FormGroup>
