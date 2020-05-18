@@ -9,7 +9,8 @@ class FooterBar extends Component {
 		super()
 	}
 	
-	handleSave = () => {
+	handleSave = event => {
+		event.preventDefault()
 		console.log('save')
 	}
 
@@ -17,7 +18,7 @@ class FooterBar extends Component {
 		return(
 			<Container className="mt-3">
 				<Row className="d-flex justify-content-end">
-					<Form>
+					<Form onSubmit={this.handleSave}>
 						<FormGroup row>
 							<Col sm={2}>
 								<Label for="name" sm={2}><p className="text-success">NAME:</p></Label>
@@ -26,7 +27,7 @@ class FooterBar extends Component {
 								<Input type="text" name="name" id="name" />
 							</Col>
 							<Col sm={3}>
-								<Button color="primary" onClick={this.handleSave} type="submit">SAVE</Button>
+								<Button color="primary" type="submit">SAVE</Button>
 							</Col>
 						</FormGroup>
 					</Form>
