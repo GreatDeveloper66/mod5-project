@@ -11,12 +11,17 @@ class SavedSequences extends Component {
 	
 	handleEdit = event => {
 		event.preventDefault()
-		console.log('save')
+		this.props.history.push('/sequences/edit')
 	}
 	
 	handleDelete = event => {
 		event.preventDefault()
 		
+	}
+	
+	handleView = event => {
+		event.preventDefault()
+		this.props.history.push('/sequences/view')
 	}
 
 	render(){
@@ -41,10 +46,10 @@ class SavedSequences extends Component {
        
 							</Col>
 							<Col sm={2}>
-								<Button color="primary">VIEW</Button>
+								<Button color="primary" onClick={this.handleView}>VIEW</Button>
 							</Col>
 							<Col sm={2}>
-								<Button color="primary" type="submit">EDIT</Button>
+								<Button color="primary" onClick={this.handleEdit}>EDIT</Button>
 							</Col>
 							<Col sm={2}>
 								<Button color="primary" onClick={this.handleDelete}>DELETE</Button>
