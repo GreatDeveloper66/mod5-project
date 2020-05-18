@@ -13,8 +13,10 @@ Asanacategory.destroy_all
 Asanasequence.destroy_all
 
 
-User.create({username: 'Allan',email: 'allan@gmail.com',password: '%$yuijc'})
-User.create({username: 'Lucy',email: 'lucy@gmail.com',password: '##@@lccgyy'})
+User1 = User.create({username: 'Allan',email: 'allan@gmail.com',password: '%$yuijc'})
+User2 = User.create({username: 'Lucy',email: 'lucy@gmail.com',password: '##@@lccgyy'})
+User3 = User.create({username: 'testuser',email: 'testuser@gmail.com', password: 'testuser'})
+User4 = User.create({username: 'usertodelete',email:'usertodelete@gmail.com',password: 'usertodelete'})
 
                     
 asanasarray = [
@@ -91,27 +93,21 @@ asanas = asanasarray.map do |asanadata|
 end
 
 categories = asanacategories.map do |cat| 
-  catasanas = cat[1].map do |num|
-    asanas[num]
-  end
+  catasanas = cat[1].map { |num| asanas[num] }
   Category.createcategory(name: cat[0], asanarray: catasanas)
-end
+ end
 
 
-sequences1 = [33,34,35,8,5,37,37,37,36,36,36,38,38,38,39,39,39,0,1,2,45,46,28]
-sequencea1 = sequences1.map do |num|
-  asanas[num]
-end
-sequences2 = [33,34,35,8,5,37,37,37,36,36,36,38,38,38,39,39,39,0,1,2,45,46,28,48]
-sequencea2 = sequences2.map do |num|
-  asanas[num]
-end
+sequences1 = [33,34,35,8,5,37,37,37,36,36,36,38,38,38,39,39,39,0,1,2,45,46,28].map { |num| asanas[num] }
+sequences2 = [33,34,35,8,5,37,37,37,36,36,36,38,38,38,39,39,39,0,1,2,45,46,28,48].map { |num| asanas[num] }
 
-sequence1 = Sequence.createsequence(name: 'Basic A',asanarray: sequencea1)
-sequence2 = Sequence.createsequence(name: 'Basic B',asanarray: sequencea2)
-
-
-
-
+User1.create_sequence(name: 'Basic A', sequence_array: sequences1)
+User1.create_sequence(name: 'Basic B', sequence_array: sequences2)
+User2.create_sequence(name: 'Basic C', sequence_array: sequences1)
+User2.create_sequence(name: 'Basic D', sequence_array: sequences2)
+User3.create_sequence(name: 'Basic E', sequence_array: sequences1)
+User3.create_sequence(name: 'Basic F', sequence_array: sequences2)
+User4.create_sequence(name: 'Basic G', sequence_array: sequences1)
+User3.create_sequence(name: 'Basic H', sequence_array: sequences2)
 
 
