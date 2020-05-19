@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import LoadSequenceAction from '../actions/loadsequence'
 import { connect } from 'react-redux'
 import Select from 'react-select'
+import DeleteSequenceAction from '../actions/deletesequence'
 
 
 const mapStateToProps = state => {
@@ -17,6 +18,9 @@ const mapDispatchToProps = dispatch => {
 	return {
 		loadsequence: sequence => {
 			dispatch(LoadSequenceAction(sequence))
+		},
+		deletesequence: sequencename => {
+			dispatch(DeleteSequenceAction(sequencename))
 		}
 	}
 }
@@ -43,6 +47,7 @@ class SavedSequences extends Component {
 	handleDelete = event => {
 		event.preventDefault()
 		const sequencename = this.state.selectedOption.value
+		this.props.deletesequence(sequencename)
 		 
 	}
 	
