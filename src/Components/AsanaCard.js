@@ -1,6 +1,17 @@
 import React from 'react';
 import '../App.css';
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
+import { connect } from 'react-redux'
+import AddAsanaAction from '../actions/addasana'
+
+const mapDispatchToProps = dispatch => {
+	return {
+		addasana: asana => {
+			dispatch(AddAsanaAction(asana))
+		}
+	}
+}
+
 
 const addAsana = () => {
 	console.log('add asana')
@@ -16,4 +27,4 @@ const AsanaCard = props =>
 				</Card>
 
 
-export default AsanaCard
+export default connect(null,mapDispatchToProps)(AsanaCard)
