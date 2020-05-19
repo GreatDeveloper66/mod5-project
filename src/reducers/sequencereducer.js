@@ -4,6 +4,8 @@ const SequenceReducer = (state=[],action) => {
       return action.sequence
 	case 'addasana':
 		return [...state,action.asana]
+	case 'undoasana':
+		return state.slice(0,-1)
     default:
       return state
   }
