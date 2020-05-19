@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../App.css';
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import { connect } from 'react-redux'
@@ -13,18 +13,26 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-const addAsana = () => {
-	console.log('add asana')
-}
 
-const AsanaCard = props => 
+class AsanaCard extends Component {
+	constructor(props){
+		super()
+	}
+	
+	addAsana = () => {
+	this.props.addasana({id: this.props.id,englishname: this.props.englishname, sanskritname: this.props.sanskritname,picurl: this.props.picurl})
+	}
+
+	render(){
+		return (
 				<Card>
-					<CardBody onClick={addAsana}>
-						<CardTitle>{props.title}</CardTitle>
-						<CardSubtitle>{props.subtitle}</CardSubtitle>
+					<CardBody onClick={this.addAsana}>
+						<CardTitle>{this.props.title}</CardTitle>
+						<CardSubtitle>{this.props.subtitle}</CardSubtitle>
 					</CardBody>
-						<img width="100%" src={require(`../images/${props.image}.svg`)} alt="asana"/>
+						<img width="100%" src={require(`../images/${this.props.image}.svg`)} alt="asana"/>
 				</Card>
-
-
+				)
+	}
+}
 export default connect(null,mapDispatchToProps)(AsanaCard)
