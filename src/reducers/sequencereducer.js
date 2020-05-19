@@ -3,7 +3,7 @@ const SequenceReducer = (state=[],action) => {
     case 'loadsequence':
       return action.sequence
 	case 'addasana':
-		return [...state,action.sequence]
+		return [...state,action.asana]
     default:
       return state
   }

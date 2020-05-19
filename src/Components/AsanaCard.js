@@ -20,7 +20,7 @@ class AsanaCard extends Component {
 	}
 	
 	addAsana = () => {
-	this.props.addasana({id: this.props.id,englishname: this.props.englishname, sanskritname: this.props.sanskritname,picurl: this.props.picurl})
+	this.props.addasana({id: this.props.id,englishname: this.props.subtitle, sanskritname: this.props.title,picurl: this.props.image})
 	}
 
 	render(){
