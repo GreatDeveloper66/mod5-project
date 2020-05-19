@@ -12,6 +12,12 @@ const options = [
 	{value: 'Sequence3', label: 'Sequence3'}
 ]
 
+const mapStateToProps = state => {
+	return {
+		sequences:state.sequences
+	}
+}
+
 const mapDispatchToProps = dispatch => {
 	return {
 		loadsequence: sequence => {
@@ -31,7 +37,10 @@ class SavedSequences extends Component {
 	
 	handleEdit = event => {
 		event.preventDefault()
-		console.log(event.target.parentNode.parentNode)
+		const sequencename = this.state.selectedOption.value
+		const sequences = this.props.sequences
+		const sequence = sequences.find(sequence => sequence.name === sequencename)
+		this.props.loadsequence(sequence)
 
 		//find sequence with that name in the sequences file
 		//load that sequence to sequence state
@@ -98,4 +107,4 @@ class SavedSequences extends Component {
 	}
 }
 
-export default withRouter(connect(null,mapDispatchToProps)(SavedSequences))
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SavedSequences))
