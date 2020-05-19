@@ -35,7 +35,7 @@ class FooterBar extends Component {
 	
 	handleSave = event => {
 		event.preventDefault()
-		this.props.addsequence({id:null, name: this.state.inputValue, asanas: this.props.sequence})
+		this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})
 		
 	}
 
