@@ -41,7 +41,7 @@ class SavedSequences extends Component {
 
 		//find sequence with that name in the sequences file
 		//load that sequence to sequence state
-		this.props.history.push('/sequences/edit')
+		this.props.history.push('/sequences/new')
 	}
 	
 	handleDelete = event => {
