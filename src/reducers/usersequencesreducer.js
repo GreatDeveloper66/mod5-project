@@ -12,6 +12,8 @@ const UserSequencesReducer = (state=[],action) => {
 		  action.sequence.id = 101+ state.length
 		  return [...state,action.sequence]
 	  }
+	case 'deletesequence':
+		return [...state.filter(sequence => sequence.name !== action.sequencename)]
     default:
       return state
   }
