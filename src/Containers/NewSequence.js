@@ -29,12 +29,12 @@ class NewSequence extends Component {
 		super()
 	}
 	
-	componentWillMount() {
+	componentDidMount() {
 		this.props.loadcategories(data)
 	}
 	renderCategories = () => {
 		const categories = this.props.categories
-		return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} />)
+		return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)
 	}
 	render(){
 		return(

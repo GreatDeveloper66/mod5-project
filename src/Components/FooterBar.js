@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { connect } from 'react-redux'
 import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap'
 
 

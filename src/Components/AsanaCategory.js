@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { connect } from 'react-redux'
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Container, Row,Col } from 'reactstrap'
-import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import AsanaCard from './AsanaCard'
 
 
@@ -12,14 +9,10 @@ class AsanaCategory extends Component {
 	constructor(props){
 		super()
 	}
-	/*
-	renderAsanaCards = () => {
-		return this.props.asanas.map(asana => <Col xs="3"><AsanaCard title={asana.sanskritname} subtitle={asana.englishname} image={asana.picurl} /></Col>)
-	}
-	*/
+	
 	renderAsanaCards = () => {
 		if(this.props.name){
-			return this.props.asanas.map(asana => <Col xs="3"><AsanaCard title={asana.sanskritname} subtitle={asana.englishname} image={asana.picurl} /></Col>)
+			return this.props.asanas.map(asana => <Col xs="3" key={asana.id}><AsanaCard title={asana.sanskritname} subtitle={asana.englishname} image={asana.picurl} id={asana.id} /></Col>)
 		}
 	}
 	render(){
