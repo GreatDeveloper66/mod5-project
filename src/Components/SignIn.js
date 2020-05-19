@@ -6,6 +6,7 @@ import LogInUserAction from '../actions/loginuser'
 import fetch from 'isomorphic-fetch'
 import UserName from './username'
 import Password from './password'
+import data from '../json/sequences.json'
 
 
 const mapStateToProps = state => {
