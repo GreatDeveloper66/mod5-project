@@ -3,7 +3,16 @@ const UserSequencesReducer = (state=[],action) => {
     case 'loadsequences':
       return action.sequences
 	case 'addsequence':
-	  return [...state,action.sequence]
+	  const name = action.sequence.name
+	  const asanas = action.sequence.asanas
+	  const foundsequence = state.find(sequence => sequence.name === action.sequence.name)
+	  if(foundsequence){
+		  return [...state, {id:foundsequence.id,name:name,asanas: asanas}]
+	  }
+	  else {
+		  action.sequence.id = 101+ state.length
+		  return [...state,action.sequence]
+	  }
     default:
       return state
   }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap'
-/*import AddSequenceAction from '../actions/addsequence'*/
+import AddSequenceAction from '../actions/addsequence'
+import { connect } from 'react-redux'
 
-/*
+
 const mapStateToProps = state => {
 	return {
 		sequence: state.sequence
@@ -17,7 +18,7 @@ const mapDispatchToProps = dispatch => {
 		}
 	}
 }
-*/
+
 
 class FooterBar extends Component {
 	constructor(props){
@@ -34,9 +35,7 @@ class FooterBar extends Component {
 	
 	handleSave = event => {
 		event.preventDefault()
-		
-		
-		console.log('save')
+		this.props.addsequence({id:null, name: this.state.inputValue, asanas: this.props.sequence})
 		
 	}
 
@@ -65,4 +64,4 @@ class FooterBar extends Component {
 	}
 }
 
-export default FooterBar
+export default connect(mapStateToProps,mapDispatchToProps)(FooterBar)
