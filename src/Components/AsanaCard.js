@@ -2,10 +2,13 @@ import React from 'react';
 import '../App.css';
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 
+const addAsana = () => {
+	console.log('add asana')
+}
 
 const AsanaCard = props => 
 				<Card>
-					<CardBody>
+					<CardBody onClick={addAsana}>
 						<CardTitle>{props.title}</CardTitle>
 						<CardSubtitle>{props.subtitle}</CardSubtitle>
 					</CardBody>

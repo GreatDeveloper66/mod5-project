@@ -91,7 +91,7 @@ class AsanaCarousel extends Component {
 	
 	
 	renderCarouselCards = () =>  {
-		console.log(this.props)
+		
 		const sequence = this.props.sequence
 		if(sequence.length > 0 ){
 		return asanasarray.map((asana,index) => <div key={index}><AsanaCard title={asana[1]} subtitle={asana[0]} image={asana[2]} /></div>)	
