@@ -37,10 +37,7 @@ class SavedSequences extends Component {
 	
 	handleEdit = event => {
 		event.preventDefault()
-		const sequencename = this.state.selectedOption.value
-		const sequences = this.props.sequences
-		const sequence = sequences.find(sequence => sequence.name === sequencename)
-		this.props.loadsequence(sequence)
+		this.findSequence()
 
 		//find sequence with that name in the sequences file
 		//load that sequence to sequence state
@@ -52,8 +49,16 @@ class SavedSequences extends Component {
 		
 	}
 	
+	findSequence = () => {
+		const sequencename = this.state.selectedOption.value
+		const sequences = this.props.sequences
+		const sequence = sequences.find(sequence => sequence.name === sequencename)
+		this.props.loadsequence(sequence)
+	}
+	
 	handleView = event => {
 		event.preventDefault()
+		this.findSequence()
 		this.props.history.push('/sequences/view')
 	}
 	
