@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux'
 //import NotesReducer from './reducers/notes'
-import RootReducer from './reducers/rootreducer'
+import RootReducer from './reducers/rootReducer'
 import { createStore } from 'redux'
 // import thunk from 'redux-thunk'
 // import thunkMiddleware from 'redux-thunk'

@@ -3,7 +3,13 @@ import '../App.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import AsanaCard from './AsanaCard'
+import { connect } from 'react-redux'
 
+const mapStateToProps = state => {
+  return {
+    sequence: state.sequence
+  }
+}
 
 const asanasarray = [
   ['Warrior1','Virabhadrasana A','yoga-30',1],
@@ -84,7 +90,8 @@ class AsanaCarousel extends Component {
 	}
 	
 	
-	renderCarouselCards = () => {
+	renderCarouselCards = () =>  {
+		console.log(this.props)
 		return asanasarray.map((asana,index) => <div key={index}><AsanaCard title={asana[1]} subtitle={asana[0]} image={asana[2]} /></div>)	
 	}
 	render(){
@@ -115,4 +122,4 @@ class AsanaCarousel extends Component {
 	}
 }
 
-export default AsanaCarousel
+export default connect(mapStateToProps, null)(AsanaCarousel)
