@@ -45,10 +45,13 @@ class FooterBar extends Component {
 				<Row className="d-flex justify-content-end">
 					<Form onSubmit={this.handleSave}>
 						<FormGroup row>
+							<Col sm={1}>
+								<Button color="danger">X</Button>
+							</Col>
 							<Col sm={2}>
 								<Label for="name" sm={2}><p className="text-success">NAME:</p></Label>
 							</Col>
-							<Col sm={7}>
+							<Col sm={6}>
 								<Input type="text" name="name" id="name" value={this.state.inputvalue} onChange={this.handleChange}/>
 							</Col>
 							<Col sm={3}>
