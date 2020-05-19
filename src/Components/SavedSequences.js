@@ -6,11 +6,6 @@ import LoadSequenceAction from '../actions/loadsequence'
 import { connect } from 'react-redux'
 import Select from 'react-select'
 
-const options = [
-    {value: 'Sequence1', label: 'Sequence1'},
-	{value: 'Sequence2', label: 'Sequence2'},
-	{value: 'Sequence3', label: 'Sequence3'}
-]
 
 const mapStateToProps = state => {
 	return {
@@ -35,18 +30,20 @@ class SavedSequences extends Component {
 
 	}
 	
+	renderOptions = () => {
+		const names = this.props.sequences.map(sequence => sequence.name)
+		return names.map(name => ({value: name, label: name}))
+	}
 	handleEdit = event => {
 		event.preventDefault()
 		this.findSequence()
-
-		//find sequence with that name in the sequences file
-		//load that sequence to sequence state
 		this.props.history.push('/sequences/new')
 	}
 	
 	handleDelete = event => {
 		event.preventDefault()
-		
+		const sequencename = this.state.selectedOption.value
+		 
 	}
 	
 	findSequence = () => {
@@ -80,17 +77,11 @@ class SavedSequences extends Component {
 									<Select
 										value={this.state.selectedOption}
 										onChange={this.handleChange}
-										options={options}
+										options={this.renderOptions()}
 										/>
-										{
-											/*
-									<Input type="select" name="select">
-										<option>Sequence1</option>
-										<option>Sequence2</option>
-										<option>Sequence3</option>
-									</Input>
-									*/
-										}
+										
+											
+										
        
 							</Col>
 							<Col sm={2}>
