@@ -4,7 +4,7 @@ import RenderProfileReducer from './renderprofile'
 import LogInMessageReducer from './loginmessagereducer'
 import LoadCategoriesReducer from './loadcategories'
 
-const RootReducer = combineReducers({ jwt:RegisterUserReducer, profile: RenderProfileReducer, loginmessage: LogInMessageReducer,categories: LoadCategoriesReducer })
+const RootReducer = combineReducers({ jwt:RegisterUserReducer, profile: RenderProfileReducer, loginmessage: LogInMessageReducer,categories: LoadCategoriesReducer, sequence: SequenceReducer })
 
 export default RootReducer
 
