@@ -17,10 +17,15 @@ const mapDispatchToProps = dispatch => {
 class SavedSequences extends Component {
 	constructor(props){
 		super()
+
 	}
 	
 	handleEdit = event => {
 		event.preventDefault()
+		console.log(event.target.parentNode.parentNode)
+		//find name selected in dropdown
+		//find sequence with that name in current sequences
+		//load that sequence to sequence state
 		this.props.history.push('/sequences/edit')
 	}
 	
@@ -46,7 +51,7 @@ class SavedSequences extends Component {
 						<FormGroup row>
 							<Col sm={6}>
 								
-									<Input type="select" name="select" id="exampleSelect">
+									<Input type="select" name="select">
 										<option>Sequence1</option>
 										<option>Sequence2</option>
 										<option>Sequence3</option>
