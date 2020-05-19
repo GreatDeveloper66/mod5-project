@@ -2,7 +2,17 @@ import React, { Component } from 'react';
 import '../App.css';
 import { Container, Row, Button, Form, FormGroup, Input, Col } from 'reactstrap'
 import { withRouter } from 'react-router-dom'
+import LoadSequenceAction from '../actions/loadsequence'
+import { connect } from 'react-redux'
 
+
+const mapDispatchToProps = dispatch => {
+	return {
+		loadsequence: sequence => {
+			dispatch(LoadSequenceAction(sequence))
+		}
+	}
+}
 
 class SavedSequences extends Component {
 	constructor(props){
@@ -37,11 +47,9 @@ class SavedSequences extends Component {
 							<Col sm={6}>
 								
 									<Input type="select" name="select" id="exampleSelect">
-										<option>Saved Sequence 1</option>
-										<option>Saved Sequence 2</option>
-										<option>Saved Sequence 3</option>
-										<option>Saved Sequence 4</option>
-										<option>Saved Sequence 5</option>
+										<option>Sequence1</option>
+										<option>Sequence2</option>
+										<option>Sequence3</option>
 									</Input>
        
 							</Col>
@@ -64,4 +72,4 @@ class SavedSequences extends Component {
 	}
 }
 
-export default withRouter(SavedSequences)
+export default withRouter(connect(null,mapDispatchToProps)(SavedSequences))
