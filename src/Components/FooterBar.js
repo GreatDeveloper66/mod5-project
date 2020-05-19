@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import '../App.css';
 import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap'
 import AddSequenceAction from '../actions/addsequence'
+import UndoAsanaAction from '../actions/undoasanas'
 import { connect } from 'react-redux'
+
 
 
 const mapStateToProps = state => {
@@ -15,6 +17,9 @@ const mapDispatchToProps = dispatch => {
 	return {
 		addsequence: sequence => {
 			dispatch(AddSequenceAction(sequence))
+		},
+		undoasana: asana => {
+			dispatch(UndoAsanaAction(asana))
 		}
 	}
 }
@@ -33,6 +38,7 @@ class FooterBar extends Component {
 		this.setState({inputvalue: event.target.value})
 	}
 	
+	
 	handleSave = event => {
 		event.preventDefault()
 		this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})
@@ -46,7 +52,7 @@ class FooterBar extends Component {
 					<Form onSubmit={this.handleSave}>
 						<FormGroup row>
 							<Col sm={1}>
-								<Button color="danger">X</Button>
+								<Button color="danger" onClick={() => this.props.undoasana()}>X</Button>
 							</Col>
 							<Col sm={2}>
 								<Label for="name" sm={2}><p className="text-success">NAME:</p></Label>

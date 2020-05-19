@@ -1,7 +1,6 @@
-const UndoAsanaAction = asana => {
+const UndoAsanaAction = () => {
   return {
-    type: 'undoasana',
-	asana: asana
+    type: 'undoasana'
   }
 }
 
