@@ -1,6 +1,6 @@
 const DeleteSequenceAction = sequencename => {
   return {
-    type: 'delete',
+    type: 'deletesequence',
 	sequencename: sequencename
   }
 }
