@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import '../App.css';
 import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap'
 
-
+const mapDispatchToProps = dispatch => {
+	return {
+		
+	}
+}
 class FooterBar extends Component {
 	constructor(props){
 		super()
@@ -11,6 +15,7 @@ class FooterBar extends Component {
 	handleSave = event => {
 		event.preventDefault()
 		console.log('save')
+		
 	}
 
 	render(){

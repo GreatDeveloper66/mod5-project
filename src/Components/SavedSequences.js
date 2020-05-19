@@ -53,7 +53,7 @@ class SavedSequences extends Component {
 		const sequencename = this.state.selectedOption.value
 		const sequences = this.props.sequences
 		const sequence = sequences.find(sequence => sequence.name === sequencename)
-		this.props.loadsequence(sequence)
+		this.props.loadsequence(sequence.asanas)
 	}
 	
 	handleView = event => {
