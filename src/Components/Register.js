@@ -6,13 +6,17 @@ import RegisterUserAction from '../actions/registeruser'
 import Email from './email'
 import UserName from './username'
 import Password from './password'
+import RenderProfileAction from '../actions/renderprofile'
 
 
 const mapDispatchToProps = dispatch => {
   return {
     registerUser: jwt => {
       dispatch(RegisterUserAction(jwt))
-    }
+    },
+	renderprofile: profile => {
+			dispatch(RenderProfileAction(profile))
+	}
   }
 }
 
@@ -43,6 +47,7 @@ const Register = props => {
       .then(resp => resp.json())
       .then(data => {
           props.registerUser(data.jwt)
+		  props.renderprofile({user: {id: data.user.id,email: data.user.email,username: data.user.username}})
           props.history.push('/home')
         })
   }
