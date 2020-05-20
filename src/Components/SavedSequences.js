@@ -41,7 +41,7 @@ class SavedSequences extends Component {
 	handleEdit = event => {
 		event.preventDefault()
 		this.findSequence()
-		this.props.history.push('/sequences/new')
+		this.props.history.push('/sequences/edit')
 	}
 	
 	handleDelete = event => {
