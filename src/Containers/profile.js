@@ -19,6 +19,7 @@ const mapDispatchToProps = dispatch => {
 		deleteUser: () => {
 			dispatch(LogOutUserAction())
 		}
+		
 	}
 }
 

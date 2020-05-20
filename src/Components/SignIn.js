@@ -9,6 +9,7 @@ import fetch from 'isomorphic-fetch'
 import UserName from './username'
 import Password from './password'
 import sequences from '../json/sequences.json'
+import RenderProfileAction from '../actions/renderprofile'
 
 
 const mapStateToProps = state => {
@@ -29,7 +30,10 @@ const mapDispatchToProps = dispatch => {
 	},
 	loadcategories: categories => {
       dispatch(LoadCategoriesAction(categories))
-    }
+    },
+	renderprofile: profile => {
+			dispatch(RenderProfileAction(profile))
+	}
   }
 }
 
@@ -65,9 +69,11 @@ class SignIn extends Component {
 	fetch('http://localhost:5000/api/v1/login', configObj)
 		.then(resp => resp.json())
 		.then(data => {
+			console.log('user data', data)
 			if(data.successfulLogin){
 			this.props.logInUser(data.jwt, '')
 			this.props.loadusersequences(sequences)
+			this.props.renderprofile({user: {id: data.user.id,email: data.user.email,username: data.user.username}})
 			this.props.history.push('/home')
 			}
 			else {
@@ -75,6 +81,7 @@ class SignIn extends Component {
 			}
     })
 }
+
 
 componentDidMount() {
 		fetch('http://localhost:5000/api/v1/categories')
