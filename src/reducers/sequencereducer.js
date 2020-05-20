@@ -8,6 +8,8 @@ const SequenceReducer = (state=[],action) => {
 		return state.slice(0,-1)
 	case 'clearsequence':
 		return []
+	case 'logoutuser':
+		return []
     default:
       return state
   }
