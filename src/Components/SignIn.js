@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../App.css';
 import { Form, Col, Button, Row, Container, Card, Alert} from 'reactstrap'
 import { connect } from 'react-redux'
@@ -29,70 +29,74 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const SignIn = props => {
+class SignIn extends Component {
+	constructor(props){
+		super()
+	}
 	
-	const handleRegisterSwitch = () => {
-		props.logInUser(props.jwt,'')
-		props.history.push('/Register')
+	
+	handleRegisterSwitch = () => {
+		this.props.logInUser(this.props.jwt,'')
+		this.props.history.push('/Register')
 	}
 
-const SignInUser = event => {
-  event.preventDefault()
-  const username = event.target.username.value
-  const password = event.target.password.value
-  const userObj = {
-    user: {
-      username: username,
-      password: password
-    }
-  }
-  const configObj = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify(userObj)
-  }
-  fetch('http://localhost:5000/api/v1/login', configObj)
-    .then(resp => resp.json())
-    .then(data => {
-		if(data.successfulLogin){
-          props.logInUser(data.jwt, '')
-		  props.loadusersequences(sequences)
-          props.history.push('/home')
+	SignInUser = event => {
+		event.preventDefault()
+		const username = event.target.username.value
+		const password = event.target.password.value
+		const userObj = {
+		user: {
+			username: username,
+			password: password
+			}
 		}
-		else {
-			props.logInUser('','Incorrect UserName and/or Password. Try Again')
-		}
-	 console.log('props', props)
-     
+	const configObj = {
+		method: "POST",
+		headers: {
+		"Content-Type": "application/json",
+		"Accept": "application/json"
+		},
+		body: JSON.stringify(userObj)
+	}
+	fetch('http://localhost:5000/api/v1/login', configObj)
+		.then(resp => resp.json())
+		.then(data => {
+			if(data.successfulLogin){
+			this.props.logInUser(data.jwt, '')
+			this.props.loadusersequences(sequences)
+			this.props.history.push('/home')
+			}
+			else {
+				this.props.logInUser('','Incorrect UserName and/or Password. Try Again')
+			}
     })
 }
-return (
-<Container className="mt-5">
-<Row className="d-flex justify-content-center">
-  <Col xs={12} sm={8} lg={4}>
-<Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-  <h2>Sign In</h2>
-  <Form className="form" onSubmit={SignInUser}>
-    <UserName username={"username here"}/>
-	<Password />
-    <Col className="d-flex justify-content-around">
-    <Button onClick={handleRegisterSwitch}>New User?</Button>
-    <Button>Submit</Button>
-    </Col>
-  </Form>
-</Card>
-	
+
+render(){
+	return (
+	<Container className="mt-5">
+	<Row className="d-flex justify-content-center">
+	<Col xs={12} sm={8} lg={4}>
+	<Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+		<h2>Sign In</h2>
+	<Form className="form" onSubmit={this.SignInUser}>
+		<UserName username={"username here"}/>
+		<Password />
+		<Col className="d-flex justify-content-around">
+			<Button onClick={this.handleRegisterSwitch}>New User?</Button>
+			<Button>Submit</Button>
+		</Col>
+	</Form>
+	</Card>	
   </Col>
 </Row>
-	<Row className="d-flex justify-content-center">
-		<Col xs={12} sm={8} lg={4}>
-	{props.loginmessage ? <Alert color="danger">{props.loginmessage}</Alert> : ''}
-		</Col>
-	</Row>
+<Row className="d-flex justify-content-center">
+	<Col xs={12} sm={8} lg={4}>
+		{this.props.loginmessage ? <Alert color="danger">{this.props.loginmessage}</Alert> : ''}
+	</Col>
+</Row>
 </Container>
 )
+}
 }
 export default connect(mapStateToProps,mapDispatchToProps)(SignIn)
