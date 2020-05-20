@@ -1,4 +1,4 @@
-const SequenceReducer = (state=[],action) => {
+const SequenceReducer = (state={},action) => {
   switch(action.type){
     case 'loadsequence':
       return action.sequence
@@ -7,9 +7,9 @@ const SequenceReducer = (state=[],action) => {
 	case 'undoasana':
 		return Object.assign({},state,{asanas: state.asanas.slice(0,-1)})
 	case 'clearsequence':
-		return []
+		return {}
 	case 'logoutuser':
-		return []
+		return {}
     default:
       return state
   }

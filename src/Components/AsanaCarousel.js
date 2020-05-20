@@ -36,13 +36,12 @@ class AsanaCarousel extends Component {
 	
 	
 	renderCarouselCards = () =>  {
-		
-		const asanas = this.props.sequence.asanas
-		if(asanas.length > 0 ){
-		return asanas.map((asana,index) => <div key={index}><AsanaCard title={asana.sanskritname} subtitle={asana.englishname} image={asana.picurl} /></div>)	
+		if(this.props.sequence.asanas){
+			console.log(this.props.sequence)
+			return this.props.sequence.asanas.map((asana,index) => <div key={index}><AsanaCard title={asana.sanskritname} subtitle={asana.englishname} image={asana.picurl} /></div>)
 		}
 		else {
-			return <div></div>
+			return <div></div>	
 		}
 	}
 	render(){
