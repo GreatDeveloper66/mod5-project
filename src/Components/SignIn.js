@@ -8,14 +8,14 @@ import LoadCategoriesAction from '../actions/loadcategories'
 import fetch from 'isomorphic-fetch'
 import UserName from './username'
 import Password from './password'
-import sequences from '../json/sequences.json'
 import RenderProfileAction from '../actions/renderprofile'
 
 
 const mapStateToProps = state => {
   return {
     jwt: state.jwt,
-	loginmessage: state.loginmessage
+	loginmessage: state.loginmessage,
+	profile: state.profile
   }
 }
 
@@ -69,10 +69,9 @@ class SignIn extends Component {
 	fetch('http://localhost:5000/api/v1/login', configObj)
 		.then(resp => resp.json())
 		.then(data => {
-			console.log('user data', data)
 			if(data.successfulLogin){
 			this.props.logInUser(data.jwt, '')
-			this.props.loadusersequences(sequences)
+			
 			this.props.renderprofile({user: {id: data.user.id,email: data.user.email,username: data.user.username}})
 			this.props.history.push('/home')
 			}
@@ -87,11 +86,16 @@ componentDidMount() {
 		fetch('http://localhost:5000/api/v1/categories')
 			.then(resp => resp.json())
 			.then(data => {
-				console.log(data)
 				this.props.loadcategories(data)
 			})
 		
 	}
+
+componentWillUnmount(){
+	fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`)
+		.then(resp => resp.json())
+		.then(data => this.props.loadusersequences(data))
+}
 
 render(){
 	return (
