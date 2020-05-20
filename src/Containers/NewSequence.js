@@ -30,6 +30,9 @@ class NewSequence extends Component {
 	}
 	
 	componentDidMount() {
+		fetch('http://localhost:5000/api/v1/categories')
+			.then(resp => resp.json())
+			.then(data => console.log(data))
 		this.props.loadcategories(data)
 	}
 	renderCategories = () => {
