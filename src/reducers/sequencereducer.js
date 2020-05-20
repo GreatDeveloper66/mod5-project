@@ -3,9 +3,14 @@ const SequenceReducer = (state={},action) => {
     case 'loadsequence':
       return action.sequence
 	case 'addasana':
-		return Object.assign({},state,{asanas: [...state.asanas,action.asana]})
+		if(state.asanas){
+			return {...state,asanas:[...state.asanas,action.asana]}
+		}
+		else {
+			return {id:null,name:'',asanas:[action.asana]}
+		}
 	case 'undoasana':
-		return Object.assign({},state,{asanas: state.asanas.slice(0,-1)})
+		return {...state,asanas:[...state.asanas.slice(0.,-1)]}
 	case 'clearsequence':
 		return {}
 	case 'logoutuser':
