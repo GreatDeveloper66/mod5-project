@@ -6,21 +6,10 @@ import LogOutUserAction from '../actions/logoutuser'
 import RenderProfileAction from '../actions/renderprofile'
 import { withRouter } from 'react-router-dom'
 
-const mapStateToProps = state => {
-  return {
-    jwt: state.jwt,
-	loginmessage: state.loginmessage
-  }
-}
-
-
 const mapDispatchToProps = dispatch => {
 	return {
 		logOutUser: () => {
 			dispatch(LogOutUserAction())
-		},
-		renderProfile: profile => {
-			dispatch(RenderProfileAction(profile))
 		}
 	}
 }
@@ -28,19 +17,6 @@ const mapDispatchToProps = dispatch => {
 class NavBar extends Component {
 	constructor(props){
 		super()
-	}
-	
-	handleProfile = () => {
-		const jwt = this.props.jwt
-		fetch('http://localhost:5000/api/v1/profile', {
-		headers: { Authorization: `Bearer ${jwt}`}
-		})
-		.then(response => response.json())
-		.then(data => {
-			this.props.renderProfile(data)
-			this.props.history.push('/profile')
-		})
-    
 	}
   
   handleSignOut = () => {
@@ -53,11 +29,11 @@ class NavBar extends Component {
 			<Container>
 				<Row className="d-flex justify-content-end">
 					<Button color="primary" onClick={this.handleSignOut}>Sign Out</Button>
-					<Button color="primary" onClick={this.handleProfile}>Profile</Button>
+					<Button color="primary" onClick={() => this.props.history.push('/profile')}>Profile</Button>
 				</Row>
 		</Container>
 		)
 	}
 }
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(NavBar))
+export default withRouter(connect(null,mapDispatchToProps)(NavBar))
