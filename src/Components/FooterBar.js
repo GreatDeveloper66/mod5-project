@@ -4,6 +4,7 @@ import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reac
 import AddSequenceAction from '../actions/addsequence'
 import UndoAsanaAction from '../actions/undoasanas'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 
 
@@ -42,6 +43,7 @@ class FooterBar extends Component {
 	handleSave = event => {
 		event.preventDefault()
 		this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})
+		this.props.history.push('/profile')
 		
 	}
 
@@ -73,4 +75,4 @@ class FooterBar extends Component {
 	}
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(FooterBar)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(FooterBar))

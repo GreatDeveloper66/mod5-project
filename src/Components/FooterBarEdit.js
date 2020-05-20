@@ -4,6 +4,7 @@ import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reac
 import AddSequenceAction from '../actions/addsequence'
 import UndoAsanaAction from '../actions/undoasanas'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => {
 	return {
@@ -31,6 +32,7 @@ class FooterBarEdit extends Component {
 	handleSave = event => {
 		event.preventDefault()
 		this.props.addsequence({id:null, name: this.props.sequence.name, asanas: this.props.sequence})
+		this.props.history.push('/profile')
 		
 	}
 
@@ -44,10 +46,6 @@ class FooterBarEdit extends Component {
 								<Button color="danger" onClick={() => this.props.undoasana()}>X</Button>
 							</Col>
 							<Col sm={2}>
-								<Label for="name" sm={2}><p className="text-success">NAME:</p></Label>
-							</Col>
-							<Col sm={6}>
-								{this.props.sequence.name}
 							</Col>
 							<Col sm={3}>
 								<Button color="primary" type="submit">SAVE</Button>
@@ -62,4 +60,4 @@ class FooterBarEdit extends Component {
 	}
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(FooterBarEdit)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(FooterBarEdit))
