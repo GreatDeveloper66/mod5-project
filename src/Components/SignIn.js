@@ -4,6 +4,7 @@ import { Form, Col, Button, Row, Container, Card, Alert} from 'reactstrap'
 import { connect } from 'react-redux'
 import LogInUserAction from '../actions/loginuser'
 import LoadUserSequencesAction from '../actions/loadusersequences'
+import LoadCategoriesAction from '../actions/loadcategories'
 import fetch from 'isomorphic-fetch'
 import UserName from './username'
 import Password from './password'
@@ -25,7 +26,10 @@ const mapDispatchToProps = dispatch => {
     },
 	loadusersequences: sequences => {
 		dispatch(LoadUserSequencesAction(sequences))
-	}
+	},
+	loadcategories: categories => {
+      dispatch(LoadCategoriesAction(categories))
+    }
   }
 }
 
