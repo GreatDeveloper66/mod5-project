@@ -95,6 +95,15 @@ const Profile = props => {
                           </Col>
                         </Row>
 						<SavedSequences />
+						<Row className="d-flex justify-content-center mt-3">
+							<Col xs={4}>
+							</Col>
+							<Col xs={4}>
+								<Button color="warning" size="lg" block>EXIT</Button>
+							</Col>
+							<Col xs={4}>
+							</Col>
+						</Row>
 					</Container>
                     )
                     }
