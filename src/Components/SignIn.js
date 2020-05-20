@@ -3,9 +3,11 @@ import '../App.css';
 import { Form, Col, Button, Row, Container, Card, Alert} from 'reactstrap'
 import { connect } from 'react-redux'
 import LogInUserAction from '../actions/loginuser'
+import LoadUserSequencesAction from '../actions/loadusersequences'
 import fetch from 'isomorphic-fetch'
 import UserName from './username'
 import Password from './password'
+import sequences from '../json/sequences.json'
 
 
 const mapStateToProps = state => {
@@ -20,7 +22,10 @@ const mapDispatchToProps = dispatch => {
   return {
     logInUser: (jwt,message) => {
       dispatch(LogInUserAction(jwt,message))
-    }
+    },
+	loadusersequences: sequences => {
+		dispatch(LoadUserSequencesAction(sequences))
+	}
   }
 }
 
@@ -54,6 +59,7 @@ const SignInUser = event => {
     .then(data => {
 		if(data.successfulLogin){
           props.logInUser(data.jwt, '')
+		  props.loadusersequences(sequences)
           props.history.push('/home')
 		}
 		else {

@@ -3,7 +3,8 @@ import '../App.css';
 import { connect } from 'react-redux'
 import LogOutUserAction from '../actions/logoutuser'
 import RenderProfileAction from '../actions/renderprofile'
-import { Navbar } from 'reactstrap'
+import { Row, Container, Button } from 'reactstrap'
+import NavBar from '../Components/NavBar'
 
 const mapStateToProps = state => {
   return {
@@ -49,12 +50,16 @@ class Home extends Component {
 
   render(){
     return(
-      <div>
-      <Navbar>
-      <button onClick={this.handleSignOut}>Sign Out</button>
-      <button onClick={this.handleProfile}>Profile</button>
-	  </Navbar>
-      </div>
+	<Container>
+      <NavBar />
+      <Container className="mt-4">
+		<Row className="d-flex justify-content-center align-items-center">
+			<Button color="success" size="lg" onClick={() => this.props.history.push('/sequences/new')}>Create New Sequence</Button>
+		</Row>
+	  </Container>
+	  
+	 
+      </Container>
     )
   }
 }

@@ -1,0 +1,166 @@
+[{
+		"id": 101,
+		"name": "Sequence1",
+		"asanas": [{
+			"id": 151,
+			"englishname": "Pigeon",
+			"sanskritname": "Kapotasana",
+			"picurl": "yoga-59"
+		}, {
+			"id": 164,
+			"englishname": "Childs Pose",
+			"sanskritname": "Balasana",
+			"picurl": "yoga-50"
+		}, {
+			"id": 170,
+			"englishname": "Staff",
+			"sanskritname": "Dandasana",
+			"picurl": "yoga-52"
+		}, {
+			"id": 176,
+			"englishname": "Corpse",
+			"sanskritname": "Savasana",
+			"picurl": "yoga-41"
+		}, {
+			"id": 177,
+			"englishname": "Crossed Legged Seat",
+			"sanskritname": "Bharadvajrasana",
+			"picurl": "yoga-10"
+		}, {
+			"id": 192,
+			"englishname": "West Stretching",
+			"sanskritname": "Paschimottanasana",
+			"picurl": "yoga-53"
+		}, {
+			"id": 193,
+			"englishname": "Sage Marichi Pose A",
+			"sanskritname": "Marichyasana A",
+			"picurl": "yoga-95"
+		}, {
+			"id": 194,
+			"englishname": "Sage Marichi C",
+			"sanskritname": "Marichyasana C",
+			"picurl": "yoga-95"
+		}, {
+			"id": 195,
+			"englishname": "Boat",
+			"sanskritname": "Navasana",
+			"picurl": "yoga-85"
+		}, {
+			"id": 196,
+			"englishname": "Lotus",
+			"sanskritname": "Padmasana",
+			"picurl": "yoga-10"
+		}]
+	},
+	{
+		"id": 102,
+		"name": "Sequence2",
+		"asanas": [{
+			"id": 151,
+			"englishname": "Pigeon",
+			"sanskritname": "Kapotasana",
+			"picurl": "yoga-59"
+		}, {
+			"id": 164,
+			"englishname": "Childs Pose",
+			"sanskritname": "Balasana",
+			"picurl": "yoga-50"
+		}, {
+			"id": 170,
+			"englishname": "Staff",
+			"sanskritname": "Dandasana",
+			"picurl": "yoga-52"
+		}, {
+			"id": 176,
+			"englishname": "Corpse",
+			"sanskritname": "Savasana",
+			"picurl": "yoga-41"
+		}, {
+			"id": 177,
+			"englishname": "Crossed Legged Seat",
+			"sanskritname": "Bharadvajrasana",
+			"picurl": "yoga-10"
+		}, {
+			"id": 192,
+			"englishname": "West Stretching",
+			"sanskritname": "Paschimottanasana",
+			"picurl": "yoga-53"
+		}, {
+			"id": 193,
+			"englishname": "Sage Marichi Pose A",
+			"sanskritname": "Marichyasana A",
+			"picurl": "yoga-95"
+		}, {
+			"id": 194,
+			"englishname": "Sage Marichi C",
+			"sanskritname": "Marichyasana C",
+			"picurl": "yoga-95"
+		}, {
+			"id": 195,
+			"englishname": "Boat",
+			"sanskritname": "Navasana",
+			"picurl": "yoga-85"
+		}, {
+			"id": 196,
+			"englishname": "Lotus",
+			"sanskritname": "Padmasana",
+			"picurl": "yoga-10"
+		}]
+	},
+	{
+		"id": 103,
+		"name": "Sequence3",
+		"asanas": [{
+			"id": 151,
+			"englishname": "Pigeon",
+			"sanskritname": "Kapotasana",
+			"picurl": "yoga-59"
+		}, {
+			"id": 164,
+			"englishname": "Childs Pose",
+			"sanskritname": "Balasana",
+			"picurl": "yoga-50"
+		}, {
+			"id": 170,
+			"englishname": "Staff",
+			"sanskritname": "Dandasana",
+			"picurl": "yoga-52"
+		}, {
+			"id": 176,
+			"englishname": "Corpse",
+			"sanskritname": "Savasana",
+			"picurl": "yoga-41"
+		}, {
+			"id": 177,
+			"englishname": "Crossed Legged Seat",
+			"sanskritname": "Bharadvajrasana",
+			"picurl": "yoga-10"
+		}, {
+			"id": 192,
+			"englishname": "West Stretching",
+			"sanskritname": "Paschimottanasana",
+			"picurl": "yoga-53"
+		}, {
+			"id": 193,
+			"englishname": "Sage Marichi Pose A",
+			"sanskritname": "Marichyasana A",
+			"picurl": "yoga-95"
+		}, {
+			"id": 194,
+			"englishname": "Sage Marichi C",
+			"sanskritname": "Marichyasana C",
+			"picurl": "yoga-95"
+		}, {
+			"id": 195,
+			"englishname": "Boat",
+			"sanskritname": "Navasana",
+			"picurl": "yoga-85"
+		}, {
+			"id": 196,
+			"englishname": "Lotus",
+			"sanskritname": "Padmasana",
+			"picurl": "yoga-10"
+		}]
+	}
+]
