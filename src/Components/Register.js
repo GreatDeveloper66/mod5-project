@@ -6,6 +6,7 @@ import RegisterUserAction from '../actions/registeruser'
 import Email from './email'
 import UserName from './username'
 import Password from './password'
+import fetch from 'isomorphic-fetch'
 import RenderProfileAction from '../actions/renderprofile'
 
 
@@ -24,7 +25,6 @@ const Register = props => {
   const handleRegistration = event => {
     event.preventDefault();
     // const host = runtimeEnv().REACT_APP_API_URL
-    const host = `http://localhost:5000`
     const email = event.target.email.value
     const username = event.target.username.value
     const password = event.target.password.value
@@ -43,12 +43,12 @@ const Register = props => {
       },
       body: JSON.stringify(userObj)
     }
-    fetch(`${host}/api/v1/users`,configObj)
+    fetch(`http://localhost:5000/api/v1/users`,configObj)
       .then(resp => resp.json())
       .then(data => {
           props.registerUser(data.jwt)
 		  props.renderprofile({user: {id: data.user.id,email: data.user.email,username: data.user.username}})
-          props.history.push('/home')
+		  props.history.push('/home')
         })
   }
 

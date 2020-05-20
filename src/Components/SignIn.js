@@ -71,7 +71,6 @@ class SignIn extends Component {
 		.then(data => {
 			if(data.successfulLogin){
 			this.props.logInUser(data.jwt, '')
-			
 			this.props.renderprofile({user: {id: data.user.id,email: data.user.email,username: data.user.username}})
 			fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`)
 				.then(resp => resp.json())
@@ -79,7 +78,6 @@ class SignIn extends Component {
 					this.props.loadusersequences(data)
 					this.props.history.push('/home')
 				})
-			
 			
 			}
 			else {
@@ -97,12 +95,6 @@ componentDidMount() {
 			})
 		
 	}
-
-getSequences = () => {
-	fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`)
-		.then(resp => resp.json())
-		.then(data => this.props.loadusersequences(data))
-}
 
 render(){
 	return (
