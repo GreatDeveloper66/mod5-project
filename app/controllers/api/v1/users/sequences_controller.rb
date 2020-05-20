@@ -1,5 +1,5 @@
-module Users
-	class Api::V1::SequencesController < ApplicationController
+
+	class Api::V1::Users::SequencesController < ApplicationController
 
 	skip_before_action :authorized, only: [:index,:show]
 
@@ -15,7 +15,9 @@ module Users
 		end
 		def index
 			@user = User.find_by(id: params[:user_id])
-			render json: @user.sequences
+			@sequences = @user.sequences
+			@asanas = @sequences.to_a.map{ |sequence| sequence.asanas }
+			render json: @asanas
 		end
 		def show
 			id = params[:id]
@@ -29,4 +31,3 @@ module Users
 			params.require(:sequence).permit(:name, :duration )
 		end
 	end
-end

@@ -7,7 +7,8 @@ class CategorySerializer < ActiveModel::Serializer
 		id: asana.id,
         englishname: asana.englishname,
         sanskritname: asana.sanskritname,
-        picurl: asana.picurl
+        picurl: asana.picurl,
+		duration: asana.duration
       }
     end
   end
