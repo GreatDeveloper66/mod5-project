@@ -4,7 +4,6 @@ import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
 import FooterBar from '../Components/FooterBar'
 import AsanaCategory from '../Components/AsanaCategory'
-import data from '../json/categories.json'
 import { connect } from 'react-redux'
 
 
