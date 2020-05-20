@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_221749) do
+ActiveRecord::Schema.define(version: 2020_05_14_185039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "asanacategories", force: :cascade do |t|
+    t.integer "asana_id"
+    t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "asanas", force: :cascade do |t|
+    t.string "englishname"
+    t.string "picurl"
+    t.integer "duration"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "sanskritname"
+  end
+
+  create_table "asanasequences", force: :cascade do |t|
+    t.integer "asana_id"
+    t.integer "sequence_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "order"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sequences", force: :cascade do |t|
+    t.string "name"
+    t.integer "duration"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sequences_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -23,4 +62,5 @@ ActiveRecord::Schema.define(version: 2020_05_11_221749) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "sequences", "users"
 end
