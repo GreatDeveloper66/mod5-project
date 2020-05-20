@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
-import FooterBar from '../Components/FooterBar'
+import FooterBarEdit from '../Components/FooterBarEdit.js'
 import AsanaCategory from '../Components/AsanaCategory'
 import data from '../json/categories.json'
 import LoadCategoriesAction from '../actions/loadcategories'
@@ -42,7 +42,7 @@ class EditSequence extends Component {
 			<NavBar />
 			<AsanaCarousel />
 			<AsanaCategory />
-			<FooterBar />
+			<FooterBarEdit />
 			{this.renderCategories()}
 			
 		</div>
