@@ -55,7 +55,7 @@ class SavedSequences extends Component {
 		const sequencename = this.state.selectedOption.value
 		const sequences = this.props.sequences
 		const sequence = sequences.find(sequence => sequence.name === sequencename)
-		this.props.loadsequence(sequence.asanas)
+		this.props.loadsequence(sequence)
 	}
 	
 	handleView = event => {
@@ -65,7 +65,7 @@ class SavedSequences extends Component {
 	}
 	
 	handleChange = selectedOption => {
-		this.setState({selectedOption: selectedOption}, () => console.log('option selected', this.state.selectedOption))
+		this.setState({selectedOption: selectedOption})
 	}
 
 	render(){
@@ -84,10 +84,6 @@ class SavedSequences extends Component {
 										onChange={this.handleChange}
 										options={this.renderOptions()}
 										/>
-										
-											
-										
-       
 							</Col>
 							<Col sm={2}>
 								<Button color="primary" onClick={this.handleView}>VIEW</Button>

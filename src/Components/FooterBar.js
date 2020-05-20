@@ -10,7 +10,8 @@ import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => {
 	return {
-		sequence: state.sequence
+		sequence: state.sequence,
+		profile: state.profile
 	}
 }
 
@@ -43,6 +44,19 @@ class FooterBar extends Component {
 	handleSave = event => {
 		event.preventDefault()
 		this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})
+		/*
+		const configObj = {
+			method: 'POST',
+			headers: {
+				"Accept": "application/json"
+				"Content-Type": "application/json",
+			},
+			body:JSON.stringify(sequence)
+		}
+		fetch(`http://localhost:5000/users/${props.profile.user.id}/sequences',configObj)
+			.then(resp => resp.json())
+			.then(data => console.log('post data', data))
+			*/
 		this.props.history.push('/profile')
 		
 	}
