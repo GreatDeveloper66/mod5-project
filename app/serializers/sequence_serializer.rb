@@ -1,4 +1,4 @@
-class CategorySerializer < ActiveModel::Serializer
+class SequenceSerializer < ActiveModel::Serializer
   attributes :id, :name, :asanas
   def asanas
     self.object.asanas.map do |asana|
