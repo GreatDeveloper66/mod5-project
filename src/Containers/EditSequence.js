@@ -30,6 +30,7 @@ class EditSequence extends Component {
 	}
 	
 	componentDidMount() {
+
 		this.props.loadcategories(data)
 	}
 	renderCategories = () => {
