@@ -5,7 +5,7 @@ import NavBar from '../Components/NavBar'
 import FooterBar from '../Components/FooterBar'
 import AsanaCategory from '../Components/AsanaCategory'
 import { connect } from 'react-redux'
-
+import ClearSequenceAction from '../actions/clearsequence'
 
 const mapStateToProps = state => {
   return {
@@ -13,10 +13,24 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+	return {
+		clearsequence: () => {
+			dispatch(ClearSequenceAction())
+		}
+	}
+}
+
+
 class NewSequence extends Component {
 	constructor(props){
 		super()
 	}
+	
+	componentDidMount() {
+		this.props.clearsequence()
+	}
+
 	
 	renderCategories = () => {
 		const categories = this.props.categories
@@ -36,4 +50,4 @@ class NewSequence extends Component {
 	}
 }
 
-export default connect(mapStateToProps,null)(NewSequence)
+export default connect(mapStateToProps,mapDispatchToProps)(NewSequence)
