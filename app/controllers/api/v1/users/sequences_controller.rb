@@ -16,8 +16,7 @@
 		def index
 			@user = User.find_by(id: params[:user_id])
 			@sequences = @user.sequences
-			@asanas = @sequences.to_a.map{ |sequence| sequence.asanas }
-			render json: @asanas
+			render json: @sequences
 		end
 		def show
 			id = params[:id]
