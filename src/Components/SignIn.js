@@ -73,7 +73,14 @@ class SignIn extends Component {
 			this.props.logInUser(data.jwt, '')
 			
 			this.props.renderprofile({user: {id: data.user.id,email: data.user.email,username: data.user.username}})
-			this.props.history.push('/home')
+			fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`)
+				.then(resp => resp.json())
+				.then(data => {
+					this.props.loadusersequences(data)
+					this.props.history.push('/home')
+				})
+			
+			
 			}
 			else {
 				this.props.logInUser('','Incorrect UserName and/or Password. Try Again')
@@ -91,7 +98,7 @@ componentDidMount() {
 		
 	}
 
-componentWillUnmount(){
+getSequences = () => {
 	fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`)
 		.then(resp => resp.json())
 		.then(data => this.props.loadusersequences(data))
