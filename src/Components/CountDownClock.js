@@ -22,9 +22,15 @@ class CountDownClock extends Component {
     return (
 	  <Container>
 		<Row className="d-flex justify-content-center">
-		<Col xs={3}>
-		
-			
+		<Col xs={3} className="d-flex justify-content-center align-items-center">
+			<Card>
+			<ReactCountdownClock seconds={360}
+                     color="#444"
+                     alpha={0.9}
+                     size={200}
+                     onComplete={this.timeUp}
+					 timeFormat="hms"/>
+		</Card>
 		</Col>
 		
 		<Col xs={3}>
