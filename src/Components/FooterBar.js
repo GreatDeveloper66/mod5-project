@@ -3,6 +3,7 @@ import '../App.css';
 import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap'
 import AddSequenceAction from '../actions/addsequence'
 import UndoAsanaAction from '../actions/undoasanas'
+import LoadUserSequencesAction from '../actions/loadusersequences'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
@@ -23,6 +24,9 @@ const mapDispatchToProps = dispatch => {
 		},
 		undoasana: asana => {
 			dispatch(UndoAsanaAction(asana))
+		},
+		loadusersequences: sequences => {
+			dispatch(LoadUserSequencesAction(sequences))
 		}
 	}
 }
@@ -59,7 +63,7 @@ class FooterBar extends Component {
 		
 		fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`,configObj)
 			.then(resp => resp.json())
-			.then(data => console.log('post data', data))
+			.then(data => this.props.loadusersequences(data))
 		this.props.history.push('/profile')
 	}
 
