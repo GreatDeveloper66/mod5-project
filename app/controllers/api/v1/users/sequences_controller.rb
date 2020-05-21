@@ -1,10 +1,17 @@
 
 	class Api::V1::Users::SequencesController < ApplicationController
 
-	skip_before_action :authorized, only: [:index,:show]
-
 		def create
-			render json: current_user.sequences
+			@name = params[:name]
+			@user = User.find_by(id: params[:user_id])
+			@asanas = params[:sequence][:asanas]
+			@asanarray = @asanas.map do |asana|
+				Asana.find_by(id: asana[:id])
+			end	
+			puts @asanarray
+			@newsequence = @user.create_sequence(name: @name,sequence_array: @asanarray)
+			@sequences = @user.sequences
+			render json: @sequences
 		end
 		def update
 		end
