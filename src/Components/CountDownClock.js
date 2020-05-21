@@ -31,7 +31,7 @@ class CountDownClock extends Component {
  
 findDuration = () => this.props.sequence.asanas.reduce((sum,asana) => sum + asana.duration,0)*60
 
-findInterval = () => this.props.sequence.asanas[this.props.slide].duration * 60
+findInterval = () => this.props.slide < this.props.sequence.asanas.length ? this.props.sequence.asanas[this.props.slide].duration * 60: null
 
 	
   render() {
