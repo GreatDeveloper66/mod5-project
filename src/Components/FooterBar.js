@@ -11,7 +11,8 @@ import { withRouter } from 'react-router-dom'
 const mapStateToProps = state => {
 	return {
 		sequence: state.sequence,
-		profile: state.profile
+		profile: state.profile,
+		jwt: state.jwt
 	}
 }
 
@@ -43,23 +44,25 @@ class FooterBar extends Component {
 	
 	handleSave = event => {
 		event.preventDefault()
-		this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})
-		/*
+		/*this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})*/
+		const jwt = this.props.jwt
+		const sequence = {name:this.state.inputvalue,asanas:this.props.sequence}
 		const configObj = {
 			method: 'POST',
 			headers: {
-				"Accept": "application/json"
+				"Accept": "application/json",
 				"Content-Type": "application/json",
+				Authorization: `Bearer ${jwt}`
 			},
 			body:JSON.stringify(sequence)
 		}
-		fetch(`http://localhost:5000/users/${props.profile.user.id}/sequences',configObj)
+		
+		fetch(`http://localhost:5000/users/${this.props.profile.user.id}/sequences`,configObj)
 			.then(resp => resp.json())
 			.then(data => console.log('post data', data))
-			*/
 		this.props.history.push('/profile')
-		
 	}
+
 
 	render(){
 		return(
@@ -85,7 +88,7 @@ class FooterBar extends Component {
 					
 				</Row>
 		</Container>
-		)
+		);
 	}
 }
 
