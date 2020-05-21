@@ -43,7 +43,7 @@ class FooterBarEdit extends Component {
 			method: 'PATCH',
 			headers: {
 				"Accept":"application/json",
-				"Content-Type":"applications/json",
+				"Content-Type":"application/json",
 				Authorization: `Bearer ${jwt}`
 			},
 			body:JSON.stringify(sequence)
