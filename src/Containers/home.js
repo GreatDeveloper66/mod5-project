@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { connect } from 'react-redux'
-import LogOutUserAction from '../actions/logoutuser'
 import { Row, Container, Button } from 'reactstrap'
 import NavBar from '../Components/NavBar'
 

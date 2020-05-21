@@ -3,7 +3,6 @@ import '../App.css';
 import { connect } from 'react-redux'
 import { Container, Row, Button } from 'reactstrap'
 import LogOutUserAction from '../actions/logoutuser'
-import RenderProfileAction from '../actions/renderprofile'
 import { withRouter } from 'react-router-dom'
 
 const mapDispatchToProps = dispatch => {

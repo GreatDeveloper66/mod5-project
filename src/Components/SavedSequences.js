@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container, Row, Button, Form, FormGroup, Input, Col } from 'reactstrap'
+import { Container, Row, Button, Form, FormGroup, Col } from 'reactstrap'
 import { withRouter } from 'react-router-dom'
 import LoadSequenceAction from '../actions/loadsequence'
 import { connect } from 'react-redux'
@@ -48,7 +48,6 @@ class SavedSequences extends Component {
 	
 	handleDelete = event => {
 		event.preventDefault()
-		const sequencename = this.state.selectedOption.value
 		const id = this.state.selectedOption.id
 		this.props.deletesequence(id)
 		const jwt = this.props.jwt
@@ -70,9 +69,9 @@ class SavedSequences extends Component {
 	
 	
 	findSequence = () => {
-		const sequencename = this.state.selectedOption.value
+		const sequenceid = this.state.selectedOption.id
 		const sequences = this.props.sequences
-		const sequence = sequences.find(sequence => sequence.name === sequencename)
+		const sequence = sequences.find(sequence => sequence.id === sequenceid)
 		this.props.loadsequence(sequence)
 	}
 	
