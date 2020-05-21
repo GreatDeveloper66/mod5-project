@@ -46,7 +46,7 @@ class FooterBar extends Component {
 		event.preventDefault()
 		/*this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})*/
 		const jwt = this.props.jwt
-		const sequence = {name:this.state.inputvalue,asanas:this.props.sequence}
+		const sequence = {name:this.state.inputvalue,sequence:this.props.sequence}
 		const configObj = {
 			method: 'POST',
 			headers: {
@@ -57,7 +57,7 @@ class FooterBar extends Component {
 			body:JSON.stringify(sequence)
 		}
 		
-		fetch(`http://localhost:5000/users/${this.props.profile.user.id}/sequences`,configObj)
+		fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`,configObj)
 			.then(resp => resp.json())
 			.then(data => console.log('post data', data))
 		this.props.history.push('/profile')

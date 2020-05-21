@@ -12,7 +12,9 @@ class AsanaCategory extends Component {
 	
 	renderAsanaCards = () => {
 		if(this.props.name){
-			return this.props.asanas.map(asana => <Col xs="3" key={asana.id}><AsanaCard title={asana.sanskritname} subtitle={asana.englishname} image={asana.picurl} id={asana.id} /></Col>)
+			return this.props.asanas.map(asana => <Col xs="3" key={asana.id}><AsanaCard title={asana.sanskritname} 
+			                              subtitle={asana.englishname} image={asana.picurl} asana_id={asana.id} 
+										  time={asana.duration} /></Col>)
 		}
 	}
 	render(){
