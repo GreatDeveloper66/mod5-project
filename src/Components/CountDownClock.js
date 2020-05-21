@@ -27,15 +27,13 @@ class CountDownClock extends Component {
 			<ReactCountdownClock seconds={360}
                      color="#444"
                      alpha={0.9}
-                     size={200}
+                     size={150}
                      onComplete={this.timeUp}
 					 timeFormat="hms"/>
 		</Card>
 		</Col>
 		
 		<Col xs={3}>
-		
-		
 		
 		</Col>
 		<Col xs={3}>
@@ -46,7 +44,7 @@ class CountDownClock extends Component {
 			<ReactCountdownClock seconds={60}
                      color="#444"
                      alpha={0.9}
-                     size={200}
+                     size={100}
                      onComplete={this.timeUp}
 					 timeFormat="hms"/>
 		</Card>
