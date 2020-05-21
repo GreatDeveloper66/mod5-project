@@ -21,11 +21,11 @@
 			puts params[:action]
 			@user = User.find_by(id: params[:user_id])
 			@sequence_id = params[:id]
-			@asanas = params[:sequence][:asanas]
+			@asanas = params[:asanas]
 			@asanarray = @asanas.map do |asana|
 				Asana.find_by(id: asana[:id])
 			end	
-			@user.update_sequence(id: @sequence_id,asana_array: @asanarray)
+			@user.update_sequence(sequence_id: @sequence_id,asana_array: @asanarray)
 			@sequences = @user.sequences
 			render json: @sequences
 		end
