@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import ReactCountdownClock from "react-countdown-clock";
 import { Container, Row, Col,Card } from 'reactstrap'
+import { connect } from 'react-redux'
+ 
+ 
+const mapStateToProps = state => {
+		return {
+			sequence: state.sequence
+		}
+	} 
  
 class CountDownClock extends Component {
   constructor(props){
 	super()
   }
-  
-  timesUp = () => {
-		console.log('timesup')
+ 
+ findDuration = () => {
+		return this.props.sequence.asanas.reduce((sum,asana) => sum + asana.duration,0)*60
 	}
+	
   render() {
     const settings = {
       count: 5432,
@@ -19,18 +28,19 @@ class CountDownClock extends Component {
     };
 	
 	
+	
     return (
 	  <Container>
 		<Row className="d-flex justify-content-center">
 		<Col xs={3} className="d-flex justify-content-center align-items-center">
 			<Card>
-			<ReactCountdownClock seconds={360}
+			<ReactCountdownClock seconds={this.findDuration()}
                      color="#444"
                      alpha={0.9}
                      size={150}
                      onComplete={this.timeUp}
 					 timeFormat="hms"/>
-		</Card>
+			</Card>
 		</Col>
 		
 		<Col xs={3}>
@@ -55,4 +65,4 @@ class CountDownClock extends Component {
   }
 }
 
-export default CountDownClock
+export default connect(mapStateToProps,null)(CountDownClock)
