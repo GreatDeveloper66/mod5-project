@@ -5,6 +5,7 @@ import AddSequenceAction from '../actions/addsequence'
 import UndoAsanaAction from '../actions/undoasanas'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import LoadUserSequencesAction from '../actions/loadusersequences'
 
 const mapStateToProps = state => {
 	return {
@@ -21,6 +22,9 @@ const mapDispatchToProps = dispatch => {
 		},
 		undoasana: asana => {
 			dispatch(UndoAsanaAction(asana))
+		},
+		loadusersequences: sequences => {
+			dispatch(LoadUserSequencesAction(sequences))
 		}
 	}
 }
@@ -53,9 +57,10 @@ class FooterBarEdit extends Component {
 		
 		fetch(url,configObj)
 			.then(resp => resp.json())
-			.then(data => console.log('returned data', data))
-		this.props.history.push('/profile')
-		
+			.then(data => {
+				this.props.loadusersequences(data)
+				this.props.history.push('/profile')
+				})
 	}
 
 	render(){
