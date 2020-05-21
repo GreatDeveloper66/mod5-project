@@ -10,7 +10,9 @@ import DeleteSequenceAction from '../actions/deletesequence'
 
 const mapStateToProps = state => {
 	return {
-		sequences:state.sequences
+		sequences:state.sequences,
+		jwt: state.jwt,
+		profile: state.profile
 	}
 }
 
@@ -35,8 +37,8 @@ class SavedSequences extends Component {
 	}
 	
 	renderOptions = () => {
-		const names = this.props.sequences.map(sequence => sequence.name)
-		return names.map(name => ({value: name, label: name}))
+		const names = this.props.sequences.map(sequence => ({name: sequence.name, id: sequence.id}))
+		return names.map(name => ({value: name.name, label: name.name, id: name.id}))
 	}
 	handleEdit = event => {
 		event.preventDefault()
@@ -47,9 +49,25 @@ class SavedSequences extends Component {
 	handleDelete = event => {
 		event.preventDefault()
 		const sequencename = this.state.selectedOption.value
-		this.props.deletesequence(sequencename)
-		 
+		const id = this.state.selectedOption.id
+		this.props.deletesequence(id)
+		const jwt = this.props.jwt
+		const configObj = {
+			method: 'DELETE',
+			headers: {
+				Authorization: `Bearer ${jwt}`
+			}
+		}
+		
+		fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences/${id}`,configObj)
+			.then(resp => resp.json())
+			.then(data => {
+				this.props.history.push('/profile')
+			})
+		
 	}
+		 
+	
 	
 	findSequence = () => {
 		const sequencename = this.state.selectedOption.value

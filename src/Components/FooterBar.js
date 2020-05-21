@@ -48,7 +48,6 @@ class FooterBar extends Component {
 	
 	handleSave = event => {
 		event.preventDefault()
-		/*this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})*/
 		const jwt = this.props.jwt
 		const sequence = {name:this.state.inputvalue,sequence:this.props.sequence}
 		const configObj = {

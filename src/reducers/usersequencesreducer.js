@@ -13,8 +13,7 @@ const UserSequencesReducer = (state=[],action) => {
 		  return [...state,action.sequence]
 	  }
 	case 'deletesequence':
-		const foundid = state.find(sequence => sequence.name === action.sequencename).id
-		return [...state.filter(sequence => sequence.id !== foundid)]
+		return [...state.filter(sequence => sequence.id !== action.sequenceid)]
 	case 'logoutuser':
 		return []
     default:
