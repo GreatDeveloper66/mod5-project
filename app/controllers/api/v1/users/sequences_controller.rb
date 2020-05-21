@@ -8,12 +8,26 @@
 			@asanarray = @asanas.map do |asana|
 				Asana.find_by(id: asana[:id])
 			end	
-			puts @asanarray
 			@newsequence = @user.create_sequence(name: @name,sequence_array: @asanarray)
 			@sequences = @user.sequences
 			render json: @sequences
 		end
+		def edit
+			@sequence = Sequence.find_by(id: params[:id])
+			render json: {sequence: SequenceSerializer.new(@sequence) }
+		end
 		def update
+		    puts params
+			puts params[:action]
+			@user = User.find_by(id: params[:user_id])
+			@sequence_id = params[:id]
+			@asanas = params[:sequence][:asanas]
+			@asanarray = @asanas.map do |asana|
+				Asana.find_by(id: asana[:id])
+			end	
+			@user.update_sequence(id: @sequence_id,asana_array: @asanarray)
+			@sequences = @user.sequences
+			render json: @sequences
 		end
 		def destroy
 			@sequence = Sequence.find_by(id: params[:id])
