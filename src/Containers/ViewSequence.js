@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
+import CountDownClock from '../Components/CountDownClock'
+
 
 
 class ViewSequence extends Component {
@@ -13,6 +15,8 @@ class ViewSequence extends Component {
 			<div>
 			<NavBar />
 			<AsanaCarousel />
+			
+			<CountDownClock />
 			
 		</div>
 		)

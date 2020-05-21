@@ -4,7 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import AsanaCard from './AsanaCard'
 import { connect } from 'react-redux'
-
+import { Container, Row } from 'reactstrap'
 const mapStateToProps = state => {
   return {
     sequence: state.sequence
@@ -65,6 +65,7 @@ class AsanaCarousel extends Component {
 				itemClass="carousel-item-padding-40-px"
 				>
 				{this.renderCarouselCards()}
+				
 			</Carousel>
 		
 		)
