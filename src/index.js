@@ -22,7 +22,7 @@ const store = createStore(RootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wi
 ReactDOM.render(
   <Provider store={store}>
   <React.StrictMode>
-    <App />
+    <App className="App"/>
   </React.StrictMode>
   </Provider>,
   document.getElementById('root')
