@@ -17,6 +17,7 @@ User1 = User.create({username: 'Allan',email: 'allan@gmail.com',password: '%$yui
 User2 = User.create({username: 'Lucy',email: 'lucy@gmail.com',password: '##@@lccgyy'})
 User3 = User.create({username: 'testuser',email: 'testuser@gmail.com', password: 'testuser'})
 User4 = User.create({username: 'usertodelete',email:'usertodelete@gmail.com',password: 'usertodelete'})
+User5 = User.create({username: 'usertochange',email:'usertochange@gmail.com',password: 'usertochange'})
 
 cues = [
 	'Step foot to the rear of the mat. Stack front knee above the ankle. Sink hips downward until thigh is parallel to the mat.Open hips to
@@ -282,8 +283,8 @@ asanacategories = [
   ['salutations',[18,19,20,21]]
 ]
 
-asanas = asanasarray.map do |asanadata|
-  Asana.create({sanskritname: asanadata[1],englishname: asanadata[0],picurl: asanadata[2],duration: asanadata[3]})
+asanas = asanasarray.map do |asanadata,index|
+  Asana.create({sanskritname: asanadata[1],englishname: asanadata[0],picurl: asanadata[2],duration: asanadata[3],cues[index]})
 end
 
 categories = asanacategories.map do |cat| 
@@ -292,16 +293,19 @@ categories = asanacategories.map do |cat|
  end
 
 
-sequences1 = [33,34,35,8,5,37,37,37,36,36,36,38,38,38,39,39,39,0,1,2,45,46,28].map { |num| asanas[num] }
-sequences2 = [33,34,35,8,5,37,37,37,36,36,36,38,38,38,39,39,39,0,1,2,45,46,28,48].map { |num| asanas[num] }
+VinyassaA = [33,34,35,8,5,37,37,37,36,36,36,38,38,38,39,39,39,0,1,2,45,46,28].map { |num| asanas[num] }
+VinyassaB = [33,34,35,8,5,37,37,37,36,36,36,38,38,38,39,39,39,0,1,2,45,46,28,48].map { |num| asanas[num] }
 
-User1.create_sequence(name: 'Basic A', sequence_array: sequences1)
-User1.create_sequence(name: 'Basic B', sequence_array: sequences2)
-User2.create_sequence(name: 'Basic C', sequence_array: sequences1)
-User2.create_sequence(name: 'Basic D', sequence_array: sequences2)
-User3.create_sequence(name: 'Basic E', sequence_array: sequences1)
-User3.create_sequence(name: 'Basic F', sequence_array: sequences2)
-User4.create_sequence(name: 'Basic G', sequence_array: sequences1)
-User3.create_sequence(name: 'Basic H', sequence_array: sequences2)
+User1.create_sequence(name: 'VinyassaA', sequence_array: VinyassaA)
+User1.create_sequence(name: 'VinyassaB', sequence_array: VinyassaB)
+User2.create_sequence(name: 'VinyassaA', sequence_array: VinyassaA)
+User2.create_sequence(name: 'VinyassaB', sequence_array: VinyassaB)
+User3.create_sequence(name: 'VinyassaA', sequence_array: VinyassaA)
+User3.create_sequence(name: 'VinyassaB', sequence_array: VinyassaB)
+User4.create_sequence(name: 'VinyassaA', sequence_array: VinyassaA)
+User4.create_sequence(name: 'VinyassaB', sequence_array: VinyassaB)
+User5.create_sequence(name: 'VinyassaA', sequence_array: VinyassaA)
+User5.create_sequence(name: 'VinyassaB', sequence_array: VinyassaB)
+
 
 
