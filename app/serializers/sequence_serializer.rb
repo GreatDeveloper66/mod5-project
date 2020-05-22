@@ -1,4 +1,4 @@
-class CategorySerializer < ActiveModel::Serializer
+class SequenceSerializer < ActiveModel::Serializer
   attributes :id, :name, :asanas
   def asanas
     self.object.asanas.map do |asana|
@@ -7,7 +7,8 @@ class CategorySerializer < ActiveModel::Serializer
         englishname: asana.englishname,
         sanskritname: asana.sanskritname,
         picurl: asana.picurl,
-		duration: asana.duration
+		duration: asana.duration,
+		cues: asana.cues
       }
     end
   end

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:create,:index,:edit,:update,:destroy] do
 		scope module: 'users' do
-			resources :sequences, only: [:index,:show,:create,:update,:destroy]
+			resources :sequences, only: [:index,:show,:create,:update,:destroy,:edit]
 			end
 		end
       resources :categories, only: [:index,:show]

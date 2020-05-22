@@ -1,23 +1,41 @@
 
 	class Api::V1::Users::SequencesController < ApplicationController
 
-	skip_before_action :authorized, only: [:index,:show]
-
 		def create
-			render json: current_user.sequences
+			@name = params[:name]
+			@user = User.find_by(id: params[:user_id])
+			@asanas = params[:sequence][:asanas]
+			@asanarray = @asanas.map do |asana|
+				Asana.find_by(id: asana[:id])
+			end	
+			@newsequence = @user.create_sequence(name: @name,sequence_array: @asanarray)
+			@sequences = @user.sequences
+			render json: @sequences
+		end
+		def edit
+			@sequence = Sequence.find_by(id: params[:id])
+			render json: {sequence: SequenceSerializer.new(@sequence) }
 		end
 		def update
+			@user = User.find_by(id: params[:user_id])
+			@sequence_id = params[:id]
+			@asanas = params[:asanas]
+			@asanarray = @asanas.map do |asana|
+				Asana.find_by(id: asana[:id])
+			end	
+			@user.update_sequence(sequence_id: @sequence_id,asana_array: @asanarray)
+			@sequences = @user.sequences
+			render json: @sequences
 		end
 		def destroy
 			@sequence = Sequence.find_by(id: params[:id])
 			@sequence.destroy
-			render json: { message: 'user succesfully deleted' }
+			render json: { message: 'sequence succesfully deleted' }
 		end
 		def index
 			@user = User.find_by(id: params[:user_id])
 			@sequences = @user.sequences
-			@asanas = @sequences.to_a.map{ |sequence| sequence.asanas }
-			render json: @asanas
+			render json: @sequences
 		end
 		def show
 			id = params[:id]

@@ -8,6 +8,7 @@ class Asana < ApplicationRecord
     self.create({:sanskritname => asanarray[0],
                   :englishname => asanarray[1],
                   :picurl => asanarray[2],
-                  :duration => asanarray[3]})
+                  :duration => asanarray[3],
+				  :cues => asanarray[4]})
   end
 end
