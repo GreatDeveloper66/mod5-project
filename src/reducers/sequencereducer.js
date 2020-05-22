@@ -1,11 +1,20 @@
-const SequenceReducer = (state=[],action) => {
+const SequenceReducer = (state={},action) => {
   switch(action.type){
     case 'loadsequence':
       return action.sequence
 	case 'addasana':
-		return [...state,action.asana]
+		if(state.asanas){
+			return {...state,asanas:[...state.asanas,action.asana]}
+		}
+		else {
+			return {id:null,name:'',asanas:[action.asana]}
+		}
 	case 'undoasana':
-		return state.slice(0,-1)
+		return {...state,asanas:[...state.asanas.slice(0.,-1)]}
+	case 'clearsequence':
+		return {}
+	case 'logoutuser':
+		return {}
     default:
       return state
   }

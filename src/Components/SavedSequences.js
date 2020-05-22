@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container, Row, Button, Form, FormGroup, Input, Col } from 'reactstrap'
+import { Container, Row, Button, Form, FormGroup, Col } from 'reactstrap'
 import { withRouter } from 'react-router-dom'
 import LoadSequenceAction from '../actions/loadsequence'
 import { connect } from 'react-redux'
@@ -10,7 +10,9 @@ import DeleteSequenceAction from '../actions/deletesequence'
 
 const mapStateToProps = state => {
 	return {
-		sequences:state.sequences
+		sequences:state.sequences,
+		jwt: state.jwt,
+		profile: state.profile
 	}
 }
 
@@ -35,8 +37,8 @@ class SavedSequences extends Component {
 	}
 	
 	renderOptions = () => {
-		const names = this.props.sequences.map(sequence => sequence.name)
-		return names.map(name => ({value: name, label: name}))
+		const names = this.props.sequences.map(sequence => ({name: sequence.name, id: sequence.id}))
+		return names.map(name => ({value: name.name, label: name.name, id: name.id}))
 	}
 	handleEdit = event => {
 		event.preventDefault()
@@ -46,16 +48,31 @@ class SavedSequences extends Component {
 	
 	handleDelete = event => {
 		event.preventDefault()
-		const sequencename = this.state.selectedOption.value
-		this.props.deletesequence(sequencename)
-		 
+		const id = this.state.selectedOption.id
+		this.props.deletesequence(id)
+		const jwt = this.props.jwt
+		const configObj = {
+			method: 'DELETE',
+			headers: {
+				Authorization: `Bearer ${jwt}`
+			}
+		}
+		
+		fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences/${id}`,configObj)
+			.then(resp => resp.json())
+			.then(data => {
+				this.props.history.push('/profile')
+			})
+		
 	}
+		 
+	
 	
 	findSequence = () => {
-		const sequencename = this.state.selectedOption.value
+		const sequenceid = this.state.selectedOption.id
 		const sequences = this.props.sequences
-		const sequence = sequences.find(sequence => sequence.name === sequencename)
-		this.props.loadsequence(sequence.asanas)
+		const sequence = sequences.find(sequence => sequence.id === sequenceid)
+		this.props.loadsequence(sequence)
 	}
 	
 	handleView = event => {
@@ -65,7 +82,7 @@ class SavedSequences extends Component {
 	}
 	
 	handleChange = selectedOption => {
-		this.setState({selectedOption: selectedOption}, () => console.log('option selected', this.state.selectedOption))
+		this.setState({selectedOption: selectedOption})
 	}
 
 	render(){
@@ -84,10 +101,6 @@ class SavedSequences extends Component {
 										onChange={this.handleChange}
 										options={this.renderOptions()}
 										/>
-										
-											
-										
-       
 							</Col>
 							<Col sm={2}>
 								<Button color="primary" onClick={this.handleView}>VIEW</Button>

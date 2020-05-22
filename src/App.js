@@ -9,6 +9,7 @@ import Register from './Components/Register'
 import NewSequence from './Containers/NewSequence'
 import EditSequence from './Containers/EditSequence'
 import ViewSequence from './Containers/ViewSequence'
+import YogaWorkoutScreen from './Containers/YogaWorkoutScreen'
 
 // import runtimeEnv from '@mars/heroku-js-runtime-env'
 
@@ -31,6 +32,7 @@ class App extends Component {
 		  <Route exact path='/sequences/new' component={NewSequence} />
 		  <Route exact path='/sequences/edit' component={EditSequence} />
 		  <Route exact path='/sequences/view' component={ViewSequence} />
+		  <Route exact path='/sequences/presets' component={YogaWorkoutScreen} />
         </Switch>
     </Router>
 	</Container>

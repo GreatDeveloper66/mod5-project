@@ -4,10 +4,8 @@ import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
 import FooterBar from '../Components/FooterBar'
 import AsanaCategory from '../Components/AsanaCategory'
-import data from '../json/categories.json'
-import LoadCategoriesAction from '../actions/loadcategories'
 import { connect } from 'react-redux'
-
+import ClearSequenceAction from '../actions/clearsequence'
 
 const mapStateToProps = state => {
   return {
@@ -15,14 +13,14 @@ const mapStateToProps = state => {
   }
 }
 
-
 const mapDispatchToProps = dispatch => {
-  return {
-    loadcategories: categories => {
-      dispatch(LoadCategoriesAction(categories))
-    }
-  }
+	return {
+		clearsequence: () => {
+			dispatch(ClearSequenceAction())
+		}
+	}
 }
+
 
 class NewSequence extends Component {
 	constructor(props){
@@ -30,8 +28,10 @@ class NewSequence extends Component {
 	}
 	
 	componentDidMount() {
-		this.props.loadcategories(data)
+		this.props.clearsequence()
 	}
+
+	
 	renderCategories = () => {
 		const categories = this.props.categories
 		return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)

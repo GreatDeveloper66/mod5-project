@@ -3,6 +3,7 @@ import '../App.css';
 import { Container, Row, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap'
 import AddSequenceAction from '../actions/addsequence'
 import UndoAsanaAction from '../actions/undoasanas'
+import LoadUserSequencesAction from '../actions/loadusersequences'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
@@ -10,7 +11,9 @@ import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => {
 	return {
-		sequence: state.sequence
+		sequence: state.sequence,
+		profile: state.profile,
+		jwt: state.jwt
 	}
 }
 
@@ -21,6 +24,9 @@ const mapDispatchToProps = dispatch => {
 		},
 		undoasana: asana => {
 			dispatch(UndoAsanaAction(asana))
+		},
+		loadusersequences: sequences => {
+			dispatch(LoadUserSequencesAction(sequences))
 		}
 	}
 }
@@ -42,10 +48,24 @@ class FooterBar extends Component {
 	
 	handleSave = event => {
 		event.preventDefault()
-		this.props.addsequence({id:null, name: this.state.inputvalue, asanas: this.props.sequence})
-		this.props.history.push('/profile')
+		const jwt = this.props.jwt
+		const sequence = {name:this.state.inputvalue,sequence:this.props.sequence}
+		const configObj = {
+			method: 'POST',
+			headers: {
+				"Accept": "application/json",
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${jwt}`
+			},
+			body:JSON.stringify(sequence)
+		}
 		
+		fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`,configObj)
+			.then(resp => resp.json())
+			.then(data => this.props.loadusersequences(data))
+		this.props.history.push('/profile')
 	}
+
 
 	render(){
 		return(
@@ -71,7 +91,7 @@ class FooterBar extends Component {
 					
 				</Row>
 		</Container>
-		)
+		);
 	}
 }
 

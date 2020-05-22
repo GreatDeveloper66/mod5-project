@@ -1,7 +1,7 @@
-const DeleteSequenceAction = sequencename => {
+const DeleteSequenceAction = sequenceid => {
   return {
     type: 'deletesequence',
-	sequencename: sequencename
+	sequenceid: sequenceid
   }
 }
 
