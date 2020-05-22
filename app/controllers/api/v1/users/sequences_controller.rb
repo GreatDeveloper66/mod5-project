@@ -17,8 +17,6 @@
 			render json: {sequence: SequenceSerializer.new(@sequence) }
 		end
 		def update
-		    puts params
-			puts params[:action]
 			@user = User.find_by(id: params[:user_id])
 			@sequence_id = params[:id]
 			@asanas = params[:asanas]
@@ -32,7 +30,7 @@
 		def destroy
 			@sequence = Sequence.find_by(id: params[:id])
 			@sequence.destroy
-			render json: { message: 'user succesfully deleted' }
+			render json: { message: 'sequence succesfully deleted' }
 		end
 		def index
 			@user = User.find_by(id: params[:user_id])
