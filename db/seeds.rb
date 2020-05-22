@@ -283,8 +283,8 @@ asanacategories = [
   ['salutations',[18,19,20,21]]
 ]
 
-asanas = asanasarray.map do |asanadata,index|
-  Asana.create({sanskritname: asanadata[1],englishname: asanadata[0],picurl: asanadata[2],duration: asanadata[3],cues[index]})
+asanas = asanasarray.map.with_index do |asanadata,index|
+  Asana.create({sanskritname: asanadata[1],englishname: asanadata[0],picurl: asanadata[2],duration: asanadata[3],cues: cues[index]})
 end
 
 categories = asanacategories.map do |cat| 

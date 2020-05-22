@@ -1,6 +1,6 @@
 class Sequence < ApplicationRecord
   belongs_to :user
-  has_many :asanasequences, dependent:destroy
+  has_many :asanasequences, dependent: :destroy
   has_many :asanas, through: :asanasequences
 
    def findasanasequences
