@@ -15,7 +15,6 @@ class ViewSequence extends Component {
 		return(
 			<div>
 			<NavBar />
-			/*<AsanaCarousel />*/
 			<SequenceSlide />
 			<CountDownClock />
 			
