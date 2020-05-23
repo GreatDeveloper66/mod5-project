@@ -1,7 +1,7 @@
 [
    {
       "name":"YOGA BEGINNER",
-      "image":"Beginner_Sequence",
+      "img":"Beginner_Sequence",
       "asanas":[
          "Bharadvajrasana",
          "Bharmanasana",
@@ -31,7 +31,7 @@
    },
    {
       "name":"FORWARD BEND FOCUS",
-      "image":"Yogi_A",
+      "img":"Yogi_A",
       "asanas":[
          "Bharadvajrasana",
          "Bidalasana",
@@ -56,7 +56,7 @@
    },
    {
       "name":"INVERSIONS",
-      "image":"Yogi B",
+      "img":"Yogi_B",
       "asanas":[
          "Bharadvajrasana",
          "Bidalasana",
@@ -81,7 +81,7 @@
    },
    {
       "name":"CARDIO",
-      "image":"Yogi C",
+      "img":"Yogi_C",
       "asanas":[
          "Bharadvajrasana",
          "Bidalasana",
