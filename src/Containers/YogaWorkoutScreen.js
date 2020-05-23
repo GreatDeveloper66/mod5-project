@@ -5,6 +5,9 @@ import { connect } from 'react-redux'
 import { Container, Row, Col, Card,CardBody,CardTitle,CardText,Jumbotron } from 'reactstrap'
 import Beginner_Sequence from '../images/Beginner_Sequence.jpg'
 
+
+
+
 const bannerStyle = {
 		backgroundImage: `url(${require('../images/Beginner_Sequence.jpg')})`,
 		backgroundSize: 'contain',
@@ -29,7 +32,7 @@ class YogaWorkoutScreen extends Component {
 			<h1>YOGA BEGINNER</h1>
 			</Row>
 			
-			<Row>
+			<Row className="d-flex justify-content-center align-items-center">
 			<h2>60 minutes | Level 1</h2>
 			</Row>
 			</Container>		
