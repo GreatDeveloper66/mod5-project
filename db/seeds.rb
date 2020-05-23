@@ -229,7 +229,7 @@ asanasarray = [
   ['Low Lunge','Anjaneyasana', 'yoga-27',2],
   ['Wide Stance Fold','Prasarita Padottanasana','yoga-24',3],
   ['Cobra','Bhujangasana','yoga-31',1],
-  ['Triangle','Trikonasana','yoga-14',2],
+  ['Triangle','Utthita Trikonasana','yoga-14',2],
   ['Revolved Triangle','Parivrtta Trikonasana','yoga-14',2],
   ['Childs Pose','Balasana','yoga-50',3],
   ['Pyramid Pose','Parsvottanasana','yoga-23',1],
@@ -264,19 +264,20 @@ asanasarray = [
   ['Sage Marichi C','Marichyasana C','yoga-95',2],
   ['Boat','Navasana','yoga-85',2],
   ['Lotus', 'Padmasana','yoga-10',3],
-  ['Cat/Dog Tilts', 'Bidalasana','yoga-54',2]
+  ['Cat/Dog Tilts', 'Bidalasana','yoga-54',2],
+  ['Wide Leg Forward Fold w/Twists','Parivrtta Ardha Padottanasana','yoga-24']
 ]
 
 asanacategories = [
   ['seated',[3,16,22,28,29,44,45,46,47,48]],
-  ['standing',[0,1,2,4,5,6,7,10,11,12,14,17,30,31,32,36,37,41]],
+  ['standing',[0,1,2,4,5,6,7,10,11,12,14,17,30,31,32,36,37,41,50]],
   ['restorative',[16,23,28]],
   ['hip opener',[0,1,3,29,30]],
   ['prone',[9,13]],
   ['beginner',[0,1,4,5,6,8,9,11,13,16,22,23,28,29,33,34,35,41,42,43,44,49]],
-  ['intermediate',[2,3,7,10,12,14,17,24,25,26,30,31,36,37,38,40,47] ],
+  ['intermediate',[2,3,7,10,12,14,17,24,25,26,30,31,36,37,38,40,47,50] ],
   ['advanced',[27,32,39,45,46,48]],
-  ['forward bend',[4,6,8,12,16,17,24,34,41,44,45,47,49]],
+  ['forward bend',[4,6,8,12,16,17,24,34,41,44,45,47,49,50]],
   ['backward bend',[9,10,13,33,39,40,42,49]],
   ['twist',[15,31,36,46]],
   ['balance',[2,5,7,10,11,15,30,31,32,36,37,38,47]],
