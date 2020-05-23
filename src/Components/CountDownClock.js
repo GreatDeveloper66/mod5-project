@@ -23,10 +23,6 @@ class CountDownClock extends Component {
 	super()
   }
   
- //map state slide to component
- //when done increment counter
- //get new duration
- //for other component render asana based on slide number
  
  
 findDuration = () => this.props.sequence.asanas.reduce((sum,asana) => sum + asana.duration,0)*60

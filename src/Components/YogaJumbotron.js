@@ -1,6 +1,24 @@
 import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap'
 import '../App.css';
+import LoadSequenceAction from '../actions/loadsequence'
+import { connect } from 'react-redux'
+import preset_sequences from '../json/preset_sequences.json'
+import { withRouter } from 'react-router-dom'
+
+const mapStateToProps = state => {
+	return {
+		categories: state.categories
+	}
+}
+
+const mapDispatchToProps = dispatch => {
+	return {
+		loadsequence: sequence => {
+			dispatch(LoadSequenceAction(sequence))
+		}
+	}
+}
 
 class YogaJumbotron extends Component {
 	constructor(props){
@@ -18,9 +36,20 @@ class YogaJumbotron extends Component {
 		})
 	}
 	
+	viewpreset = () => {
+		const asana_names = this.props.asanas;
+		console.log('categories', this.props.categories)	
+		const asanarray = this.props.categories.map(category => category.asanas).flat()
+		const preset_asanas = asana_names.map(asana_name => {
+								return asanarray.find(asana => asana.sanskritname === asana_name)
+								})
+		
+		this.props.loadsequence({id:null, name: this.props.name,asanas: preset_asanas}) 
+		this.props.history.push('/sequences/view')
+	}
 	render(){
 		return(
-			<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center">
+			<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center" onClick={this.viewpreset}>
 			<Container>
 				<Row className="d-flex justify-content-center align-items-center">
 					<h1>{this.props.name}</h1>
@@ -31,4 +60,4 @@ class YogaJumbotron extends Component {
 	}
 }
 
-export default YogaJumbotron
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(YogaJumbotron))
