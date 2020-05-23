@@ -1,4 +1,4 @@
-const beginners = {name:"YOGA BEGINNER", image:'Beginner_Sequence', 
+{name:"YOGA BEGINNER", image:'Beginner_Sequence', 
 					asanas: 
 					["Bharadvajrasana",
 					,"Bharmanasana",
