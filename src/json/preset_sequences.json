@@ -1,0 +1,12 @@
+const beginners = {name:"YOGA BEGINNER", image:'Beginner_Sequence', 
+					asanas: 
+					["Bharadvajrasana",
+					,"Bharmanasana",
+					"Balasna",
+					"Adho Mukha Svanasana",
+					"Tadasana",
+					"Surya Namaskara Classic",
+					"Surya Namaskara A",
+					"Surya Namaskara B",
+					"Vrksasana",
+					]}
