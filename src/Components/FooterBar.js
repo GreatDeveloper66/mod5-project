@@ -6,7 +6,7 @@ import UndoAsanaAction from '../actions/undoasanas'
 import LoadUserSequencesAction from '../actions/loadusersequences'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-
+import Select from 'react-select'
 
 
 const mapStateToProps = state => {
@@ -31,12 +31,31 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
+const options = [
+  { value: 'All', label: 'All' },
+  { value: 'beginner', label: 'Beginner' },
+  { value: 'intermediate', label: 'Intermediate' },
+  { value: 'advanced', label: 'Advanced' },
+  { value: 'seated', label: 'Seated' },
+  { value: 'standing',label :'Standing'},
+  { value: 'restorative', label: 'Restorative' },
+  { value: 'hip opener', label: 'Hip Opener' },
+  { value: 'prone', label: 'Prone' },
+  { value: 'forward bend', label: 'Forward Bend' },
+  { value: 'backward bend', label: 'Backward Bend' },
+  { value: 'twist', label: 'Twist' },
+  { value: 'balance', label: 'Balance'},
+  { value: 'inversion', label: 'Inversion' },
+  { value: 'salutation', label: 'Salutations'}
+]
+ 
 
 class FooterBar extends Component {
 	constructor(props){
 		super()
 		this.state = {
-			inputvalue: ''
+			inputvalue: '',
+			selectedOption: ''
 		}
 	}
 	
@@ -44,7 +63,9 @@ class FooterBar extends Component {
 		event.preventDefault()
 		this.setState({inputvalue: event.target.value})
 	}
-	
+	handleDropDownChange = selectedOption => {
+		this.setState({selectedOption: selectedOption})
+	}
 	
 	handleSave = event => {
 		event.preventDefault()
@@ -73,6 +94,13 @@ class FooterBar extends Component {
 				<Row className="d-flex justify-content-around">
 					<Form onSubmit={this.handleSave}>
 						<FormGroup row>
+						    <Col sm={3}>
+									<Select
+										value={this.state.selectedOption}
+										onChange={this.handleDropDownChange}
+										options={options}
+										/>
+							</Col>
 							<Col sm={1}>
 								<Button color="danger" onClick={() => this.props.undoasana()}>X</Button>
 							</Col>
