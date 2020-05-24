@@ -1,0 +1,10 @@
+const CategoryReducer = (state='',action) => {
+  switch(action.type){
+    case 'setcategory':
+      return action.category
+    default:
+      return state
+  }
+}
+
+export default CategoryReducer
