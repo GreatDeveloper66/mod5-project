@@ -9,6 +9,7 @@ import Register from './Components/Register'
 import NewSequence from './Containers/NewSequence'
 import EditSequence from './Containers/EditSequence'
 import ViewSequence from './Containers/ViewSequence'
+import EditDraggable from './Containers/EditDraggable'
 import YogaWorkoutScreen from './Containers/YogaWorkoutScreen'
 
 
@@ -31,6 +32,7 @@ class App extends Component {
 		  <Route exact path='/sequences/edit' component={EditSequence} />
 		  <Route exact path='/sequences/view' component={ViewSequence} />
 		  <Route exact path='/sequences/presets' component={YogaWorkoutScreen} />
+		  <Route exact path = '/seqeuneces/editdraggable' component={EditDraggable} />
         </Switch>
     </Router>
 	</Container>

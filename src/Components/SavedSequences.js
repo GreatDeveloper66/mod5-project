@@ -84,6 +84,12 @@ class SavedSequences extends Component {
 	handleChange = selectedOption => {
 		this.setState({selectedOption: selectedOption})
 	}
+	
+	handleEditDraggable = event => {
+		event.preventDefault()
+		this.findSequence()
+		this.props.history.push('/seqeuneces/editdraggable')
+	}
 
 	render(){
 		return(
@@ -95,7 +101,7 @@ class SavedSequences extends Component {
 				<Row className="d-flex justify-content-center">
 					<Form onSubmit={this.handleEdit}>
 						<FormGroup row>
-							<Col sm={6}>
+							<Col sm={4}>
 									<Select
 										value={this.state.selectedOption}
 										onChange={this.handleChange}
@@ -110,6 +116,9 @@ class SavedSequences extends Component {
 							</Col>
 							<Col sm={2}>
 								<Button color="primary" onClick={this.handleDelete}>DELETE</Button>
+							</Col>
+							<Col sm={2}>
+								<Button color="primary" onClick={this.handleEditDraggable}>EDITD</Button>
 							</Col>
 						</FormGroup>
 					</Form>
