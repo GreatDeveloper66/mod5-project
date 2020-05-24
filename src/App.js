@@ -11,8 +11,6 @@ import EditSequence from './Containers/EditSequence'
 import ViewSequence from './Containers/ViewSequence'
 import YogaWorkoutScreen from './Containers/YogaWorkoutScreen'
 
-// import runtimeEnv from '@mars/heroku-js-runtime-env'
-
 
 class App extends Component {
   constructor(props){
