@@ -21,7 +21,6 @@ class AsanaCard extends Component {
 	
 	addAsana = () => {
 	const asan = {id: this.props.asana_id,englishname: this.props.subtitle, sanskritname: this.props.title,picurl: this.props.image,duration:this.props.time}
-	console.log(asan)
 	this.props.addasana(asan)
 	}
 

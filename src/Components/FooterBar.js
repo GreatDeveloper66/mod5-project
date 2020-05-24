@@ -70,7 +70,7 @@ class FooterBar extends Component {
 	render(){
 		return(
 			<Container className="mt-3">
-				<Row className="d-flex justify-content-end">
+				<Row className="d-flex justify-content-around">
 					<Form onSubmit={this.handleSave}>
 						<FormGroup row>
 							<Col sm={1}>
