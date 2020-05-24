@@ -27,8 +27,8 @@ class NavBar extends Component {
 		return(
 			<Container>
 				<Row className="d-flex justify-content-end">
-					<Button color="primary" onClick={this.handleSignOut}>Sign Out</Button>
-					<Button color="primary" onClick={() => this.props.history.push('/profile')}>Profile</Button>
+					<Button color="warning" onClick={this.handleSignOut}>Sign Out</Button>
+					<Button color="success" onClick={() => this.props.history.push('/profile')}>Profile</Button>
 				</Row>
 		</Container>
 		)
