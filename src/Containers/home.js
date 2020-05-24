@@ -15,6 +15,7 @@ class Home extends Component {
       <Container className="mt-4">
 		<Row className="d-flex justify-content-center align-items-center">
 			<Button color="success" size="lg" onClick={() => this.props.history.push('/sequences/new')}>Create New Sequence</Button>
+			<Button color="primary" size="lg" onClick={() => this.props.history.push('/sequences/presets')}>Quick Workout</Button>
 		</Row>
 	  </Container>
 	  
