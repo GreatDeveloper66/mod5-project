@@ -7,11 +7,32 @@ class Home extends Component {
   constructor(props){
     super()
   }
+  
+  bannerStyle = () => {
+		return ({
+			backgroundImage: `url(${require(`../images/Yogi_D.jpg`)})`,
+			backgroundSize: 'contain',
+			backgroundPosition: 'center',
+			backgroundRepeat: 'no-repeat',
+			height: '900px',
+			width: '100%'
+		})
+  }
 
   render(){
     return(
-	<Container>
-      <NavBar />
+	
+     
+	<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center">
+		<Row className="d-flex justify-content-end align-items-center">
+			<NavBar />
+		</Row>
+			<Container>
+				<Row className="d-flex justify-content-center align-items-center">
+					<h1>Yoga Fitness</h1>
+				</Row>			
+			</Container>		
+		
       <Container className="mt-4">
 		<Row className="d-flex justify-content-center align-items-center">
 			<Button color="success" size="lg" onClick={() => this.props.history.push('/sequences/new')}>Create New Sequence</Button>
@@ -19,8 +40,8 @@ class Home extends Component {
 		</Row>
 	  </Container>
 	  
-	 
-      </Container>
+	 </div>
+      
     )
   }
 }

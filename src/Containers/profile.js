@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Form, Col, Button, Row, Container, Card } from 'reactstrap'
+import { Form, Col, Button, Row, Container, Card, FormGroup, Label, Input } from 'reactstrap'
 import Email from '../Components/email'
 import { connect } from 'react-redux'
 import UserName from '../Components/username'

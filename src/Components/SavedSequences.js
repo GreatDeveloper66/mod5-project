@@ -95,7 +95,7 @@ class SavedSequences extends Component {
 				<Row className="d-flex justify-content-center">
 					<Form onSubmit={this.handleEdit}>
 						<FormGroup row>
-							<Col sm={6}>
+							<Col sm={4}>
 									<Select
 										value={this.state.selectedOption}
 										onChange={this.handleChange}
