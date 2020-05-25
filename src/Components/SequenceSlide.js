@@ -28,15 +28,15 @@ class SequenceSlide extends Component {
 		<div>
 			<Container>
 				<Row>
-					<Col xs={2}>
+					<Col xs={3}>
 					</Col>
-					<Col xs={4}>
+					<Col xs={2}>
 						{this.renderAsanaCard()}
 					</Col>
 					<Col xs={4}>
 						<CountDownClock />
 					</Col>
-					<Col xs={2}>
+					<Col xs={3}>
 					</Col>
 				</Row>
 			</Container>

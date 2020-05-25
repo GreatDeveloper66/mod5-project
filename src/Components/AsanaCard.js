@@ -26,7 +26,7 @@ class AsanaCard extends Component {
 	
 	renderCues = () => {
 		if(this.props.cues){
-			return <CardFooter><CardText>{this.props.cues}</CardText></CardFooter>
+			return <CardFooter><CardText><small>{this.props.cues}</small></CardText></CardFooter>
 		}
 		else 
 			return null
