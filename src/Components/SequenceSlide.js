@@ -17,37 +17,25 @@ class SequenceSlide extends Component {
 		super()
 	}
 	
-	renderCard = () => {
+	renderAsanaCard = () => {
 		const { id, englishname, sanskritname, duration, picurl, cues } = this.props.sequence.asanas[this.props.slide]
-		return <Container>
-					<Row>
-						<Col xs={4}>
-						</Col>
-						<Col xs={4} className="d-flex justify-content-center align-items-center">
-							<AsanaCard asana_id = {id} time = {duration} title = {sanskritname} subtitle = {englishname} image={picurl} cues={cues} />
-						</Col>
-						<Col xs={4}>
-						</Col>
-					</Row>
-					<Row>
-						<Col xs={4}>
-						</Col>
-						<Col xs={4} className="d-flex justify-content-center align-items-center">
-							<Card>
-								<CardBody>
-								{cues}
-								</CardBody>
-							</Card>
-						</Col>
-						<Col xs={4}>
-						</Col>
-					</Row>
-				</Container>
+		return <AsanaCard asana_id={id} subtitle={englishname} title={sanskritname} image={picurl} time={duration} cues={cues} />
 	}
+	
 	render(){
 		return(
 		<div>
-			{this.renderCard()}
+			<Container>
+				<Row>
+					<Col xs={4}>
+					</Col>
+					<Col xs={4}>
+						{this.renderAsanaCard()}
+					</Col>
+					<Col xs={4}>
+					</Col>
+				</Row>
+			</Container>
 		</div>
 		)
 	}
