@@ -37,8 +37,8 @@ class AsanaCard extends Component {
 				<Card>
 					<CardImg top width="100%" src={require(`../images/${this.props.image}.svg`)} alt="asana" />
 					<CardBody onClick={this.addAsana}>
-						<CardTitle>{this.props.title}</CardTitle>
-						<CardSubtitle>{this.props.subtitle}</CardSubtitle>
+						<CardTitle><small>{this.props.title}</small></CardTitle>
+						<CardSubtitle><small>{this.props.subtitle}</small></CardSubtitle>
 							{this.renderCues()}
 					</CardBody>
 						
