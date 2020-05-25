@@ -11,11 +11,12 @@ class Home extends Component {
   bannerStyle = () => {
 		return ({
 			backgroundImage: `url(${require(`../images/Yogi_D.jpg`)})`,
-			backgroundSize: 'contain',
+			backgroundSize: 'cover',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
-			height: '900px',
-			width: '100%'
+			height: '100vh',
+			width: '100%',
+			
 		})
   }
 
@@ -24,6 +25,7 @@ class Home extends Component {
 	
      
 	<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center">
+		
 		<Row className="d-flex justify-content-end align-items-center">
 			<NavBar />
 		</Row>
@@ -37,8 +39,11 @@ class Home extends Component {
 		<Row className="d-flex justify-content-center align-items-center">
 			<Button color="success" size="lg" onClick={() => this.props.history.push('/sequences/new')}>Create New Sequence</Button>
 			<Button color="primary" size="lg" onClick={() => this.props.history.push('/sequences/presets')}>Quick Workout</Button>
-		</Row>
-	  </Container>
+			</Row>
+			</Container>
+		
+		
+	  
 	  
 	 </div>
       

@@ -27,12 +27,12 @@ class SequenceSlide extends Component {
 		<div>
 			<Container>
 				<Row>
-					<Col xs={4}>
+					<Col xs={3}>
 					</Col>
-					<Col xs={4}>
+					<Col xs={6}>
 						{this.renderAsanaCard()}
 					</Col>
-					<Col xs={4}>
+					<Col xs={3}>
 					</Col>
 				</Row>
 			</Container>
