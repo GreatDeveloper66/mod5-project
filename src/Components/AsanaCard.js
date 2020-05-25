@@ -13,7 +13,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-
 class AsanaCard extends Component {
 	constructor(props){
 		super()
@@ -34,7 +33,7 @@ class AsanaCard extends Component {
 
 	render(){
 		return (
-				<Card>
+				<Card style={{cursor:'pointer'}}>
 					<CardImg top width="100%" src={require(`../images/${this.props.image}.svg`)} alt="asana" />
 					<CardBody onClick={this.addAsana}>
 						<CardTitle><small>{this.props.title}</small></CardTitle>
