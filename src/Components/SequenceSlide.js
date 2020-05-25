@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import AsanaCard from './AsanaCard'
 import { connect } from 'react-redux'
-import { Container, Row, Col, Card,CardBody } from 'reactstrap'
+import { Container, Row, Col, Card,CardBody, CardFooter } from 'reactstrap'
 import CountDownClock from '../Components/CountDownClock'
 
 const mapStateToProps = state => {
@@ -28,15 +28,22 @@ class SequenceSlide extends Component {
 		<div>
 			<Container>
 				<Row>
+					<Col xs={5}>
+					</Col>
 					<Col xs={3}>
+						<Card>
+							<CardBody>
+						{this.renderAsanaCard()}
+							</CardBody>
+							<CardFooter>
+								<CountDownClock />
+							</CardFooter>
+						</Card>
+					</Col>
+					<Col xs={3}>
+						
 					</Col>
 					<Col xs={2}>
-						{this.renderAsanaCard()}
-					</Col>
-					<Col xs={4}>
-						<CountDownClock />
-					</Col>
-					<Col xs={3}>
 					</Col>
 				</Row>
 			</Container>
