@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Row, Container, Button } from 'reactstrap'
+import { Row, Container, Button, Col } from 'reactstrap'
 import NavBar from '../Components/NavBar'
 
 class Home extends Component {
@@ -24,27 +24,19 @@ class Home extends Component {
     return(
 	
      
-	<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center">
-		
-		<Row className="d-flex justify-content-end align-items-center">
-			<NavBar />
-		</Row>
-			<Container>
-				<Row className="d-flex justify-content-center align-items-center">
-					<h1>Yoga Fitness</h1>
-				</Row>			
-			</Container>		
-		
-      <Container className="mt-4">
-		<Row className="d-flex justify-content-center align-items-center">
-			<Button color="success" size="lg" onClick={() => this.props.history.push('/sequences/new')}>Create New Sequence</Button>
+	<div style={this.bannerStyle()} className="d-flex justify-content-center">
+		<Container>
+			<Row>
+				<NavBar />
+			</Row>
+			<Row className = "d-flex justify-content-center">
+				<h1>YOGA FITNESS</h1>
+			</Row>
+			<Row className="d-flex justify-content-center">
+				<Button color="success" size="lg" onClick={() => this.props.history.push('/sequences/new')}>New Sequence</Button>
 			<Button color="primary" size="lg" onClick={() => this.props.history.push('/sequences/presets')}>Quick Workout</Button>
 			</Row>
-			</Container>
-		
-		
-	  
-	  
+		</Container>
 	 </div>
       
     )
