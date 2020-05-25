@@ -43,33 +43,29 @@ findInterval = () => this.props.slide < this.props.sequence.asanas.length ? this
     return (
 	  <Container>
 		<Row className="d-flex justify-content-center">
-		<Col xs={3} className="d-flex justify-content-center align-items-center">
-			<Card>
+		
+			<div style={{backgroundColor:'lightblue'}}>
 			<ReactCountdownClock seconds={this.findDuration()}
                      color="#444"
                      alpha={0.9}
-                     size={150}
+                     size={100}
                      onComplete={() => console.log('complete')}
 					 timeFormat="hms"/>
-			</Card>
-		</Col>
+			</div>
 		
-		<Col xs={3}>
 		
-		</Col>
-		<Col xs={3}>
 		
-		</Col>
-		<Col xs={3} className="d-flex justify-content-center align-items-center">
-			<Card>
+		
+		
+			<div style={{backgroundColor:'lightblue'}}>
 			<ReactCountdownClock key={this.props.slide} seconds={this.findInterval()}
                      color="#444"
                      alpha={0.9}
                      size={100}
                      onComplete={() => this.props.incslide()}
 					 timeFormat="hms"/>
-		</Card>
-		</Col>
+		</div>
+		
 		</Row>
 	  </Container>
     );

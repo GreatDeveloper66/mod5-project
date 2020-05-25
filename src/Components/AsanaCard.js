@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Card, CardBody, CardTitle, CardSubtitle, CardImg, CardText } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardSubtitle, CardImg, CardText, CardFooter } from 'reactstrap'
 import { connect } from 'react-redux'
 import AddAsanaAction from '../actions/addasana'
 
@@ -26,7 +26,7 @@ class AsanaCard extends Component {
 	
 	renderCues = () => {
 		if(this.props.cues){
-			return <CardText>{this.props.cues}</CardText>
+			return <CardFooter><CardText>{this.props.cues}</CardText></CardFooter>
 		}
 		else 
 			return null
@@ -39,8 +39,8 @@ class AsanaCard extends Component {
 					<CardBody onClick={this.addAsana}>
 						<CardTitle><small>{this.props.title}</small></CardTitle>
 						<CardSubtitle><small>{this.props.subtitle}</small></CardSubtitle>
-							{this.renderCues()}
 					</CardBody>
+					{this.renderCues()}
 						
 				</Card>
 				)
