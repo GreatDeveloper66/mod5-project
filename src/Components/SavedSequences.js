@@ -102,21 +102,24 @@ class SavedSequences extends Component {
 				<Row className="d-flex justify-content-center">
 					<Form onSubmit={this.handleEdit}>
 						<FormGroup row>
-							<Col sm={4}>
-									<Select
+						<Col xs={12}>
+							<Select
 										value={this.state.selectedOption}
 										onChange={this.handleChange}
 										options={this.renderOptions()}
 										/>
+										</Col>
+						</FormGroup>
+						<FormGroup row>
+							
+							<Col sm={4}>
+								<Button color="success" onClick={this.handleView}>VIEW</Button>
 							</Col>
-							<Col sm={2}>
-								<Button color="primary" onClick={this.handleView}>VIEW</Button>
-							</Col>
-							<Col sm={2}>
+							<Col sm={4}>
 								<Button color="primary" onClick={this.handleEdit}>EDIT</Button>
 							</Col>
-							<Col sm={2}>
-								<Button color="primary" onClick={this.handleDelete}>DELETE</Button>
+							<Col sm={4}>
+								<Button color="danger" onClick={this.handleDelete}>DELETE</Button>
 							</Col>
 						</FormGroup>
 					</Form>

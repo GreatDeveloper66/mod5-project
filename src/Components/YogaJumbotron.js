@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import '../App.css';
 import LoadSequenceAction from '../actions/loadsequence'
 import { connect } from 'react-redux'
@@ -37,8 +37,7 @@ class YogaJumbotron extends Component {
 	}
 	
 	viewpreset = () => {
-		const asana_names = this.props.asanas;
-		console.log('categories', this.props.categories)	
+		const asana_names = this.props.asanas;	
 		const asanarray = this.props.categories.map(category => category.asanas).flat()
 		const preset_asanas = asana_names.map(asana_name => {
 								return asanarray.find(asana => asana.sanskritname === asana_name)
@@ -52,7 +51,7 @@ class YogaJumbotron extends Component {
 			<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center" onClick={this.viewpreset}>
 			<Container>
 				<Row className="d-flex justify-content-center align-items-center">
-					<h1>{this.props.name}</h1>
+						<h1>{this.props.name}</h1>
 				</Row>			
 			</Container>		
 		</div>
