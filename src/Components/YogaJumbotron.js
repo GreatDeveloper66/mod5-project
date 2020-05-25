@@ -37,6 +37,8 @@ class YogaJumbotron extends Component {
 		})
 	}
 	
+	
+	
 	viewpreset = () => {
 		const asana_names = this.props.asanas;	
 		const asanarray = this.props.categories.map(category => category.asanas).flat()
