@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container, Row, Button, Form, FormGroup, Col } from 'reactstrap'
+import { Container, Row, Button, Form, FormGroup, Col, Label, Input } from 'reactstrap'
 import AddSequenceAction from '../actions/addsequence'
 import UndoAsanaAction from '../actions/undoasanas'
 import { connect } from 'react-redux'
@@ -94,28 +94,35 @@ class FooterBarEdit extends Component {
 		return(
 			<Container className="mt-3">
 				<Row className="d-flex justify-content-around">
-				<Col xs={12}>
 					<Form onSubmit={this.handleSave}>
 						<FormGroup row>
-							<Col sm={3}>
-									<Select
-										value={this.state.selectedOption}
-										onChange={this.handleChange}
-										options={options}
-										/>
+							<Col xs={6}>
 							</Col>
-							<Col sm={1}>
+							<Col xs={3}>
 								<Button color="danger" onClick={() => this.props.undoasana()}>X</Button>
 							</Col>
-							<Col sm={2}>
-							</Col>
-							<Col sm={3}>
+							<Col xs={3}>	
 								<Button color="primary" type="submit">SAVE</Button>
+							</Col>	
+						</FormGroup>
+						{/*
+						<FormGroup row>
+							<Col xs={2}>
+							</Col>
+							<Col xs={8}>
+							<Select
+								value={this.state.selectedOption}
+								onChange={this.handleDropDownChange}
+								options={options}
+								/>
+							</Col>
+							<Col xs={2}>
 							</Col>
 						</FormGroup>
+						*/}
 					</Form>
 					
-				</Col>	
+					
 				</Row>
 		</Container>
 		)
