@@ -32,7 +32,8 @@ class YogaJumbotron extends Component {
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
 			height: '500px',
-			width: '100%'
+			width: '100%',
+			cursor: 'pointer'
 		})
 	}
 	
