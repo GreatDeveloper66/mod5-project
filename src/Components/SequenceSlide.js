@@ -24,7 +24,7 @@ class SequenceSlide extends Component {
 						<Col xs={4}>
 						</Col>
 						<Col xs={4} className="d-flex justify-content-center align-items-center">
-							<AsanaCard asana_id = {id} time = {duration} title = {sanskritname} subtitle = {englishname} image={picurl}  />
+							<AsanaCard asana_id = {id} time = {duration} title = {sanskritname} subtitle = {englishname} image={picurl} cues={cues} />
 						</Col>
 						<Col xs={4}>
 						</Col>
