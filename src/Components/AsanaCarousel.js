@@ -4,7 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import AsanaCard from './AsanaCard'
 import { connect } from 'react-redux'
-import { Container, Row } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 const mapStateToProps = state => {
   return {
     sequence: state.sequence
@@ -14,8 +14,8 @@ const mapStateToProps = state => {
 const responsive = {
 		desktop: {
 		breakpoint: { max: 3000, min: 1024 },
-		items: 3,
-		slidesToSlide: 3 // optional, default to 1.
+		items: 6,
+		slidesToSlide: 6 // optional, default to 1.
 	},
 	tablet: {
 		breakpoint: { max: 1024, min: 464 },
