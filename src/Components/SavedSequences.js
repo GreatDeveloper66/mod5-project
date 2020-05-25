@@ -41,14 +41,18 @@ class SavedSequences extends Component {
 		return names.map(name => ({value: name.name, label: name.name, id: name.id}))
 	}
 	handleEdit = event => {
-		event.preventDefault()
-		this.findSequence()
-		this.props.history.push('/sequences/edit')
+		if(this.state.selectedOption){
+			event.preventDefault()
+			this.findSequence()
+			this.props.history.push('/sequences/edit')
+		}
 	}
 	
 	handleDelete = event => {
+		const option = this.state.selectedOption
+		if(option){
 		event.preventDefault()
-		const id = this.state.selectedOption.id
+		const id = option.id
 		this.props.deletesequence(id)
 		const jwt = this.props.jwt
 		const configObj = {
@@ -63,6 +67,7 @@ class SavedSequences extends Component {
 			.then(data => {
 				this.props.history.push('/profile')
 			})
+		}
 		
 	}
 		 
@@ -76,9 +81,11 @@ class SavedSequences extends Component {
 	}
 	
 	handleView = event => {
-		event.preventDefault()
-		this.findSequence()
-		this.props.history.push('/sequences/view')
+		if(this.state.selectedOption){
+			event.preventDefault()
+			this.findSequence()
+			this.props.history.push('/sequences/view')
+		}
 	}
 	
 	handleChange = selectedOption => {
