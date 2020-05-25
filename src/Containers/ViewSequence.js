@@ -18,7 +18,7 @@ class ViewSequence extends Component {
 			<div>
 			<NavBar />
 			<SequenceSlide />
-			<CountDownClock />
+			
 			
 		</div>
 		)
