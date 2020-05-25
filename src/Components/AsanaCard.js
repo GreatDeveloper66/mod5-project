@@ -23,6 +23,9 @@ class AsanaCard extends Component {
 	}
 	
 	addAsana = () => {
+	if(this.props.deleteable){
+		return
+	}
 	const asan = {id: this.props.asana_id,englishname: this.props.subtitle, sanskritname: this.props.title,picurl: this.props.image,duration:this.props.time}
 	this.props.addasana(asan)
 	}
