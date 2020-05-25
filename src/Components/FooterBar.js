@@ -94,26 +94,36 @@ class FooterBar extends Component {
 				<Row className="d-flex justify-content-around">
 					<Form onSubmit={this.handleSave}>
 						<FormGroup row>
-						    <Col sm={3}>
-									<Select
-										value={this.state.selectedOption}
-										onChange={this.handleDropDownChange}
-										options={options}
-										/>
+							<Col xs={1}>
 							</Col>
-							<Col sm={1}>
+							<Col xs={1}>
 								<Button color="danger" onClick={() => this.props.undoasana()}>X</Button>
 							</Col>
-							<Col sm={2}>
+							<Col xs={2}>
 								<Label for="name" sm={2}><p className="text-success">NAME:</p></Label>
 							</Col>
-							<Col sm={6}>
+							<Col xs={6}>
 								<Input type="text" name="name" id="name" value={this.state.inputvalue} onChange={this.handleChange}/>
 							</Col>
-							<Col sm={3}>
+							<Col xs={2}>	
 								<Button color="primary" type="submit">SAVE</Button>
+							</Col>	
+						</FormGroup>
+						{/*
+						<FormGroup row>
+							<Col xs={2}>
+							</Col>
+							<Col xs={8}>
+							<Select
+								value={this.state.selectedOption}
+								onChange={this.handleDropDownChange}
+								options={options}
+								/>
+							</Col>
+							<Col xs={2}>
 							</Col>
 						</FormGroup>
+						*/}
 					</Form>
 					
 					

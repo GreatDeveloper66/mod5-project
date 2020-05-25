@@ -41,7 +41,6 @@ class NewSequence extends Component {
 		<div>
 			<NavBar />
 			<AsanaCarousel />
-			<AsanaCategory />
 			<FooterBar />
 			{this.renderCategories()}
 			
