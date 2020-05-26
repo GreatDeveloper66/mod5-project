@@ -3,6 +3,7 @@ import '../App.css';
 import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
 import FooterBar from '../Components/FooterBar'
+import SortBar from '../Components/SortBar'
 import AsanaCategory from '../Components/AsanaCategory'
 import { connect } from 'react-redux'
 import ClearSequenceAction from '../actions/clearsequence'
@@ -42,6 +43,7 @@ class NewSequence extends Component {
 			<NavBar />
 			<AsanaCarousel />
 			<FooterBar />
+			<SortBar />
 			{this.renderCategories()}
 			
 		</div>
