@@ -15,7 +15,5 @@ const RootReducer = combineReducers({ jwt:RegisterUserReducer, profile: RenderPr
 									sequence: SequenceReducer,sequences: UserSequencesReducer, slide: SlideReducer,
 									categorylabel: CategoryLabelReducer,sortasanas: SortAsanasReducer })
 									
-console.log(RootReducer)
-
 export default RootReducer
 

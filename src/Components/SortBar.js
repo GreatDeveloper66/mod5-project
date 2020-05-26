@@ -5,11 +5,15 @@ import { withRouter } from 'react-router-dom'
 import Select from 'react-select'
 import { Container, Row, Form, FormGroup, Col, Button, Label, Input, ButtonGroup } from 'reactstrap'
 import SetCategoryLabelAction from '../actions/setcategorylabel'
+import SortAsanasAction from '../actions/sortasana'
 
 const mapDispatchToProps = dispatch => {
 	return {
 		setcategorylabel: categorylabel => {
 			dispatch(SetCategoryLabelAction(categorylabel))
+		},
+		sortasanas: sort => {
+			dispatch(SortAsanasAction(sort))
 		}
 	}
 }
@@ -45,6 +49,18 @@ class SortBar extends Component {
 		this.props.setcategorylabel(selectedOption.value)
 	}
 	
+	sortUp = () => {
+		this.props.sortasanas("ZTOA")
+	}
+	
+	sortDown = () => {
+		this.props.sortasanas("ATOZ")
+	}
+	
+	unSort = () => {
+		this.props.sortasanas("US")
+	}
+	
 	render(){
 		return(
 				<Form>
@@ -62,9 +78,9 @@ class SortBar extends Component {
 							 <FormGroup tag="fieldset">
         <legend>Sort Alphabetically</legend>
        <ButtonGroup size="lg">
-  <Button>&#11015;</Button>
-  <Button>&#8616;</Button>
-  <Button>&#11014;</Button>
+  <Button id="atoz" onClick={this.sortDown}>&#11015;</Button>
+  <Button id="unsorted" onClick={this.unSort}>&#8616;</Button>
+  <Button id="ztoa" onClick={this.sortUp}>&#11014;</Button>
   
   
 </ButtonGroup>

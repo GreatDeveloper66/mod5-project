@@ -5,5 +5,5 @@ const SortAsanasAction = sort => {
   }
 }
 
-export default SortAsanaAction
+export default SortAsanasAction
 
