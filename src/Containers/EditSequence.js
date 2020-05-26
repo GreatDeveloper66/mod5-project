@@ -4,12 +4,14 @@ import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
 import FooterBarEdit from '../Components/FooterBarEdit.js'
 import AsanaCategory from '../Components/AsanaCategory'
+import SortBar from '../Components/SortBar'
 import { connect } from 'react-redux'
 
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories
+    categories: state.categories,
+	categorylabel: state.categorylabel
   }
 }
 
@@ -19,8 +21,16 @@ class EditSequence extends Component {
 	}
 	
 	renderCategories = () => {
+		const label = this.props.categorylabel
 		const categories = this.props.categories
-		return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)
+		if(label === "" || label === "All"){
+			return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)
+		}
+		else {
+			return categories.filter(category => category.name === label)
+						.map(category => <AsanaCategory name={category.name} 
+								asanas={category.asanas} key={category.id} />)
+		}
 	}
 	render(){
 		return(
@@ -29,6 +39,7 @@ class EditSequence extends Component {
 			<AsanaCarousel deleteable={true}/>
 			<AsanaCategory />
 			<FooterBarEdit />
+			<SortBar />
 			{this.renderCategories()}
 			
 		</div>

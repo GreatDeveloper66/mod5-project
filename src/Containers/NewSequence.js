@@ -45,8 +45,7 @@ class NewSequence extends Component {
 						.map(category => <AsanaCategory name={category.name} 
 								asanas={category.asanas} key={category.id} />)
 		}
-		
-		return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)
+				
 	}
 	render(){
 		return(
