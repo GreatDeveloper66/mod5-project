@@ -6,6 +6,7 @@ import FooterBarEdit from '../Components/FooterBarEdit.js'
 import AsanaCategory from '../Components/AsanaCategory'
 import SortBar from '../Components/SortBar'
 import { connect } from 'react-redux'
+import AsanaCategories from '../Containers/AsanaCategories'
 
 
 const mapStateToProps = state => {
@@ -41,7 +42,7 @@ class EditSequence extends Component {
 			<AsanaCategory />
 			<FooterBarEdit />
 			<SortBar />
-			{this.renderCategories()}
+			<AsanaCategories />
 			
 		</div>
 		)
