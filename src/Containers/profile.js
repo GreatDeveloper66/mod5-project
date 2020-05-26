@@ -43,7 +43,7 @@ class Profile extends Component {
 							.then(response => response.json())
 							.then(data => {
 								this.props.deleteUser()
-								this.props.history.push('/home')
+								this.props.history.push('/')
 							})
 						
 					}
