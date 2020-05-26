@@ -1,4 +1,4 @@
-const SortAsanasReducer = (state='US',action) => {
+const SortAsanasReducer = (state='ATOZ',action) => {
   switch(action.type){
     case 'sortasanas':
       return action.sort

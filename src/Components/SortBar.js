@@ -26,6 +26,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 const options = [
+  { value: '', label: '' },
   { value: 'All', label: 'All' },
   { value: 'beginner', label: 'Beginner' },
   { value: 'intermediate', label: 'Intermediate' },

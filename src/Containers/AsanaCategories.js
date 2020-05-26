@@ -33,18 +33,48 @@ renderCategories = () => {
 			return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)
 		}
 		else if(label === "All"){
+			const sorted = this.props.sortasanas
+			let newcats = categories.map(category => category.asanas).flat()
+			let eliminateDuplicates = arr => {
+				let ids = []
+				let newarr = []
+				arr.forEach(asana => {
+					if(!ids.includes(asana.id)){
+						ids.push(asana.id)
+						newarr.push(asana)
+					}
+				})
+				return newarr
+			}
+			newcats = eliminateDuplicates(newcats)	
+			if(sorted === "ATOZ"){
+				newcats = newcats.sort((a,b) => a.englishname.localeCompare(b.englishname))
+				console.log(newcats)
+			}
+			if(sorted === "ZTOA"){
+				newcats = newcats.sort((a,b) => b.englishname.localeCompare(a.englishname))
+				console.log(newcats)
+			}
+			return <AsanaCategory name={"All"} asanas={newcats} key = {"All"} />
+			
+			/*
+			const newcats = categories.map(category => category.asanas).flat()
+								.filter((v,i,a) => a.indexOf(v) === i)
 			if(this.props.sortasanas === "US"){
-				const newcats = categories.map(category => category.asanas).flat()
-				return newcats.map(asana => this.renderAsanaCard(asana))
+				console.log("US")
+				return <div key={this.props.categorylabel}>{newcats.map(asana => this.renderAsanaCard(asana))}</div>
 			}
 			else if(this.props.sortasanas === "ATOZ"){
-				const newcats = categories.map(category => category.asanas).flat().sort((a,b) => a.name - b.name)
-				return newcats.map(asana => this.renderAsanaCard(asana))
+				console.log("ATOZ")
+				return <div key={this.props.categorylabel}>{newcats.sort((a,b) => a.sanskritname > b.sanskritname)
+				.map(asana => this.renderAsanaCard(asana))}</div>
 			}
 			else {
-				const newcats = categories.map(category => category.asanas).flat().sort((a,b) =>  b.name - a.name)
-				return newcats.map(asana => this.renderAsanaCard(asana))
+				console.log("ZTOA")
+				return <div key={this.props.categorylabel}>{newcats.sort((a,b) => a.sanskritname < b.sanskritname)
+				.map(asana => this.renderAsanaCard(asana))}</div>
 			}
+			*/
 		}
 		else {
 			return categories.filter(category => category.name === label)
