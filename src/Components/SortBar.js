@@ -29,7 +29,7 @@ const options = [
   { value: 'twist', label: 'Twist' },
   { value: 'balance', label: 'Balance'},
   { value: 'inversion', label: 'Inversion' },
-  { value: 'salutation', label: 'Salutations'}
+  { value: 'salutations', label: 'Salutations'}
 ]
  
 class SortBar extends Component {

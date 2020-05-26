@@ -10,7 +10,8 @@ import ClearSequenceAction from '../actions/clearsequence'
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories
+    categories: state.categories,
+	categorylabel: state.categorylabel
   }
 }
 
@@ -34,7 +35,17 @@ class NewSequence extends Component {
 
 	
 	renderCategories = () => {
+		const label = this.props.categorylabel
 		const categories = this.props.categories
+		if(label === "" || label === "All"){
+			return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)
+		}
+		else {
+			return categories.filter(category => category.name === label)
+						.map(category => <AsanaCategory name={category.name} 
+								asanas={category.asanas} key={category.id} />)
+		}
+		
 		return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)
 	}
 	render(){
