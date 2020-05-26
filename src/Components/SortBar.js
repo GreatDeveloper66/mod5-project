@@ -3,7 +3,7 @@ import '../App.css';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import Select from 'react-select'
-import { Container, Row, Form, FormGroup, Col, Button, Label, Input } from 'reactstrap'
+import { Container, Row, Form, FormGroup, Col, Button, Label, Input, ButtonGroup } from 'reactstrap'
 import SetCategoryLabelAction from '../actions/setcategorylabel'
 
 const mapDispatchToProps = dispatch => {
@@ -59,6 +59,16 @@ class SortBar extends Component {
 										/>
 						</Col>
 						<Col sm={5}>
+							 <FormGroup tag="fieldset">
+        <legend>Sort Alphabetically</legend>
+       <ButtonGroup size="lg">
+  <Button>&#11015;</Button>
+  <Button>&#8616;</Button>
+  <Button>&#11014;</Button>
+  
+  
+</ButtonGroup>
+      </FormGroup>
 						</Col>
 					</FormGroup>
 				</Form>			
