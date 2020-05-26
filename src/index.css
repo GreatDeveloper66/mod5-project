@@ -5,12 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+ height: 100%;
+ width: 100%;
   background-image: url('yoga_background.jpg');
   background-position: center;
   background-size: cover;
+  overflow-x: hidden;
+  
+ 
   
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

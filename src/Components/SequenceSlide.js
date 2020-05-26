@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import AsanaCard from './AsanaCard'
 import { connect } from 'react-redux'
-import { Container, Row, Col, Card,CardBody } from 'reactstrap'
+import { Container, Row, Col, Card,CardBody, CardFooter } from 'reactstrap'
+import CountDownClock from '../Components/CountDownClock'
 
 const mapStateToProps = state => {
 	return {
@@ -17,37 +18,35 @@ class SequenceSlide extends Component {
 		super()
 	}
 	
-	renderCard = () => {
+	renderAsanaCard = () => {
 		const { id, englishname, sanskritname, duration, picurl, cues } = this.props.sequence.asanas[this.props.slide]
-		return <Container>
-					<Row>
-						<Col xs={4}>
-						</Col>
-						<Col xs={4} className="d-flex justify-content-center align-items-center">
-							<AsanaCard asana_id = {id} time = {duration} title = {sanskritname} subtitle = {englishname} image={picurl}  />
-						</Col>
-						<Col xs={4}>
-						</Col>
-					</Row>
-					<Row>
-						<Col xs={4}>
-						</Col>
-						<Col xs={4} className="d-flex justify-content-center align-items-center">
-							<Card>
-								<CardBody>
-								{cues}
-								</CardBody>
-							</Card>
-						</Col>
-						<Col xs={4}>
-						</Col>
-					</Row>
-				</Container>
+		return <AsanaCard asana_id={id} subtitle={englishname} title={sanskritname} image={picurl} time={duration} cues={cues} />
 	}
+	
 	render(){
 		return(
 		<div>
-			{this.renderCard()}
+			<Container>
+				<Row>
+					<Col xs={5}>
+					</Col>
+					<Col xs={3}>
+						<Card>
+							<CardBody>
+						{this.renderAsanaCard()}
+							</CardBody>
+							<CardFooter>
+								<CountDownClock />
+							</CardFooter>
+						</Card>
+					</Col>
+					<Col xs={3}>
+						
+					</Col>
+					<Col xs={2}>
+					</Col>
+				</Row>
+			</Container>
 		</div>
 		)
 	}

@@ -7,16 +7,18 @@ import SequenceSlide from '../Components/SequenceSlide'
 
 
 
+
 class ViewSequence extends Component {
 	constructor(props){
 		super()
 	}
+	
 	render(){
 		return(
 			<div>
 			<NavBar />
 			<SequenceSlide />
-			<CountDownClock />
+			
 			
 		</div>
 		)

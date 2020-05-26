@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../App.css';
-import { Form, Col, Button, Row, Container, Card, FormGroup, Label, Input } from 'reactstrap'
+import { Form, Col, Button, Row, Container, Card, FormGroup, Label, Input, Navbar } from 'reactstrap'
 import Email from '../Components/email'
 import { connect } from 'react-redux'
 import UserName from '../Components/username'
 import LogOutUserAction from '../actions/logoutuser'
 import SavedSequences from '../Components/SavedSequences'
+import NavBar from '../Components/NavBar'
 
 const mapStateToProps = state => {
   return {
@@ -42,7 +43,7 @@ class Profile extends Component {
 							.then(response => response.json())
 							.then(data => {
 								this.props.deleteUser()
-								this.props.history.push('/home')
+								this.props.history.push('/')
 							})
 						
 					}
@@ -79,6 +80,8 @@ class Profile extends Component {
                       }
 	render(){
             return (
+			<Fragment>
+				<NavBar />
 				<Container className="mt-5">
                     <Row className="d-flex justify-content-center">
                           <Col xs={12} sm={8} lg={4}>
@@ -96,16 +99,8 @@ class Profile extends Component {
                           </Col>
                         </Row>
 						<SavedSequences />
-						<Row className="d-flex justify-content-center mt-3">
-							<Col xs={4}>
-							</Col>
-							<Col xs={4}>
-								<Button color="warning" size="lg" block onClick={() => this.props.history.push('/home')}>EXIT</Button>
-							</Col>
-							<Col xs={4}>
-							</Col>
-						</Row>
 					</Container>
+				</Fragment>
                     )
                     }
 }

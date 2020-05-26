@@ -26,7 +26,7 @@ class EditSequence extends Component {
 		return(
 		<div>
 			<NavBar />
-			<AsanaCarousel />
+			<AsanaCarousel deleteable={true}/>
 			<AsanaCategory />
 			<FooterBarEdit />
 			{this.renderCategories()}
