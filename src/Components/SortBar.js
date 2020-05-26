@@ -7,6 +7,13 @@ import { Container, Row, Form, FormGroup, Col, Button, Label, Input, ButtonGroup
 import SetCategoryLabelAction from '../actions/setcategorylabel'
 import SortAsanasAction from '../actions/sortasana'
 
+const mapStateToProps = state => {
+	return {
+		sortasanas: state.sortasanas,
+		categorylabel: state.categorylabel
+	}
+}
+
 const mapDispatchToProps = dispatch => {
 	return {
 		setcategorylabel: categorylabel => {
@@ -61,6 +68,19 @@ class SortBar extends Component {
 		this.props.sortasanas("US")
 	}
 	
+	renderSortButtons = () => {
+		if(this.props.categorylabel === 'All'){
+			return <FormGroup tag="fieldset">
+					<legend>Sort Alphabetically</legend>
+					<ButtonGroup size="lg">
+						<Button id="atoz" onClick={this.sortDown}>&#11015;</Button>
+						<Button id="unsorted" onClick={this.unSort}>&#8616;</Button>
+						<Button id="ztoa" onClick={this.sortUp}>&#11014;</Button>
+					</ButtonGroup>
+				</FormGroup>
+		}
+	}
+	
 	render(){
 		return(
 				<Form>
@@ -75,16 +95,7 @@ class SortBar extends Component {
 										/>
 						</Col>
 						<Col sm={5}>
-							 <FormGroup tag="fieldset">
-        <legend>Sort Alphabetically</legend>
-       <ButtonGroup size="lg">
-  <Button id="atoz" onClick={this.sortDown}>&#11015;</Button>
-  <Button id="unsorted" onClick={this.unSort}>&#8616;</Button>
-  <Button id="ztoa" onClick={this.sortUp}>&#11014;</Button>
-  
-  
-</ButtonGroup>
-      </FormGroup>
+						{this.renderSortButtons()}
 						</Col>
 					</FormGroup>
 				</Form>			
@@ -94,4 +105,4 @@ class SortBar extends Component {
 	}
 }
 
-export default connect(null,mapDispatchToProps)(SortBar)
+export default connect(mapStateToProps,mapDispatchToProps)(SortBar)

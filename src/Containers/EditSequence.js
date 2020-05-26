@@ -11,7 +11,8 @@ import { connect } from 'react-redux'
 const mapStateToProps = state => {
   return {
     categories: state.categories,
-	categorylabel: state.categorylabel
+	categorylabel: state.categorylabel,
+	sortasanas: state.sortasanas
   }
 }
 
