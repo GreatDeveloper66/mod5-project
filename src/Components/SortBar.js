@@ -4,6 +4,15 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import Select from 'react-select'
 import { Container, Row, Form, FormGroup, Col, Button, Label, Input } from 'reactstrap'
+import SetCategoryLabelAction from '../actions/setcategorylabel'
+
+const mapDispatchToProps = dispatch => {
+	return {
+		setcategorylabel: categorylabel => {
+			dispatch(SetCategoryLabelAction(categorylabel))
+		}
+	}
+}
 
 const options = [
   { value: 'All', label: 'All' },
@@ -33,6 +42,7 @@ class SortBar extends Component {
 	
 	handleChange = selectedOption => {
 		this.setState({selectedOption: selectedOption})
+		this.props.setcategorylabel(selectedOption.value)
 	}
 	
 	render(){
@@ -58,4 +68,4 @@ class SortBar extends Component {
 	}
 }
 
-export default SortBar
+export default connect(null,mapDispatchToProps)(SortBar)
