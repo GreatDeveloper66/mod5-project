@@ -26,7 +26,7 @@ class ViewSequence extends Component {
 	
 	render(){
 		return(
-			<div style = {this.bannerStyle()} className="d-flex justify-content-center">
+			<div style = {this.bannerStyle()}>
 			<NavBar />
 			<SequenceSlide />
 			
