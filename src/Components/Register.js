@@ -64,10 +64,21 @@ class Register extends Component {
         })
   }
 
+	bannerStyle = () => ({
+		backgroundImage: `url(${require(`../images/Yogi_Background_C.jpg`)})`,
+		backgroundPosition: 'center',
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
+		height: '100vh',
+		width: '100vw',
+		overflowY: 'hidden'
+	})
+	
 
 
 	render(){
 		return (
+		<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center">
 			<Container className="mt-5">
 			<Row className="d-flex justify-content-center mt-5">
 				<Col xs={12} sm={8} lg={4}>
@@ -91,6 +102,7 @@ class Register extends Component {
 			</Col>
 		</Row>
 		</Container>
+		</div>
 		)
 		
 		

@@ -41,6 +41,17 @@ class SignIn extends Component {
 	constructor(props){
 		super()
 	}
+		
+	
+	bannerStyle = () => ({
+		backgroundImage: `url(${require(`../images/Yogi_Background_C.jpg`)})`,
+		backgroundPosition: 'center',
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
+		height: '100vh',
+		width: '100vw',
+		overflowY: 'hidden'
+	})
 	
 	
 	handleRegisterSwitch = () => {
@@ -98,6 +109,7 @@ componentDidMount() {
 
 render(){
 	return (
+	<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center">
 	<Container className="mt-5">
 	<Row className="d-flex justify-content-center">
 	<Col xs={12} sm={8} lg={4}>
@@ -120,6 +132,7 @@ render(){
 	</Col>
 </Row>
 </Container>
+</div>
 )
 }
 }

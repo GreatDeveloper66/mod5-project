@@ -80,7 +80,7 @@ class Profile extends Component {
                       }
 	render(){
             return (
-			<Fragment>
+			<div style={{backgroundColor: '#EAA724', height: '100vh', overflowY: 'hidden'}}>
 				<NavBar />
 				<Container className="mt-5">
                     <Row className="d-flex justify-content-center">
@@ -100,7 +100,8 @@ class Profile extends Component {
                         </Row>
 						<SavedSequences />
 					</Container>
-				</Fragment>
+				
+				</div>
                     )
                     }
 }
