@@ -11,10 +11,7 @@ body {
   background-image: url('yoga_background.jpg');
   background-position: center;
   background-size: cover;
-  overflow-x: hidden;
-  
- 
-  
+  overflow-x: hidden; 
 }
 
 

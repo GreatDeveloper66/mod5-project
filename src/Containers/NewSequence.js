@@ -7,7 +7,7 @@ import SortBar from '../Components/SortBar'
 import AsanaCard from '../Components/AsanaCard'
 import { connect } from 'react-redux'
 import ClearSequenceAction from '../actions/clearsequence'
-import { Col} from 'reactstrap'
+import { Container, Row, Col} from 'reactstrap'
 import AsanaCategories from '../Containers/AsanaCategories'
 
 const mapStateToProps = state => {
@@ -40,9 +40,20 @@ class NewSequence extends Component {
 		return(
 		<div>
 			<NavBar />
-			<FooterBar />
-			<AsanaCarousel />
-			<SortBar />
+			<Container>
+				<Row>
+					<Col sm={2}>
+					</Col>
+					<Col sm={8}>
+						<FooterBar />
+						<AsanaCarousel />
+						<SortBar />
+					</Col>
+					<Col sm={2}>
+					</Col>
+			
+				</Row>
+			</Container>
 			<AsanaCategories />
 			
 		</div>
