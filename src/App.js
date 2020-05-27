@@ -20,7 +20,7 @@ class App extends Component {
 
   render(){
     return (
- <Container>
+
     <Router>
       <Switch>
         <Route exact path = '/' component = {SignIn} />
@@ -33,7 +33,7 @@ class App extends Component {
 		  <Route exact path='/sequences/presets' component={YogaWorkoutScreen} />
         </Switch>
     </Router>
-	</Container>
+	
     )
   }
 }
