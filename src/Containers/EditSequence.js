@@ -37,7 +37,7 @@ class EditSequence extends Component {
 	}
 	render(){
 		return(
-		<div>
+		<div style={{backgroundColor: 'orange'}}>
 			<NavBar />
 			<AsanaCarousel deleteable={true}/>
 			<Arrows />

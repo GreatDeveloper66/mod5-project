@@ -13,9 +13,21 @@ class ViewSequence extends Component {
 		super()
 	}
 	
+	bannerStyle = () => {
+		return ({
+			backgroundImage: `url(${require(`../images/Yogi_E.jpg`)})`,
+			backgroundSize: 'cover',
+			backgroundPosition: 'center',
+			backgroundRepeat: 'no-repeat',
+			height: '100vh',
+			width: '100%',
+			
+		})
+  }
+	
 	render(){
 		return(
-			<div>
+			<div style = {this.bannerStyle()}>
 			<NavBar />
 			<SequenceSlide />
 			
