@@ -72,7 +72,7 @@ class SortBar extends Component {
 	renderSortButtons = () => {
 		if(this.props.categorylabel === 'All'){
 			return <FormGroup tag="fieldset">
-					<legend>Sort Alphabetically</legend>
+					
 					<ButtonGroup size="lg">
 						<Button id="atoz" onClick={this.sortDown}>&#11015;</Button>
 						<Button id="unsorted" onClick={this.unSort}>&#8616;</Button>
@@ -86,22 +86,18 @@ class SortBar extends Component {
 		return(
 				<Form>
 					<FormGroup row>
-						<Col sm={2}>
-						</Col>
-						<Col sm={5}>
+						<Col sm={6}>
 								<Select
 										value={this.state.selectedOption}
 										onChange={this.handleChange}
 										options={options}
 										/>
 						</Col>
-						<Col sm={5}>
+						<Col sm={6}>
 						{this.renderSortButtons()}
 						</Col>
 					</FormGroup>
-				</Form>			
-								
-						
+				</Form>		
 		)
 	}
 }

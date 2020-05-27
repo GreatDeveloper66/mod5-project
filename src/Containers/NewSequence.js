@@ -40,8 +40,8 @@ class NewSequence extends Component {
 		return(
 		<div>
 			<NavBar />
-			<AsanaCarousel />
 			<FooterBar />
+			<AsanaCarousel />
 			<SortBar />
 			<AsanaCategories />
 			
