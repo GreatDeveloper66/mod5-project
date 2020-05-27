@@ -6,10 +6,6 @@ import AddAsanaAction from '../actions/addasana'
 import RemoveAsanaAction from '../actions/removeasana'
 import SelectAsanaAction from '../actions/selectasana'
 
-const cardStyle = {
-	cursor: 'pointer',
-	fontFamily: 'Roboto'
-}
 
 const mapDispatchToProps = dispatch => {
 	return {
@@ -31,6 +27,12 @@ class AsanaCard extends Component {
 		super()
 	}
 	
+	cardStyle = () => ({
+		cursor: 'pointer',
+		fontFamily: 'Roboto',
+		height: this.props.cardHeight
+	})
+
 	addAsana = () => {
 	if(this.props.deleteable){
 		return
@@ -68,7 +70,7 @@ class AsanaCard extends Component {
 
 	render(){
 		return (
-				<Card style={cardStyle}>
+				<Card style={this.cardStyle()}>
 					<CardImg top width="100%" src={require(`../images/${this.props.image}.svg`)} alt="asana" />
 					<CardBody onClick={this.addAsana} className="text-center">
 						<CardTitle className="text-primary"><medium>{this.props.title}</medium></CardTitle>
@@ -81,5 +83,9 @@ class AsanaCard extends Component {
 				</Card>
 				)
 	}
+}
+
+AsanaCard.defaultProps = {
+	cardHeight: '400px'
 }
 export default connect(null,mapDispatchToProps)(AsanaCard)

@@ -94,7 +94,13 @@ class SortBar extends Component {
 										/>
 						</Col>
 						<Col sm={6}>
-						{this.renderSortButtons()}
+						<FormGroup tag="fieldset">
+							<ButtonGroup size="lg">
+								<Button id="atoz" onClick={this.sortDown}>&#11015;</Button>
+								<Button id="unsorted" onClick={this.unSort}>&#8616;</Button>
+								<Button id="ztoa" onClick={this.sortUp}>&#11014;</Button>
+							</ButtonGroup>
+						</FormGroup>
 						</Col>
 					</FormGroup>
 				</Form>		

@@ -42,16 +42,11 @@ class NewSequence extends Component {
 			<NavBar />
 			<Container>
 				<Row>
-					<Col sm={2}>
-					</Col>
-					<Col sm={8}>
+					<Col sm={12}>
 						<FooterBar />
 						<AsanaCarousel />
 						<SortBar />
 					</Col>
-					<Col sm={2}>
-					</Col>
-			
 				</Row>
 			</Container>
 			<AsanaCategories />

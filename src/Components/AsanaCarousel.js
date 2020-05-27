@@ -47,6 +47,7 @@ class AsanaCarousel extends Component {
 	}
 	render(){
 		return (
+		<div style={{height: '400px'}}>
 				<Carousel
 				swipeable={false}
 				draggable={false}
@@ -68,7 +69,7 @@ class AsanaCarousel extends Component {
 				{this.renderCarouselCards()}
 				
 			</Carousel>
-		
+		</div>
 		)
 	}
 }
