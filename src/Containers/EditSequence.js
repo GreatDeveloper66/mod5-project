@@ -44,6 +44,7 @@ class EditSequence extends Component {
 					<Col sm={12}>
 						<FooterBarEdit />
 						<AsanaCarousel deleteable={true} />
+						<Arrows />
 						<SortBar />
 					</Col>
 				</Row>

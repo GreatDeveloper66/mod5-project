@@ -20,18 +20,18 @@ const SequenceReducer = (state={},action) => {
 	case 'logoutuser':
 		return {}
 	case 'moveasanaup':
-		const found_id = state.asanas.findIndex(asana => asana.id === action.asana_id)
 		const temparray = state.asanas.slice(0)
-		const temp = temparray[found_id]
-		temparray[found_id] = temparray[found_id + 1]
-		temparray[found_id + 1] = temp
+		const id = action.asana_id
+		const temp = temparray[id]
+		temparray[id] = temparray[id + 1]
+		temparray[id + 1] = temp
 		return {...state,asanas:temparray}
 	case 'moveasanadown':
-		const find_id = state.asanas.findIndex(asana => asana.id === action.asana_id)
 		const temparr = state.asanas.slice(0)
-		const tempval = temparr[find_id]
-		temparr[find_id] = temparr[find_id - 1]
-		temparr[find_id - 1] = tempval
+		const asanaid = action.asana_id
+		const tempval = temparr[asanaid]
+		temparr[asanaid] = temparr[asanaid - 1]
+		temparr[asanaid - 1] = tempval
 		return {...state,asanas:temparr}
     default:
       return state

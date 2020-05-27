@@ -2,6 +2,10 @@ const SelectedAsanaReducer = (state=null,action) => {
   switch(action.type){
     case 'selectasana':
       return action.selectedasanaid
+	case 'moveasanaup':
+		return action.asana_id + 1
+	case 'moveasanadown':
+		return action.asana_id - 1
     default:
       return state
   }
