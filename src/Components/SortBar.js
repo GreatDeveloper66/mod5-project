@@ -86,9 +86,9 @@ class SortBar extends Component {
 		return(
 				<Form>
 					<FormGroup row>
-						<Col sm={5}>
-						</Col>
 						<Col sm={2}>
+						</Col>
+						<Col sm={5}>
 								<Select
 										value={this.state.selectedOption}
 										onChange={this.handleChange}

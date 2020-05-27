@@ -6,6 +6,11 @@ import AddAsanaAction from '../actions/addasana'
 import RemoveAsanaAction from '../actions/removeasana'
 import SelectAsanaAction from '../actions/selectasana'
 
+const cardStyle = {
+	cursor: 'pointer',
+	fontFamily: 'Roboto'
+}
+
 const mapDispatchToProps = dispatch => {
 	return {
 		addasana: asana => {
@@ -63,10 +68,10 @@ class AsanaCard extends Component {
 
 	render(){
 		return (
-				<Card style={{cursor:'pointer'}}>
+				<Card style={cardStyle}>
 					<CardImg top width="100%" src={require(`../images/${this.props.image}.svg`)} alt="asana" />
-					<CardBody onClick={this.addAsana}>
-						<CardTitle><small>{this.props.title}</small></CardTitle>
+					<CardBody onClick={this.addAsana} className="text-center">
+						<CardTitle className="text-primary"><medium>{this.props.title}</medium></CardTitle>
 						<CardSubtitle><small>{this.props.subtitle}</small></CardSubtitle>
 							{this.renderDeleteButton()}
 							{this.renderMoveButton()}

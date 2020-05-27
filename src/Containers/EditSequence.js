@@ -8,6 +8,7 @@ import SortBar from '../Components/SortBar'
 import { connect } from 'react-redux'
 import AsanaCategories from '../Containers/AsanaCategories'
 import Arrows from '../Components/Arrows'
+import { Row } from 'reactstrap'
 
 const mapStateToProps = state => {
   return {
@@ -40,9 +41,10 @@ class EditSequence extends Component {
 			<NavBar />
 			<AsanaCarousel deleteable={true}/>
 			<Arrows />
-			<AsanaCategory />
+			<Row>
 			<FooterBarEdit />
 			<SortBar />
+			</Row>
 			<AsanaCategories />
 			
 		</div>

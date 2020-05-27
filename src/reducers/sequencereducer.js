@@ -14,6 +14,7 @@ const SequenceReducer = (state={},action) => {
 	case 'removeasana':
 		const pos = action.asana_id
 		return {...state,asanas:[...state.asanas.slice(0,pos),...state.asanas.slice(pos  + 1)]}
+		
 	case 'clearsequence':
 		return {}
 	case 'logoutuser':
