@@ -12,8 +12,8 @@ const SequenceReducer = (state={},action) => {
 	case 'undoasana':
 		return {...state,asanas:[...state.asanas.slice(0,-1)]}
 	case 'removeasana':
-		const foundid = state.asanas.findIndex(asana => asana.id === action.asana_id)
-		return {...state,asanas:[...state.asanas.slice(0,foundid),...state.asanas.slice(foundid  + 1)]}
+		const pos = action.asana_id
+		return {...state,asanas:[...state.asanas.slice(0,pos),...state.asanas.slice(pos  + 1)]}
 	case 'clearsequence':
 		return {}
 	case 'logoutuser':

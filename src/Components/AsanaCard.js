@@ -43,11 +43,11 @@ class AsanaCard extends Component {
 	}
 	
 	handleRemoveCard = () => {
-		this.props.removeasana(this.props.asana_id)
+		this.props.removeasana(this.props.position)
 	}
 	
 	handleMoveCard = () => {
-		this.props.selectasana(this.props.asana_id)
+		this.props.selectasana(this.props.position)
 	}
 	
 	renderDeleteButton = () => {
