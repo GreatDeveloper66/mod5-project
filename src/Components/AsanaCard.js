@@ -4,6 +4,7 @@ import { Card, CardBody, CardTitle, CardSubtitle, CardImg, CardText, CardFooter,
 import { connect } from 'react-redux'
 import AddAsanaAction from '../actions/addasana'
 import RemoveAsanaAction from '../actions/removeasana'
+import SelectAsanaAction from '../actions/selectasana'
 
 const mapDispatchToProps = dispatch => {
 	return {
@@ -12,6 +13,9 @@ const mapDispatchToProps = dispatch => {
 		},
 		removeasana: asana => {
 			dispatch(RemoveAsanaAction(asana))
+		},
+		selectasana: selectedasana => {
+			dispatch(SelectAsanaAction(selectedasana))
 		}
 	}
 }
@@ -42,10 +46,19 @@ class AsanaCard extends Component {
 		this.props.removeasana(this.props.asana_id)
 	}
 	
+	handleMoveCard = () => {
+		this.props.selectasana(this.props.asana_id)
+	}
+	
 	renderDeleteButton = () => {
 			if(this.props.deleteable){
 			return <Button color="danger" onClick={this.handleRemoveCard}>X</Button>
 			}
+	}
+	renderMoveButton = () => {
+		if(this.props.deleteable){
+			return <Button color="success" onClick={this.handleMoveCard}>O</Button>
+		}
 	}
 
 	render(){
@@ -56,6 +69,7 @@ class AsanaCard extends Component {
 						<CardTitle><small>{this.props.title}</small></CardTitle>
 						<CardSubtitle><small>{this.props.subtitle}</small></CardSubtitle>
 							{this.renderDeleteButton()}
+							{this.renderMoveButton()}
 					</CardBody>
 					{this.renderCues()}
 						

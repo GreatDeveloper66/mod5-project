@@ -56,25 +56,6 @@ renderCategories = () => {
 				console.log(newcats)
 			}
 			return <AsanaCategory name={"All"} asanas={newcats} key = {"All"} />
-			
-			/*
-			const newcats = categories.map(category => category.asanas).flat()
-								.filter((v,i,a) => a.indexOf(v) === i)
-			if(this.props.sortasanas === "US"){
-				console.log("US")
-				return <div key={this.props.categorylabel}>{newcats.map(asana => this.renderAsanaCard(asana))}</div>
-			}
-			else if(this.props.sortasanas === "ATOZ"){
-				console.log("ATOZ")
-				return <div key={this.props.categorylabel}>{newcats.sort((a,b) => a.sanskritname > b.sanskritname)
-				.map(asana => this.renderAsanaCard(asana))}</div>
-			}
-			else {
-				console.log("ZTOA")
-				return <div key={this.props.categorylabel}>{newcats.sort((a,b) => a.sanskritname < b.sanskritname)
-				.map(asana => this.renderAsanaCard(asana))}</div>
-			}
-			*/
 		}
 		else {
 			return categories.filter(category => category.name === label)

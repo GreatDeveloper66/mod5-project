@@ -8,12 +8,14 @@ import UserSequencesReducer from './usersequencesreducer'
 import SlideReducer from './slidereducer'
 import CategoryLabelReducer from './categorylabelreducer'
 import SortAsanasReducer from './sortasanasreducer'
+import SelectedAsanaReducer from './selectasanareducer'
 
 
 const RootReducer = combineReducers({ jwt:RegisterUserReducer, profile: RenderProfileReducer, 
 									loginmessage: LogInMessageReducer,categories: LoadCategoriesReducer, 
 									sequence: SequenceReducer,sequences: UserSequencesReducer, slide: SlideReducer,
-									categorylabel: CategoryLabelReducer,sortasanas: SortAsanasReducer })
+									categorylabel: CategoryLabelReducer,sortasanas: SortAsanasReducer,
+									selectedasana: SelectedAsanaReducer })
 									
 export default RootReducer
 
