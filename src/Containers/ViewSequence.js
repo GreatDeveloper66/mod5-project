@@ -20,8 +20,7 @@ class ViewSequence extends Component {
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
 			height: '100vh',
-			width: '100%',
-			
+			width: '100%'
 		})
   }
 	
