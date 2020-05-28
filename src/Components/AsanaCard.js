@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import AddAsanaAction from '../actions/addasana'
 import RemoveAsanaAction from '../actions/removeasana'
 import SelectAsanaAction from '../actions/selectasana'
+import ClearSelectedAsanaAction from '../actions/clearselectedasana'
 
 
 const mapDispatchToProps = dispatch => {
@@ -17,6 +18,9 @@ const mapDispatchToProps = dispatch => {
 		},
 		selectasana: selectedasana => {
 			dispatch(SelectAsanaAction(selectedasana))
+		},
+		clearselectedasana: () => {
+			dispatch(ClearSelectedAsanaAction())
 		}
 	}
 }
@@ -50,6 +54,7 @@ class AsanaCard extends Component {
 	}
 	
 	handleRemoveCard = () => {
+		this.props.clearselectedasana()
 		this.props.removeasana(this.props.position)
 	}
 	
