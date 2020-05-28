@@ -15,7 +15,10 @@ class ViewSequence extends Component {
 	
 	bannerStyle = () => {
 		return ({
+			/*
 			backgroundImage: `url(${require(`../images/Yogi_E.jpg`)})`,
+			*/
+			backgroundColor: '#EAA724',
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',

@@ -22,7 +22,7 @@ class YogaWorkoutScreen extends Component {
 	render(){
 		return(
 		
-		<div style={{backgroundColor: '#EAA724', height: '100vh'}}>
+		<div style={{backgroundColor: '#EAA724'}}>
 			<NavBar />
 			<div>
 				{this.renderJumbotrons()}
