@@ -93,7 +93,7 @@ class SortBar extends Component {
 										options={options}
 										/>
 						</Col>
-						<Col sm={6}>
+						<Col sm={6} className="d-flex justify-content-center">
 						<FormGroup tag="fieldset">
 							<ButtonGroup size="lg">
 								<Button id="atoz" onClick={this.sortDown}>&#11015;</Button>
