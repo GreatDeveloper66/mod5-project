@@ -84,9 +84,10 @@ class SortBar extends Component {
 	
 	render(){
 		return(
+				<div style={{backgroundColor: 'yellow', height: '55px'}} className="mt-5">
 				<Form>
-					<FormGroup row>
-						<Col sm={6}>
+					<FormGroup row className="d-flex align-item-center justify-content-between">
+						<Col sm={4} >
 								<Select
 										value={this.state.selectedOption}
 										onChange={this.handleChange}
@@ -94,16 +95,18 @@ class SortBar extends Component {
 										/>
 						</Col>
 						<Col sm={6} className="d-flex justify-content-center">
-						<FormGroup tag="fieldset">
+							<h2 text="primary">SORT ASANAS</h2>
+						</Col>
+						<Col sm={2} className="d-flex justify-content-center">
 							<ButtonGroup size="lg">
 								<Button id="atoz" onClick={this.sortDown}>&#11015;</Button>
 								<Button id="unsorted" onClick={this.unSort}>&#8616;</Button>
 								<Button id="ztoa" onClick={this.sortUp}>&#11014;</Button>
 							</ButtonGroup>
-						</FormGroup>
 						</Col>
 					</FormGroup>
 				</Form>		
+			</div>
 		)
 	}
 }
