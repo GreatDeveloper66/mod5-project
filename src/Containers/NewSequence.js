@@ -38,7 +38,7 @@ class NewSequence extends Component {
 
 	render(){
 		return(
-		<div style={{backgroundColor: '#EAA724'}}>
+		<div style={{backgroundColor: '#E59866'}}>
 			<NavBar />
 			<Container>
 				<Row>
