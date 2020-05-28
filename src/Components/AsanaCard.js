@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Card, CardBody, CardTitle, CardSubtitle, CardImg, CardText, CardFooter,Button } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardSubtitle, CardImg, CardText, CardFooter,Button, CardHeader } from 'reactstrap'
 import { connect } from 'react-redux'
 import AddAsanaAction from '../actions/addasana'
 import RemoveAsanaAction from '../actions/removeasana'
@@ -64,23 +64,26 @@ class AsanaCard extends Component {
 	
 	renderDeleteButton = () => {
 			if(this.props.deleteable){
-			return <Button color="danger" onClick={this.handleRemoveCard}>X</Button>
+			return <CardHeader>
+					<Button color="danger" onClick={this.handleRemoveCard}>X</Button>
+				   </CardHeader>
 			}
 	}
 	renderMoveButton = () => {
 		if(this.props.deleteable){
-			return <Button color="success" onClick={this.handleMoveCard}>O</Button>
+			return <Button onClick={this.handleMoveCard}>&#119064;</Button>
 		}
 	}
 
 	render(){
 		return (
 				<Card style={this.cardStyle()}>
+				{this.renderDeleteButton()}
 					<CardImg top width="100%" src={require(`../images/${this.props.image}.svg`)} alt="asana" />
 					<CardBody onClick={this.addAsana} className="text-center">
 						<CardTitle className="text-primary"><medium>{this.props.title}</medium></CardTitle>
 						<CardSubtitle><small>{this.props.subtitle}</small></CardSubtitle>
-							{this.renderDeleteButton()}
+							
 							{this.renderMoveButton()}
 					</CardBody>
 					{this.renderCues()}
