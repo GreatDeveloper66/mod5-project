@@ -42,10 +42,10 @@ class SequenceSlide extends Component {
 								 <Container>
 									<Row>
 										<Col sm={6} className="d-flex justify-content-center">
-											<p>Time left in Workout</p>
+											<p className="text-success">Total Time Left</p>
 										</Col>
 										<Col sm={6} className="d-flex justify-content-center">
-											<p>Time left in Pose</p>
+											<p className="text-info">Time left in Pose</p>
 										</Col>
 									</Row>
 								</Container>
