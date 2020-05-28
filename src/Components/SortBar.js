@@ -84,7 +84,7 @@ class SortBar extends Component {
 	
 	render(){
 		return(
-				<div style={{backgroundColor: 'yellow', height: '55px'}} className="mt-5">
+				<div style={{backgroundColor: '#FF7F50', height: '55px'}} className="mt-5">
 				<Form>
 					<FormGroup row className="d-flex align-item-center justify-content-between">
 						<Col sm={4} >
