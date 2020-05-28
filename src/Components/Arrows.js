@@ -30,6 +30,9 @@ class Arrows extends Component {
 	
 	handleMoveDown = () => {
 		const id = this.props.asana_id
+		if(id === null) {
+			return
+		}
 		if(id > 0){
 			this.props.moveasanadown(id)
 		}
@@ -37,6 +40,9 @@ class Arrows extends Component {
 	
 	handleMoveUp = () => {
 		const id = this.props.asana_id
+		if(id === null) {
+			return
+		}
 		if(id < this.props.sequence.asanas.length - 1){
 			this.props.moveasanaup(id)
 		}
