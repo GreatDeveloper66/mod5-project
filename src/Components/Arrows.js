@@ -18,7 +18,8 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
 	return {
-		asana_id: state.selectedasana
+		asana_id: state.selectedasana,
+		sequence: state.sequence
 	}
 }
 
@@ -27,17 +28,30 @@ class Arrows extends Component {
 		super()
 	}
 	
+	handleMoveDown = () => {
+		const id = this.props.asana_id
+		if(id > 0){
+			this.props.moveasanadown(id)
+		}
+	}
+	
+	handleMoveUp = () => {
+		const id = this.props.asana_id
+		if(id < this.props.sequence.asanas.length - 1){
+			this.props.moveasanaup(id)
+		}
+	}
 	render(){
 		return(
 		<Container>
 			<Row>
 				<Col sm={1}>
-					<Button size="lg" onClick={() => this.props.moveasanadown(this.props.asana_id)}>&#11013;</Button>
+					<Button size="lg" onClick={() => this.handleMoveDown()}>&#11013;</Button>
 				</Col>
 				<Col sm={10}>
 				</Col>
 				<Col sm={1}>
-					<Button size="lg" onClick={() => this.props.moveasanaup(this.props.asana_id)}>&#10145;</Button>
+					<Button size="lg" onClick={() => this.handleMoveUp()}>&#10145;</Button>
 				</Col>
 				
 			</Row>

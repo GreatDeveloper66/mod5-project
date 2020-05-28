@@ -22,6 +22,9 @@ const SequenceReducer = (state={},action) => {
 	case 'moveasanaup':
 		const temparray = state.asanas.slice(0)
 		const id = action.asana_id
+		if(id === null){
+			return state
+		}
 		const temp = temparray[id]
 		temparray[id] = temparray[id + 1]
 		temparray[id + 1] = temp
@@ -29,6 +32,9 @@ const SequenceReducer = (state={},action) => {
 	case 'moveasanadown':
 		const temparr = state.asanas.slice(0)
 		const asanaid = action.asana_id
+		if(asanaid === null){
+			return state
+		}
 		const tempval = temparr[asanaid]
 		temparr[asanaid] = temparr[asanaid - 1]
 		temparr[asanaid - 1] = tempval
