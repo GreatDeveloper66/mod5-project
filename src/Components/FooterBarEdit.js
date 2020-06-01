@@ -8,6 +8,8 @@ import { withRouter } from 'react-router-dom'
 import LoadUserSequencesAction from '../actions/loadusersequences'
 import Select from 'react-select'
 
+const URL = process.env.REACT_APP_API_URL
+
 const mapStateToProps = state => {
 	return {
 		sequence: state.sequence,
@@ -65,7 +67,7 @@ class FooterBarEdit extends Component {
 		const user_id = this.props.profile.user.id
 		const sequence_id = sequence.id
 		const jwt = this.props.jwt
-		const url = `http://localhost:5000/api/v1/users/${user_id}/sequences/${sequence_id}`
+		const url = `${URL}/api/v1/users/${user_id}/sequences/${sequence_id}`
 		const configObj = {
 			method: 'PATCH',
 			headers: {

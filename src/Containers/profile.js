@@ -8,6 +8,8 @@ import LogOutUserAction from '../actions/logoutuser'
 import SavedSequences from '../Components/SavedSequences'
 import NavBar from '../Components/NavBar'
 
+const URL = process.env.REACT_APP_API_URL
+
 const mapStateToProps = state => {
   return {
     jwt: state.jwt,
@@ -32,7 +34,7 @@ class Profile extends Component {
 	handleDelete = () => {
 		const id = this.props.profile.user.id
 		const jwt = this.props.jwt
-		const url = `http://localhost:5000/api/v1/users/${id}`
+		const url = `${URL}/api/v1/users/${id}`
 		const configObj = {
 							method: 'DELETE',
 							headers: {
@@ -71,7 +73,7 @@ class Profile extends Component {
                           },
                           body:JSON.stringify(userObj)
                         }
-						const url = `http://localhost:5000/api/v1/users/${id}`
+						const url = `${URL}/api/v1/users/${id}`
                         fetch(url,configObj)
                           .then(resp => resp.json())
                           .then(data => {

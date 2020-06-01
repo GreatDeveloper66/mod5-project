@@ -60,7 +60,7 @@ class FooterBar extends Component {
 			body:JSON.stringify(sequence)
 		}
 		
-		fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`,configObj)
+		fetch(`${URL}/api/v1/users/${this.props.profile.user.id}/sequences`,configObj)
 			.then(resp => resp.json())
 			.then(data => this.props.loadusersequences(data))
 		this.props.history.push('/profile')
