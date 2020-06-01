@@ -87,6 +87,11 @@ class SignIn extends Component {
 				.then(resp => resp.json())
 				.then(data => {
 					this.props.loadusersequences(data)
+					fetch('http://localhost:5000/api/v1/categories',{headers: {Authorization: `Bearer ${this.props.jwt}`}})
+						.then(resp => resp.json())
+						.then(data => {
+							this.props.loadcategories(data)
+					})
 					this.props.history.push('/home')
 				})
 			
@@ -99,11 +104,7 @@ class SignIn extends Component {
 
 
 componentDidMount() {
-		fetch('http://localhost:5000/api/v1/categories')
-			.then(resp => resp.json())
-			.then(data => {
-				this.props.loadcategories(data)
-			})
+		
 		
 	}
 
