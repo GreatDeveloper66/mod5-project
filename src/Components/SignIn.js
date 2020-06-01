@@ -11,6 +11,8 @@ import Password from './password'
 import RenderProfileAction from '../actions/renderprofile'
 import { UncontrolledTooltip } from 'reactstrap'
 
+const URL = process.env.REACT_APP_API_URL
+
 const mapStateToProps = state => {
   return {
     jwt: state.jwt,
@@ -77,17 +79,17 @@ class SignIn extends Component {
 		},
 		body: JSON.stringify(userObj)
 	}
-	fetch('http://localhost:5000/api/v1/login', configObj)
+	fetch(`${URL}/api/v1/login`, configObj)
 		.then(resp => resp.json())
 		.then(data => {
 			if(data.successfulLogin){
 			this.props.logInUser(data.jwt, '')
 			this.props.renderprofile({user: {id: data.user.id,email: data.user.email,username: data.user.username}})
-			fetch(`http://localhost:5000/api/v1/users/${this.props.profile.user.id}/sequences`,{headers: {Authorization: `Bearer ${this.props.jwt}`}})
+			fetch(`${URL}/api/v1/users/${this.props.profile.user.id}/sequences`,{headers: {Authorization: `Bearer ${this.props.jwt}`}})
 				.then(resp => resp.json())
 				.then(data => {
 					this.props.loadusersequences(data)
-					fetch('http://localhost:5000/api/v1/categories',{headers: {Authorization: `Bearer ${this.props.jwt}`}})
+					fetch('${URL}/api/v1/categories',{headers: {Authorization: `Bearer ${this.props.jwt}`}})
 						.then(resp => resp.json())
 						.then(data => {
 							this.props.loadcategories(data)
