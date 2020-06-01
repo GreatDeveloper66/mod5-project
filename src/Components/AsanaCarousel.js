@@ -37,7 +37,7 @@ class AsanaCarousel extends Component {
 	
 	renderCarouselCards = () =>  {
 		if(this.props.sequence.asanas){
-			return this.props.sequence.asanas.map((asana,index) => <div key={index}><AsanaCard asana_id={asana.id} title={asana.sanskritname} 
+			return this.props.sequence.asanas.map((asana,index) => <div key={index}><AsanaCard position={index} asana_id={asana.id} title={asana.sanskritname} 
 			                                                        subtitle={asana.englishname} image={asana.picurl} time={asana.duration} 
 																	deleteable={this.props.deleteable ? true:false}/></div>)
 		}
@@ -47,6 +47,7 @@ class AsanaCarousel extends Component {
 	}
 	render(){
 		return (
+		<div style={{height: '400px'}}>
 				<Carousel
 				swipeable={false}
 				draggable={false}
@@ -68,7 +69,7 @@ class AsanaCarousel extends Component {
 				{this.renderCarouselCards()}
 				
 			</Carousel>
-		
+		</div>
 		)
 	}
 }

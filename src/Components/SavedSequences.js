@@ -54,6 +54,7 @@ class SavedSequences extends Component {
 		event.preventDefault()
 		const id = option.id
 		this.props.deletesequence(id)
+		this.setState({selectedOption: null})
 		const jwt = this.props.jwt
 		const configObj = {
 			method: 'DELETE',

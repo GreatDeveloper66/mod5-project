@@ -22,12 +22,12 @@ class YogaWorkoutScreen extends Component {
 	render(){
 		return(
 		
-		<Fragment>
+		<div style={{backgroundColor: '#EAA724'}}>
 			<NavBar />
 			<div>
 				{this.renderJumbotrons()}
 			</div>
-		</Fragment>
+		</div>
 		)
 	}
 }

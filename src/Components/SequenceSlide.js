@@ -20,7 +20,7 @@ class SequenceSlide extends Component {
 	
 	renderAsanaCard = () => {
 		const { id, englishname, sanskritname, duration, picurl, cues } = this.props.sequence.asanas[this.props.slide]
-		return <AsanaCard asana_id={id} subtitle={englishname} title={sanskritname} image={picurl} time={duration} cues={cues} />
+		return <AsanaCard cardHeight={'500px'} asana_id={id} subtitle={englishname} title={sanskritname} image={picurl} time={duration} cues={cues} />
 	}
 	
 	render(){
@@ -28,9 +28,9 @@ class SequenceSlide extends Component {
 		<div>
 			<Container>
 				<Row>
-					<Col xs={5}>
+					<Col xs={4}>
 					</Col>
-					<Col xs={3}>
+					<Col xs={4}>
 						<Card>
 							<CardBody>
 						{this.renderAsanaCard()}
@@ -38,12 +38,21 @@ class SequenceSlide extends Component {
 							<CardFooter>
 								<CountDownClock />
 							</CardFooter>
+							<CardFooter>
+								 <Container>
+									<Row>
+										<Col sm={6} className="d-flex justify-content-center">
+											<p className="text-success">Total Time Left</p>
+										</Col>
+										<Col sm={6} className="d-flex justify-content-center">
+											<p className="text-info">Time left in Pose</p>
+										</Col>
+									</Row>
+								</Container>
+							</CardFooter>
 						</Card>
 					</Col>
-					<Col xs={3}>
-						
-					</Col>
-					<Col xs={2}>
+					<Col xs={4}>
 					</Col>
 				</Row>
 			</Container>

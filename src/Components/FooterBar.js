@@ -31,31 +31,13 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-const options = [
-  { value: 'All', label: 'All' },
-  { value: 'beginner', label: 'Beginner' },
-  { value: 'intermediate', label: 'Intermediate' },
-  { value: 'advanced', label: 'Advanced' },
-  { value: 'seated', label: 'Seated' },
-  { value: 'standing',label :'Standing'},
-  { value: 'restorative', label: 'Restorative' },
-  { value: 'hip opener', label: 'Hip Opener' },
-  { value: 'prone', label: 'Prone' },
-  { value: 'forward bend', label: 'Forward Bend' },
-  { value: 'backward bend', label: 'Backward Bend' },
-  { value: 'twist', label: 'Twist' },
-  { value: 'balance', label: 'Balance'},
-  { value: 'inversion', label: 'Inversion' },
-  { value: 'salutation', label: 'Salutations'}
-]
- 
+
 
 class FooterBar extends Component {
 	constructor(props){
 		super()
 		this.state = {
-			inputvalue: '',
-			selectedOption: ''
+			inputvalue: ''
 		}
 	}
 	
@@ -63,10 +45,7 @@ class FooterBar extends Component {
 		event.preventDefault()
 		this.setState({inputvalue: event.target.value})
 	}
-	handleDropDownChange = selectedOption => {
-		this.setState({selectedOption: selectedOption})
-	}
-	
+
 	handleSave = event => {
 		event.preventDefault()
 		const jwt = this.props.jwt
@@ -109,21 +88,7 @@ class FooterBar extends Component {
 								<Button color="primary" type="submit">SAVE</Button>
 							</Col>	
 						</FormGroup>
-						{/*
-						<FormGroup row>
-							<Col xs={2}>
-							</Col>
-							<Col xs={8}>
-							<Select
-								value={this.state.selectedOption}
-								onChange={this.handleDropDownChange}
-								options={options}
-								/>
-							</Col>
-							<Col xs={2}>
-							</Col>
-						</FormGroup>
-						*/}
+						
 					</Form>
 					
 					

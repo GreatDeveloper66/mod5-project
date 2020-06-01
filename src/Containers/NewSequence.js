@@ -3,13 +3,18 @@ import '../App.css';
 import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
 import FooterBar from '../Components/FooterBar'
-import AsanaCategory from '../Components/AsanaCategory'
+import SortBar from '../Components/SortBar'
+import AsanaCard from '../Components/AsanaCard'
 import { connect } from 'react-redux'
 import ClearSequenceAction from '../actions/clearsequence'
+import { Container, Row, Col} from 'reactstrap'
+import AsanaCategories from '../Containers/AsanaCategories'
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories
+    categories: state.categories,
+	categorylabel: state.categorylabel,
+	sortasanas: state.sortasanas
   }
 }
 
@@ -31,18 +36,20 @@ class NewSequence extends Component {
 		this.props.clearsequence()
 	}
 
-	
-	renderCategories = () => {
-		const categories = this.props.categories
-		return categories.map(category => <AsanaCategory name={category.name} asanas={category.asanas} key={category.id} />)
-	}
 	render(){
 		return(
-		<div>
+		<div style={{backgroundColor: '#E59866'}}>
 			<NavBar />
-			<AsanaCarousel />
-			<FooterBar />
-			{this.renderCategories()}
+			<Container>
+				<Row>
+					<Col sm={12}>
+						<FooterBar />
+						<AsanaCarousel />
+						<SortBar />
+					</Col>
+				</Row>
+			</Container>
+			<AsanaCategories />
 			
 		</div>
 		)
