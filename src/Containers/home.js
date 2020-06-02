@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Row, Container, Button, Col } from 'reactstrap'
+import { Row, Container, Button } from 'reactstrap'
 import NavBar from '../Components/NavBar'
 
 class Home extends Component {

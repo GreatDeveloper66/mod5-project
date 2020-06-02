@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container, Row, Button, Form, FormGroup, Label, Input, Col, ButtonGroup } from 'reactstrap'
+import { Container, Row, Button, Col } from 'reactstrap'
 import { connect } from 'react-redux'
 import MoveAsanaDownAction from '../actions/moveasanadown'
 import MoveAsanaUpAction from '../actions/moveasanaup'

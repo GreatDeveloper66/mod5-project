@@ -4,7 +4,6 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import AsanaCard from './AsanaCard'
 import { connect } from 'react-redux'
-import { Container, Row, Col } from 'reactstrap'
 const mapStateToProps = state => {
   return {
     sequence: state.sequence

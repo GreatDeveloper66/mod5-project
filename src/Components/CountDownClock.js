@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactCountdownClock from "react-countdown-clock";
-import { Container, Row, Col,Card } from 'reactstrap'
+import { Container, Row } from 'reactstrap'
 import { connect } from 'react-redux'
 import IncSlideAction from '../actions/incslide'
 
@@ -31,20 +31,12 @@ findInterval = () => this.props.slide < this.props.sequence.asanas.length ? this
 
 	
   render() {
-    const settings = {
-      count: 5432,
-      border: true,
-      showTitle: true,
-      noPoints: true,
-    };
-	
-	
 	
     return (
 	  <Container>
 		<Row className="d-flex justify-content-around">
 		
-			<div style={{backgroundColor:'lightblue'}}>
+			<div>
 			<ReactCountdownClock seconds={this.findDuration()}
                      color="#444"
                      alpha={0.9}
@@ -57,7 +49,7 @@ findInterval = () => this.props.slide < this.props.sequence.asanas.length ? this
 		
 		
 		
-			<div style={{backgroundColor:'lightblue'}}>
+			<div>
 			<ReactCountdownClock key={this.props.slide} seconds={this.findInterval()}
                      color="#444"
                      alpha={0.9}

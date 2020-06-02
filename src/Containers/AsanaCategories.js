@@ -15,10 +15,6 @@ const mapStateToProps = state => {
 
 
 class AsanaCategories extends Component {
-	constructor(props){
-		super(props)
-	}
-
 
 renderAsanaCard = card => {
 		return <Col xs="3" key={card.id}><AsanaCard title={card.sanskritname} 

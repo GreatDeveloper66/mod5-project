@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
-import AsanaCarousel from '../Components/AsanaCarousel'
 import NavBar from '../Components/NavBar'
-import CountDownClock from '../Components/CountDownClock'
 import SequenceSlide from '../Components/SequenceSlide'
-import { UncontrolledTooltip } from 'reactstrap'
 
 
 
@@ -29,15 +26,9 @@ class ViewSequence extends Component {
 	
 	render(){
 		return(
-			<div style = {this.bannerStyle()} href="#" id="author_credit">
+			<div style = {this.bannerStyle()} >
 			<NavBar />
 			<SequenceSlide />
-			{/*
-			<UncontrolledTooltip placement="right" target="author_credit">
-				Photo by Anupam Mahapatra on Unsplash
-			</UncontrolledTooltip>
-			*/}
-			
 		</div>
 		)
 	}
