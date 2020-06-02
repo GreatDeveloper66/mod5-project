@@ -47,7 +47,7 @@ class AsanaCard extends Component {
 	
 	renderCues = () => {
 		if(this.props.cues){
-			return <CardFooter className="text-info"><CardText><small>{this.props.cues}</small></CardText></CardFooter>
+			return <CardFooter className="text-info"><CardText><h6>{this.props.cues}</h6></CardText></CardFooter>
 		}
 		else 
 			return null
@@ -81,8 +81,8 @@ class AsanaCard extends Component {
 				{this.renderDeleteButton()}
 					<CardImg top width="100%" src={require(`../images/${this.props.image}.svg`)} alt="asana" />
 					<CardBody onClick={this.addAsana} className="text-center">
-						<CardTitle className="text-primary"><medium>{this.props.title}</medium></CardTitle>
-						<CardSubtitle><small>{this.props.subtitle}</small></CardSubtitle>
+						<CardTitle className="text-primary"><h5>{this.props.title}</h5></CardTitle>
+						<CardSubtitle><h6>{this.props.subtitle}</h6></CardSubtitle>
 							
 							{this.renderMoveButton()}
 					</CardBody>
