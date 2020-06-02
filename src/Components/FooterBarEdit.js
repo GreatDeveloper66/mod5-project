@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container, Row, Button, Form, FormGroup, Col, Label, Input } from 'reactstrap'
+import { Container, Row, Button, Form, FormGroup, Col } from 'reactstrap'
 import AddSequenceAction from '../actions/addsequence'
 import UndoAsanaAction from '../actions/undoasanas'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import LoadUserSequencesAction from '../actions/loadusersequences'
-import Select from 'react-select'
 
 const URL = process.env.REACT_APP_API_URL
 
@@ -31,26 +30,6 @@ const mapDispatchToProps = dispatch => {
 		}
 	}
 }
-
-
-const options = [
-  { value: 'All', label: 'All' },
-  { value: 'beginner', label: 'Beginner' },
-  { value: 'intermediate', label: 'Intermediate' },
-  { value: 'advanced', label: 'Advanced' },
-  { value: 'seated', label: 'Seated' },
-  { value: 'standing',label :'Standing'},
-  { value: 'restorative', label: 'Restorative' },
-  { value: 'hip opener', label: 'Hip Opener' },
-  { value: 'prone', label: 'Prone' },
-  { value: 'forward bend', label: 'Forward Bend' },
-  { value: 'backward bend', label: 'Backward Bend' },
-  { value: 'twist', label: 'Twist' },
-  { value: 'balance', label: 'Balance'},
-  { value: 'inversion', label: 'Inversion' },
-  { value: 'salutation', label: 'Salutations'}
-]
- 
 
 class FooterBarEdit extends Component {
 	constructor(props){
@@ -107,21 +86,6 @@ class FooterBarEdit extends Component {
 								<Button color="primary" type="submit">SAVE</Button>
 							</Col>	
 						</FormGroup>
-						{/*
-						<FormGroup row>
-							<Col xs={2}>
-							</Col>
-							<Col xs={8}>
-							<Select
-								value={this.state.selectedOption}
-								onChange={this.handleDropDownChange}
-								options={options}
-								/>
-							</Col>
-							<Col xs={2}>
-							</Col>
-						</FormGroup>
-						*/}
 					</Form>
 					
 					

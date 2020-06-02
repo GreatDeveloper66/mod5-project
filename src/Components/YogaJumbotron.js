@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row } from 'reactstrap'
 import '../App.css';
 import LoadSequenceAction from '../actions/loadsequence'
 import { connect } from 'react-redux'
-import preset_sequences from '../json/preset_sequences.json'
 import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => {

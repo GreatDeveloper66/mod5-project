@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import '../App.css';
 import { Form, Col, Button, Row, Container, Card, Alert} from 'reactstrap'
 import { connect } from 'react-redux'
@@ -9,7 +9,6 @@ import fetch from 'isomorphic-fetch'
 import UserName from './username'
 import Password from './password'
 import RenderProfileAction from '../actions/renderprofile'
-import { UncontrolledTooltip } from 'reactstrap'
 
 const URL = process.env.REACT_APP_API_URL
 
@@ -113,7 +112,7 @@ componentDidMount() {
 render(){
 	return (
 	
-	<div style={this.bannerStyle()} href='#' id="author_credit" className="d-flex justify-content-center align-items-center">
+	<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center">
 	<Container className="mt-5">
 	<Row className="d-flex justify-content-center">
 	<Col xs={12} sm={8} lg={4}>
@@ -137,11 +136,7 @@ render(){
 </Row>
 </Container>
 </div>
-/*
-<UncontrolledTooltip placement="right" target="author_credit">
-	Photo by Yannic Läderach on Unsplash
-</UncontrolledTooltip>
-*/
+
 )
 }
 }

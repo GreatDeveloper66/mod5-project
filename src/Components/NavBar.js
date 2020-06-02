@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux'
-import { Container, Row, Button, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem,NavLink, ButtonGroup } from 'reactstrap'
+import { Container, Row, Button, ButtonGroup } from 'reactstrap'
 import LogOutUserAction from '../actions/logoutuser'
 import { withRouter } from 'react-router-dom'
 
@@ -14,9 +14,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 class NavBar extends Component {
-	constructor(props){
-		super(props)
-	}
   
   handleSignOut = () => {
 	this.props.logOutUser() 

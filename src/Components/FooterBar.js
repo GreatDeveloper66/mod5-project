@@ -6,7 +6,6 @@ import UndoAsanaAction from '../actions/undoasanas'
 import LoadUserSequencesAction from '../actions/loadusersequences'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import Select from 'react-select'
 
 
 const mapStateToProps = state => {

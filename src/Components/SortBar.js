@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 import Select from 'react-select'
-import { Container, Row, Form, FormGroup, Col, Button, Label, Input, ButtonGroup } from 'reactstrap'
+import { Form, FormGroup, Col, Button, ButtonGroup } from 'reactstrap'
 import SetCategoryLabelAction from '../actions/setcategorylabel'
 import SortAsanasAction from '../actions/sortasana'
 
