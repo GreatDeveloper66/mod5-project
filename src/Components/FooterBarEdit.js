@@ -42,7 +42,6 @@ class FooterBarEdit extends Component {
 	handleSave = event => {
 		event.preventDefault()
 		const sequence = this.props.sequence
-		console.log(JSON.stringify(sequence))
 		const user_id = this.props.profile.user.id
 		const sequence_id = sequence.id
 		const jwt = this.props.jwt
@@ -56,9 +55,6 @@ class FooterBarEdit extends Component {
 			},
 			body:JSON.stringify(sequence)
 		}
-		
-		console.log('configObj:',configObj)
-		
 		fetch(url,configObj)
 			.then(resp => resp.json())
 			.then(data => {
