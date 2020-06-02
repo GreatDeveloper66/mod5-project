@@ -36,7 +36,7 @@ findInterval = () => this.props.slide < this.props.sequence.asanas.length ? this
 	  <Container>
 		<Row className="d-flex justify-content-around">
 		
-			<div style={{backgroundColor:'lightblue'}}>
+			<div>
 			<ReactCountdownClock seconds={this.findDuration()}
                      color="#444"
                      alpha={0.9}

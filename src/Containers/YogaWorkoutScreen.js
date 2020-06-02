@@ -10,8 +10,8 @@ class YogaWorkoutScreen extends Component {
 	}
 	
 	renderJumbotrons = () => {
-		return preset_sequences.map(sequence => {
-													return <YogaJumbotron img = {sequence.img} name={sequence.name} asanas={sequence.asanas}/>
+		return preset_sequences.map((sequence, index) => {
+													return <YogaJumbotron key={index} img = {sequence.img} name={sequence.name} asanas={sequence.asanas}/>
 												}) 
 	}
 	
