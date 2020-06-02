@@ -7,6 +7,7 @@ import LoadUserSequencesAction from '../actions/loadusersequences'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
+const URL = process.env.REACT_APP_API_URL
 
 const mapStateToProps = state => {
 	return {

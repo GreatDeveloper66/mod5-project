@@ -49,7 +49,7 @@ findInterval = () => this.props.slide < this.props.sequence.asanas.length ? this
 		
 		
 		
-			<div style={{backgroundColor:'lightblue'}}>
+			<div>
 			<ReactCountdownClock key={this.props.slide} seconds={this.findInterval()}
                      color="#444"
                      alpha={0.9}

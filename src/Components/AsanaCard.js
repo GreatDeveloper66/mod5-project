@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Card, CardBody, CardTitle, CardSubtitle, CardImg, CardText, CardFooter,Button, CardHeader } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardSubtitle, CardImg, CardFooter,Button, CardHeader } from 'reactstrap'
 import { connect } from 'react-redux'
 import AddAsanaAction from '../actions/addasana'
 import RemoveAsanaAction from '../actions/removeasana'
@@ -47,7 +47,7 @@ class AsanaCard extends Component {
 	
 	renderCues = () => {
 		if(this.props.cues){
-			return <CardFooter className="text-info"><CardText><h6>{this.props.cues}</h6></CardText></CardFooter>
+			return <CardFooter className="text-info"><h6>{this.props.cues}</h6></CardFooter>
 		}
 		else 
 			return null
