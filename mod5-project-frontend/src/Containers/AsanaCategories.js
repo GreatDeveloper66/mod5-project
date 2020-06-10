@@ -7,7 +7,7 @@ import AsanaCard from '../Components/AsanaCard'
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories,
+    categories: state.categories.categories,
 	categorylabel: state.categorylabel,
 	sortasanas: state.sortasanas
   }
@@ -17,8 +17,8 @@ const mapStateToProps = state => {
 class AsanaCategories extends Component {
 
 renderAsanaCard = card => {
-		return <Col xs="3" key={card.id}><AsanaCard title={card.sanskritname} 
-			                              subtitle={card.englishname} image={card.picurl} asana_id={card.id} 
+		return <Col xs="3" key={card.id}><AsanaCard title={card.sanskritname}
+			                              subtitle={card.englishname} image={card.picurl} asana_id={card.id}
 										  time={card.duration} /></Col>
 	}
 
@@ -42,7 +42,7 @@ renderCategories = () => {
 				})
 				return newarr
 			}
-			newcats = eliminateDuplicates(newcats)	
+			newcats = eliminateDuplicates(newcats)
 			if(sorted === "ATOZ"){
 				newcats = newcats.sort((a,b) => a.englishname.localeCompare(b.englishname))
 				console.log(newcats)
@@ -55,10 +55,10 @@ renderCategories = () => {
 		}
 		else {
 			return categories.filter(category => category.name === label)
-						.map(category => <AsanaCategory name={category.name} 
+						.map(category => <AsanaCategory name={category.name}
 								asanas={category.asanas} key={category.id} />)
 		}
-				
+
 	}
 
 	render(){
