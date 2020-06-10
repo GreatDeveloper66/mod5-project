@@ -42,8 +42,8 @@ class SignIn extends Component {
 	constructor(props){
 		super()
 	}
-		
-	
+
+
 	bannerStyle = () => ({
 		backgroundImage: `url(${require(`../images/Yogi_Background_C.jpg`)})`,
 		backgroundPosition: 'center',
@@ -53,8 +53,8 @@ class SignIn extends Component {
 		width: '100vw',
 		overflowY: 'hidden'
 	})
-	
-	
+
+
 	handleRegisterSwitch = () => {
 		this.props.logInUser(this.props.jwt,'')
 		this.props.history.push('/Register')
@@ -88,14 +88,17 @@ class SignIn extends Component {
 				.then(resp => resp.json())
 				.then(data => {
 					this.props.loadusersequences(data)
+          this.props.fetchcategories(this.props.jwt)
+          /*
 					fetch(`${URL}/api/v1/categories`,{headers: {Authorization: `Bearer ${this.props.jwt}`}})
 						.then(resp => resp.json())
 						.then(data => {
 							this.props.loadcategories(data)
 					})
+          */
 					this.props.history.push('/home')
 				})
-			
+
 			}
 			else {
 				this.props.logInUser('','Incorrect UserName and/or Password. Try Again')
@@ -105,13 +108,13 @@ class SignIn extends Component {
 
 
 componentDidMount() {
-		
-		
+
+
 	}
 
 render(){
 	return (
-	
+
 	<div style={this.bannerStyle()} className="d-flex justify-content-center align-items-center">
 	<Container className="mt-5">
 	<Row className="d-flex justify-content-center">
@@ -126,7 +129,7 @@ render(){
 			<Button>Submit</Button>
 		</Col>
 	</Form>
-	</Card>	
+	</Card>
   </Col>
 </Row>
 <Row className="d-flex justify-content-center">
