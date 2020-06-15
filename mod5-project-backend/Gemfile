@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3'
+gem 'rails', '~> 6.0.3.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -52,6 +52,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'listen', '~> 3.0' # NOTE: for TCP functionality, use '~> 2.10' for now
 
-#gem "activesupport", ">= 6.0.3.1"
-#gem "actionpack", ">= 6.0.3.1"
-#gem "activestorage", ">= 6.0.3.1"
+gem "activesupport", ">= 6.0.3.1"
+gem "actionpack", ">= 6.0.3.1"
+gem "activestorage", ">= 6.0.3.1"
