@@ -46,8 +46,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#platforms :mswin do 
+#platforms :mswin do
 #  gem "wdm", :group => [:development, :test]
 #end
 
 gem 'listen', '~> 3.0' # NOTE: for TCP functionality, use '~> 2.10' for now
+
+#gem "activesupport", ">= 6.0.3.1"
+#gem "actionpack", ">= 6.0.3.1"
+#gem "activestorage", ">= 6.0.3.1"
