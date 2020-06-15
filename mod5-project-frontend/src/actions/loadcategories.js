@@ -1,7 +1,7 @@
 const LoadCategoriesAction = categories => {
   return {
     type: 'loadcategories',
-	categories: categories
+	  categories: categories
   }
 }
 

@@ -1,7 +1,9 @@
-const CategoriesReducer = (state=[],action) => {
+const CategoriesReducer = (state={categories: [], requesting: false},action) => {
   switch(action.type){
     case 'loadcategories':
-      return action.categories
+      return {categories: action.categories, requesting: false}
+    case 'loadingcategories':
+      return {categories: [], requesting: true}
     default:
       return state
   }
