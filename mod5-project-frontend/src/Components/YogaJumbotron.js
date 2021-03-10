@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => {
 	return {
-		categories: state.categories
+		categories: state.categories.categories
 	}
 }
 
@@ -40,7 +40,7 @@ class YogaJumbotron extends Component {
 	
 	viewpreset = () => {
 		const asana_names = this.props.asanas;	
-		const asanarray = this.props.categories.map(category => category.asanas).flat()
+		const asanarray = this.props.categories.categoris.map(category => category.asanas).flat()
 		const preset_asanas = asana_names.map(asana_name => {
 								return asanarray.find(asana => asana.sanskritname === asana_name)
 								})
