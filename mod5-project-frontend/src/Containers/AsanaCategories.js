@@ -7,9 +7,9 @@ import AsanaCard from '../Components/AsanaCard'
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories.categories,
-	categorylabel: state.categorylabel,
-	sortasanas: state.sortasanas
+    categories: state.categories,
+		categorylabel: state.categorylabel,
+		sortasanas: state.sortasanas
   }
 }
 
