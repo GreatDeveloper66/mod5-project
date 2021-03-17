@@ -14,11 +14,13 @@ export default CategoriesReducer
 */
 
 
-const CategoriesReducer = (state={categories: []}, action) => {
-  switch(action.type) {
-    case 'loadcategories': 
-      return action.message
+const LoadCategoriesReducer = (state = { categories: [] }, action) => {
+  switch (action.type) {
+    case 'loadcategories':
+      return action.categories
     default:
       return state
   }
 }
+
+export default LoadCategoriesReducer
