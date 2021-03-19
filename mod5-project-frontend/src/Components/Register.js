@@ -9,6 +9,13 @@ import ConfirmPassword from './ConfirmPassword'
 import fetch from 'isomorphic-fetch'
 import RenderProfileAction from '../actions/renderprofile'
 
+const mapStateToProps = state => {
+  return {
+    jwt: state.jwt,
+	loginmessage: state.loginmessage,
+	profile: state.profile
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -62,6 +69,11 @@ class Register extends Component {
 		  this.props.renderprofile({user: {id: data.user.id,email: data.user.email,username: data.user.username}})
 		  this.props.history.push('/home')
         })
+				fetch(`${URL}/api/v1/categories`,{headers: {Authorization: `Bearer ${this.props.jwt}`}})
+						.then(resp => resp.json())
+						.then(data => {
+							this.props.loadcategories(data)
+					})
   }
 
 	bannerStyle = () => ({
@@ -111,4 +123,4 @@ class Register extends Component {
   
 }
 
-export default connect(null,mapDispatchToProps)(Register)
+export default connect(mapStateToProps,mapDispatchToProps)(Register)

@@ -15,8 +15,8 @@ const URL = process.env.REACT_APP_API_URL
 const mapStateToProps = state => {
   return {
     jwt: state.jwt,
-	loginmessage: state.loginmessage,
-	profile: state.profile
+		loginmessage: state.loginmessage,
+		profile: state.profile
   }
 }
 
@@ -35,7 +35,7 @@ const mapDispatchToProps = dispatch => {
 	renderprofile: profile => {
 			dispatch(RenderProfileAction(profile))
 	}
-  }
+}
 }
 
 class SignIn extends Component {
@@ -88,14 +88,12 @@ class SignIn extends Component {
 				.then(resp => resp.json())
 				.then(data => {
 					this.props.loadusersequences(data)
-          this.props.fetchcategories(this.props.jwt)
-          /*
 					fetch(`${URL}/api/v1/categories`,{headers: {Authorization: `Bearer ${this.props.jwt}`}})
 						.then(resp => resp.json())
 						.then(data => {
 							this.props.loadcategories(data)
 					})
-          */
+          
 					this.props.history.push('/home')
 				})
 
