@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: mod5_project_backend_development
+  database: <%= ENV['MOD5_PROJECT_BACKEND_DEVELOPMENT'] %> 
   username: <%= ENV['MOD5_PROJECT_BACKEND_DATABASE_USERNAME'] %>
   password: <%= ENV['MOD5_PROJECT_BACKEND_DATABASE_PASSWORD'] %>
 
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: mod5_project_backend_test
+  database: <%= ENV['MOD5_PROJECT_BACKEND_TEST'] %> 
   username: <%= ENV['MOD5_PROJECT_BACKEND_DATABASE_USERNAME'] %>
   password: <%= ENV['MOD5_PROJECT_BACKEND_DATABASE_PASSWORD'] %>
 
@@ -86,6 +86,6 @@ test:
 #
 production:
   <<: *default
-  database: mod5_project_backend_production
+  database: <%= ENV['MOD5_PROJECT_BACKEND_PRODUCTION'] %> 
   username: <%= ENV['MOD5_PROJECT_BACKEND_DATABASE_USERNAME'] %>
   password: <%= ENV['MOD5_PROJECT_BACKEND_DATABASE_PASSWORD'] %>
